@@ -24,7 +24,7 @@ const Navigation = () => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black bg-opacity-50 backdrop-filter backdrop-blur-lg' : 'bg-transparent'}`}>
       <div className="container mx-auto px-8">
-        <div className="flex justify-between items-center pt-4 pb-2">
+        <div className="flex justify-between items-center py-2">
           <motion.div
             className="flex-1 flex justify-between items-center"
             initial={{ opacity: 0, y: -50 }}
@@ -33,13 +33,17 @@ const Navigation = () => {
           >
             <NavLink to="/team">Team</NavLink>
             <NavLink to="/journey">Journey</NavLink>
-            <motion.img
-              src={tsrLogo}
-              alt="TSR Logo"
-              className="h-24 w-auto mx-8"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            />
+            <motion.div className="flex items-center justify-center" style={{ height: '40px', overflow: 'visible' }}>
+              <Link to="/">
+                <motion.img
+                  src={tsrLogo}
+                  alt="TSR Logo"
+                  className="h-20 w-auto cursor-pointer"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                />
+              </Link>
+            </motion.div>
             <NavLink to="/about">About</NavLink>
             <NavLink to="/contact">Contact Us</NavLink>
           </motion.div>
@@ -52,7 +56,7 @@ const Navigation = () => {
 const NavLink = ({ to, children }) => (
   <Link
     to={to}
-    className="text-white hover:text-gray-300 transition-colors duration-300 text-xl font-bold px-12"
+    className="text-white hover:text-gray-300 transition-colors duration-300 text-lg font-bold px-8"
   >
     {children}
   </Link>

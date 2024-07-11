@@ -6,13 +6,18 @@ body {
   font-family: 'Arial', sans-serif;
 }
 
-/* Add any global styles here */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+body {
+  overflow-x: hidden;
+}
+
+.min-h-screen {
+  min-height: 100vh;
 }
 
 .logo {

@@ -1,4 +1,6 @@
 /* src/styles/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,7 +8,7 @@
 /* Add any custom styles below this line */
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Exo 2', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -27,6 +29,13 @@ h1 {
   line-height: 1.1;
 }
 
+/* index.css */
+.group:hover .rotate-arrow {
+  transform: rotate(-30deg);
+  color: #f5cb42; /* Change to your desired hover color */
+}
+
+
 /* You can keep the button styles if you're not using Tailwind's button utilities */
 button {
   border-radius: 8px;
@@ -38,7 +47,6 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-
 
 /* Media query for light/dark mode can be handled by Tailwind's dark mode feature */
 @media (prefers-color-scheme: light) {
