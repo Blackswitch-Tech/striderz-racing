@@ -4,6 +4,9 @@ import Section from '../components/Section';
 import backgroundImage from '../assets/images/home_bg.jpg';
 import Gallery from '../components/Gallery';
 import Merchandise from '../components/Merchandise';
+import Autocar from '../assets/images/autocar.svg'
+import Manorama from "../assets/images/malayalamanorama.svg"
+import Carousel from "../components/Carousel"
 
 const LandingPage = () => {
   // Sample data for Gallery and Merchandise components
@@ -145,24 +148,20 @@ const LandingPage = () => {
         </div>
       </Section>
 
-      <Section className="min-h-screen bg-[#0033CC] text-white flex items-center justify-center">
-        <div className="text-center">
-          <h2 className="text-5xl mb-8">Featured On</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {/* Add logos or names of platforms featuring your cars */}
-            <div className="bg-white h-24 w-full rounded-lg"></div>
-            <div className="bg-white h-24 w-full rounded-lg"></div>
-            <div className="bg-white h-24 w-full rounded-lg"></div>
-            <div className="bg-white h-24 w-full rounded-lg"></div>
-          </div>
-        </div>
-      </Section>
+      <Section className="min-h-[100vh] bg-[#0033CC] text-white flex items-center justify-center py-12">
+  <div className="text-center flex  justify-between  w-full max-w-6xl px-4">
+    <h2 className="text-5xl flex items-center">Featured On</h2>
+    <div className="flex space-x-4  ">
+      <div className=" h-24  rounded-lg"><img src={Autocar} alt="" /></div>
+     <div className=" h-24 pt-5 rounded-lg"><img src={Manorama} alt="" /></div></div>
+    </div>
+
+</Section>
+
 
       <Section className="min-h-screen bg-[#0033CC] text-white flex items-center justify-center">
-        <div className="w-full">
-          <h2 className="text-5xl mb-8 text-center">Gallery</h2>
-          <Gallery images={galleryImages} />
-        </div>
+      <h2 className="text-5xl mb-8 text-center">Gallery</h2>
+       <Carousel/>
       </Section>
 
       <Section className="min-h-screen bg-[#0033CC] text-white flex items-center justify-center">
@@ -170,6 +169,10 @@ const LandingPage = () => {
           <h2 className="text-5xl mb-8 text-center">Merchandise</h2>
           <Merchandise items={merchandiseItems} />
         </div>
+      </Section>
+
+      <Section>
+        
       </Section>
     </div>
   );
