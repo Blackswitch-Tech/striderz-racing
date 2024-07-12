@@ -1,12 +1,44 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Section from '../components/Section';
+import { motion, useInView, useAnimation } from 'framer-motion';
 import backgroundImage from '../assets/images/home_bg.jpg';
 import Gallery from '../components/Gallery';
 import Merchandise from '../components/Merchandise';
+import carImage from '../assets/images/car1.png';
+
+const AnimatedSection = ({ children, className }) => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+    threshold: 0.2,
+  });
+
+  React.useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    } else {
+      controls.start('hidden');
+    }
+  }, [controls, inView]);
+
+  return (
+    <motion.div
+      ref={ref}
+      animate={controls}
+      initial="hidden"
+      variants={{
+        visible: { opacity: 1, y: 0 },
+        hidden: { opacity: 0, y: 20 }
+      }}
+      transition={{ duration: 0.5 }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
 const LandingPage = () => {
-  // Sample data for Gallery and Merchandise components
   const galleryImages = [
     '/path/to/image1.jpg',
     '/path/to/image2.jpg',
@@ -19,158 +51,303 @@ const LandingPage = () => {
     { name: 'Poster', price: 9.99, image: '/path/to/poster.jpg' },
   ];
 
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const staggerChildren = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const sectionPadding = 'py-16';
+
   return (
     <div>
-      <Section 
-        className="h-screen bg-cover bg-center flex items-center justify-center" 
-        style={{ backgroundImage: `url(${backgroundImage})` }}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
       >
-        {/* You can add a welcome message or leave it empty for just the background */}
-      </Section>
-
-      <Section className="min-h-screen bg-[#0033CC] text-white flex items-center justify-end pr-16">
-        <div className="relative w-full">
-        <div className="absolute right-0 top-1/2 transform -translate-y-1/2 text-right">
-  <h5 className="text-4xl mb-2 font-bold">Fueling Passion,</h5>
-  <h2 className="text-4xl mb-2 font-bold">Engineering Excellence</h2>
-  <p className="text-xl">We take pride in our dedication, talent, and the</p>
-  <p className="text-xl">incredible performances that define us. Driven</p>
-  <p className="text-xl">by a love for racing, we represent our college</p>
-  <p className="text-xl">with genuine passion and engineering prowess.</p>
-  <p className="text-xl mb-6">Dive deeper into our story.</p>
-  <Link to="/about" className="flex items-center justify-end group hover:text-yellow-500 transition-colors duration-300 mb-12 text-xl text-white">
-  READ MORE
-  <span 
-    style={{ 
-      display: 'inline-block', 
-      marginLeft: '8px', 
-      fontSize: '15px',
-      transition: 'transform 0.3s, color 0.3s'
-    }}
-    className="rotate-arrow"
-  >
-    ➔
-  </span>
-</Link>
-
-
-          </div>
+        <div 
+          className={`h-screen bg-cover bg-center flex items-center justify-center ${sectionPadding}`} 
+          style={{ backgroundImage: `url(${backgroundImage})` }}
+        >
         </div>
-      </Section>
+      </motion.div>
 
-      <Section className="min-h-screen bg-[#0033CC] text-white flex flex-col items-center justify-center pl-12">
-  <div className="text-left mb-8">
-    <h2 className="text-4xl ">Meet the Buggy</h2>
+      <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
+        <div className="w-full bg-white h-[1px] opacity-50"></div>
+      </div> {/* Separator */}
+
+      <div className={`min-h-screen bg-[#0033CC] text-white flex items-center justify-end pr-16 relative overflow-hidden ${sectionPadding}`}>
+        <motion.img 
+          src={carImage} 
+          alt="Car"
+          className="absolute left-0 h-[600px] w-auto"
+          style={{ top: '-5%' }}
+          initial={{ x: -1000 }}
+          animate={{ x: 250 }}
+          transition={{ type: 'spring', stiffness: 80, damping: 50 }}
+        />
+        <motion.div 
+          className="relative w-full"
+          initial="hidden"
+          animate="visible"
+          variants={staggerChildren}
+        >
+          <div className="absolute right-0 top-1/2 transform -translate-y-1/2 text-right">
+            <motion.h5 variants={fadeInUp} className="text-4xl mb-2 font-bold">Fueling Passion,</motion.h5>
+            <motion.h2 variants={fadeInUp} className="text-4xl mb-2 font-bold">Engineering Excellence</motion.h2>
+            <motion.p variants={fadeInUp} className="text-xl">We take pride in our dedication, talent, and the</motion.p>
+            <motion.p variants={fadeInUp} className="text-xl">incredible performances that define us. Driven</motion.p>
+            <motion.p variants={fadeInUp} className="text-xl">by a love for racing, we represent our college</motion.p>
+            <motion.p variants={fadeInUp} className="text-xl">with genuine passion and engineering prowess.</motion.p>
+            <motion.p variants={fadeInUp} className="text-xl mb-6">Dive deeper into our story.</motion.p>
+            <motion.div variants={fadeInUp}>
+              <Link to="/about" className="flex items-center justify-end group hover:text-yellow-500 transition-colors duration-300 mb-12 text-xl text-white">
+                READ MORE
+                <motion.span 
+                  style={{ 
+                    display: 'inline-block', 
+                    marginLeft: '8px', 
+                    fontSize: '15px',
+                  }}
+                  className="rotate-arrow"
+                  whileHover={{ x: 5 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+                >
+                  ➔
+                </motion.span>
+              </Link>
+            </motion.div>
+          </div>
+        </motion.div>
+      </div>
+
+      <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
+        <div className="w-full bg-white h-[1px] opacity-50"></div>
+      </div> {/* Separator */}
+
+      <div className={`min-h-screen bg-[#0033CC] text-white flex flex-col items-start justify-center pl-12 ${sectionPadding}`}>
+        <motion.div 
+          className="mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: false }}
+        >
+          <h5 className="text-4xl font-bold">MEET THE BUGGY</h5>
+        </motion.div>
+        <motion.div 
+          className="flex flex-col items-center justify-center w-full mt-12"
+          initial="hidden"
+          whileInView="visible"
+          variants={staggerChildren}
+          viewport={{ once: false }}
+        >
+          <motion.img 
+            src={carImage} 
+            alt="Buggy Car"
+            className="h-[600px] w-auto mb-12 mt-[-150px]" // Using custom sizes
+            variants={fadeInUp}
+          />
+          
+          <motion.div variants={fadeInUp}>
+            <Link to="/journey" className="flex items-center text-xl text-white group hover:text-yellow-500 transition-colors duration-300 mb-12 mt-[-100px] font-bold">
+              Discover More
+              <motion.span 
+                style={{ 
+                  display: 'inline-block', 
+                  marginLeft: '8px', 
+                  fontSize: '15px',
+                }}
+                className="rotate-arrow"
+                whileHover={{ x: 5 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+              >
+                ➔
+              </motion.span>
+            </Link>
+          </motion.div>
+          
+          <motion.div 
+  className="flex flex-col items-center space-y-8"
+  variants={staggerChildren}
+>
+  <div className="flex flex-row items-center space-x-40">
+    <motion.div className="text-center" variants={fadeInUp}>
+      <p className="text-xl font-extrabold">10hp @</p>
+      <p className="text-xl">3600rpm</p>
+      <p className="text-sm mt-2">Peak Power</p> {/* Added mt-2 here */}
+    </motion.div>
+    <motion.div className="text-center" variants={fadeInUp}>
+      <p className="text-xl font-extrabold">CVT</p>
+      <p className="text-sm mt-2">Transmission</p> {/* Added mt-2 here */}
+      <p className="text-sm">Type</p> {/* Added mt-2 here */}
+    </motion.div>
+    <motion.div className="text-center" variants={fadeInUp}>
+      <p className="text-xl font-extrabold">19.66 Nm @</p>
+      <p className="text-xl">2800rpm</p>
+      <p className="text-sm mt-2">Peak Torque</p> {/* Added mt-2 here */}
+    </motion.div>
   </div>
-  <div className="flex flex-col items-center mt-12">
-    {/* Placeholder for the buggy car image */}
-    <div className="w- h-80 bg-gray-300 mb-12 flex items-center justify-center">
-      {/* Replace the div below with the actual image when available */}
-      <p className="text-2xl">Buggy Car Image Placeholder</p>
-    </div>
-    
-    <Link to="/journey" className="flex items-center text-xl text-white group hover:text-yellow-500 transition-colors duration-300 mb-12">
-  DISCOVER MORE
-  <span 
-    style={{ 
-      display: 'inline-block', 
-      marginLeft: '8px', 
-      fontSize: '15px',
-      transition: 'transform 0.3s, color 0.3s'
-    }}
-    className="rotate-arrow"
-  >
-    ➔
-  </span>
-</Link>
-    
-    <div className="flex flex-row items-center space-x-16">
-      <div className="text-center">
-        <p className="text-xl font-bold">10hp</p>
-        <p className="text-xl font-bold">@ 3600rpm</p>
-        <p className="text-xl">Peak Power</p>
+</motion.div>
+
+        </motion.div>
       </div>
-      <div className="text-center">
-        <p className="text-xl font-bold">CVT</p>
-        <p className="text-xl">Transmission</p>
-        <p className="text-xl">Type</p>
-      </div>
-      <div className="text-center">
-        <p className="text-xl font-bold">19.66 Nm</p>
-        <p className="text-xl font-bold">@ 2800rpm</p>
-        <p className="text-xl">Peak Torque</p>
-      </div>
-    </div>
-  </div>
-</Section>
 
+      <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
+        <div className="w-full bg-white h-[1px] opacity-50"></div>
+      </div> {/* Separator */}
 
-
-
-      <Section className="min-h-screen bg-[#0033CC] text-white flex items-center justify-center">
-        <div className="text-center">
+      <div className={`min-h-screen bg-[#0033CC] text-white flex items-center justify-center ${sectionPadding}`}>
+        <motion.div 
+          className="text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: false }}
+        >
           <h2 className="text-5xl mb-8">Our Sponsors</h2>
-          {/* Add sponsor logos or names here */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {/* Add sponsor logos or names here */}
-            <div className="bg-white h-24 w-full rounded-lg"></div>
-            <div className="bg-white h-24 w-full rounded-lg"></div>
-            <div className="bg-white h-24 w-full rounded-lg"></div>
-            <div className="bg-white h-24 w-full rounded-lg"></div>
-          </div>
-        </div>
-      </Section>
+          <motion.div 
+            className="grid grid-cols-2 md:grid-cols-4 gap-8"
+            variants={staggerChildren}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+          >
+            {[...Array(4)].map((_, index) => (
+              <motion.div 
+                key={index}
+                className="bg-white h-24 w-full rounded-lg"
+                variants={fadeInUp}
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: 'spring', stiffness: 300, damping: 10 }}
+              />
+            ))}
+          </motion.div>
+        </motion.div>
+      </div>
 
-      <Section className="min-h-screen bg-[#0033CC] text-white flex items-center justify-center">
-        <div className="text-center">
+      <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
+        <div className="w-full bg-white h-[1px] opacity-50"></div>
+      </div> {/* Separator */}
+
+      <div className={`min-h-screen bg-[#0033CC] text-white flex items-center justify-center ${sectionPadding}`}>
+        <motion.div 
+          className="text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: false }}
+        >
           <h2 className="text-5xl mb-8">Meet the Team</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Add team member cards here */}
-            <div className="bg-white text-black p-4 rounded-lg">
-              <img src="/path/to/team-member1.jpg" alt="Team Member 1" className="w-full h-48 object-cover rounded mb-4" />
-              <h3 className="text-xl font-bold">John Doe</h3>
-              <p>Engineer</p>
-            </div>
-            <div className="bg-white text-black p-4 rounded-lg">
-              <img src="/path/to/team-member2.jpg" alt="Team Member 2" className="w-full h-48 object-cover rounded mb-4" />
-              <h3 className="text-xl font-bold">Jane Smith</h3>
-              <p>Designer</p>
-            </div>
-            <div className="bg-white text-black p-4 rounded-lg">
-              <img src="/path/to/team-member3.jpg" alt="Team Member 3" className="w-full h-48 object-cover rounded mb-4" />
-              <h3 className="text-xl font-bold">Mike Johnson</h3>
-              <p>Mechanic</p>
-            </div>
-          </div>
-        </div>
-      </Section>
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            variants={staggerChildren}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+          >
+            {[
+              { name: "John Doe", role: "Engineer" },
+              { name: "Jane Smith", role: "Designer" },
+              { name: "Mike Johnson", role: "Mechanic" }
+            ].map((member, index) => (
+              <motion.div 
+                key={index}
+                className="bg-white text-black p-4 rounded-lg"
+                variants={fadeInUp}
+                whileHover={{ y: -5 }}
+                transition={{ type: 'spring', stiffness: 300, damping: 10 }}
+              >
+                <div className="w-full h-48 bg-gray-300 rounded mb-4" />
+                <h3 className="text-xl font-bold">{member.name}</h3>
+                <p>{member.role}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
+      </div>
 
-      <Section className="min-h-screen bg-[#0033CC] text-white flex items-center justify-center">
-        <div className="text-center">
+      <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
+        <div className="w-full bg-white h-[1px] opacity-50"></div>
+      </div> {/* Separator */}
+
+      <div className={`min-h-screen bg-[#0033CC] text-white flex items-center justify-center ${sectionPadding}`}>
+        <motion.div 
+          className="text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: false }}
+        >
           <h2 className="text-5xl mb-8">Featured On</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {/* Add logos or names of platforms featuring your cars */}
-            <div className="bg-white h-24 w-full rounded-lg"></div>
-            <div className="bg-white h-24 w-full rounded-lg"></div>
-            <div className="bg-white h-24 w-full rounded-lg"></div>
-            <div className="bg-white h-24 w-full rounded-lg"></div>
-          </div>
-        </div>
-      </Section>
+          <motion.div 
+            className="grid grid-cols-2 md:grid-cols-4 gap-8"
+            variants={staggerChildren}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+          >
+            {[...Array(4)].map((_, index) => (
+              <motion.div 
+                key={index}
+                className="bg-white h-24 w-full rounded-lg"
+                variants={fadeInUp}
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: 'spring', stiffness: 300, damping: 10 }}
+              />
+            ))}
+          </motion.div>
+        </motion.div>
+      </div>
 
-      <Section className="min-h-screen bg-[#0033CC] text-white flex items-center justify-center">
-        <div className="w-full">
+      <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
+        <div className="w-full bg-white h-[1px] opacity-50"></div>
+      </div> {/* Separator */}
+
+      <div className={`min-h-screen bg-[#0033CC] text-white flex items-center justify-center ${sectionPadding}`}>
+        <motion.div 
+          className="w-full"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: false }}
+        >
           <h2 className="text-5xl mb-8 text-center">Gallery</h2>
           <Gallery images={galleryImages} />
-        </div>
-      </Section>
+        </motion.div>
+      </div>
 
-      <Section className="min-h-screen bg-[#0033CC] text-white flex items-center justify-center">
-        <div className="w-full">
+      <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
+        <div className="w-full bg-white h-[1px] opacity-50"></div>
+      </div> {/* Separator */}
+
+      <div className={`min-h-screen bg-[#0033CC] text-white flex items-center justify-center ${sectionPadding}`}>
+        <motion.div 
+          className="w-full"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: false }}
+        >
           <h2 className="text-5xl mb-8 text-center">Merchandise</h2>
           <Merchandise items={merchandiseItems} />
-        </div>
-      </Section>
+        </motion.div>
+      </div>
+
+      <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
+        <div className="w-full bg-white h-[1px] opacity-50"></div>
+      </div> {/* Separator */}
     </div>
   );
 };
