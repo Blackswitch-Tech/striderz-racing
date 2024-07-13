@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useInView, useAnimation } from 'framer-motion';
 import backgroundImage from '../assets/images/home_bg.jpg';
-import Gallery from '../components/Gallery';
+import bglogo from "../assets/images/bglogo.svg"
 import Merchandise from '../components/Merchandise';
 import carImage from '../assets/images/car1.png';
 import sponsor1 from '../assets/images/sponsor1.png';
@@ -11,6 +11,9 @@ import teamImage from '../assets/images/team.png';
 import featured1 from '../assets/images/featured1.png';
 import featured2 from '../assets/images/featured2.png';
 
+import Autocar from '../assets/images/autocar.svg'
+import Manorama from "../assets/images/malayalamanorama.svg"
+import Carousel from "../components/Carousel"
 const AnimatedSection = ({ children, className }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
@@ -184,8 +187,8 @@ const LandingPage = () => {
           </motion.div>
           
           <motion.div 
-  className="flex flex-col items-center space-y-8"
-  variants={staggerChildren}
+    className="flex flex-col items-center space-y-8"
+    variants={staggerChildren}
 >
   <div className="flex flex-row items-center space-x-40">
     <motion.div className="text-center" variants={fadeInUp}>
@@ -363,18 +366,23 @@ const LandingPage = () => {
   <div className="w-full bg-white h-[1px] opacity-50"></div>
 </div> {/* Separator */}
 
-      <div className={`min-h-screen bg-[#0033CC] text-white flex items-center justify-center ${sectionPadding}`}>
-        <motion.div 
-          className="w-full"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: false }}
-        >
-          <h2 className="text-5xl mb-8 text-center">Gallery</h2>
-          <Gallery images={galleryImages} />
-        </motion.div>
-      </div>
+<div className={`min-h-screen bg-[#0033CC] text-white flex items-center justify-center ${sectionPadding}`}>
+  <motion.div 
+    className="w-full"
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+    viewport={{ once: false }}
+  >
+    <h2 className="text-5xl mb-24 text-center">Gallery</h2>
+    <div className="px-24  mx-auto">
+      <Carousel  />
+    </div>
+  </motion.div>
+</div>
+
+
+
 
       <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
         <div className="w-full bg-white h-[1px] opacity-50"></div>
@@ -396,6 +404,19 @@ const LandingPage = () => {
       <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
         <div className="w-full bg-white h-[1px] opacity-50"></div>
       </div> {/* Separator */}
+      <div className={`min-h-screen bg-[#0033CC] text-white flex items-center justify-center ${sectionPadding}`}>
+        <motion.div 
+          className="w-full"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: false }}
+        >
+          <h2 className="text-5xl mb-8 text-center">Contact Us</h2>
+        
+        </motion.div>
+      </div>
+      
     </div>
   );
 };
