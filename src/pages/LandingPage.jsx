@@ -2,12 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useInView, useAnimation } from 'framer-motion';
 import backgroundImage from '../assets/images/home_bg.jpg';
-import bglogo from "../assets/images/bglogo.svg"
-import Merchandise from '../components/Merchandise';
+
+import ContactUs from "./ContactPage"
 import carImage from '../assets/images/car1.png';
-import Autocar from '../assets/images/autocar.svg'
-import Manorama from "../assets/images/malayalamanorama.svg"
+import Autocar from '../assets/images/autocar.png'
+import Manorama from "../assets/images/malayalamanorama.png"
 import Carousel from "../components/Carousel"
+import Merc from "../assets/images/merch.png"
+
 const AnimatedSection = ({ children, className }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
@@ -295,8 +297,8 @@ const LandingPage = () => {
     <div className="text-center flex flex-col sm:flex-row sm:items-center sm:justify-between sm:gap-48 w-full max-w-6xl px-4">
       <h2 className="text-5xl sm:mb-0">Featured On</h2>
       <div className="flex gap-10 space-x-4">
-        <div className="h-32 rounded-lg "><img src={Autocar} alt="Autocar" className="h-full w-auto" /></div>
-        <div className=" pt-5  rounded-lg"><img src={Manorama} alt="Manorama" className="h-full w-auto" /></div>
+        <div className=" h-32 rounded-lg "><img src={Autocar} alt="Autocar" className="h-full w-auto" /></div>
+        <div className=" h-32   rounded-lg"><img src={Manorama} alt="Manorama" className="h-full w-auto" /></div>
       </div>
     </div>
   </motion.div>
@@ -335,8 +337,9 @@ const LandingPage = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: false }}
         >
-          <h2 className="text-5xl mb-8 text-center">Merchandise</h2>
-          <Merchandise items={merchandiseItems} />
+          <h2 className="text-5xl mb-20 text-center">Merchandise</h2>
+          <div className='flex items-center justify-center'><img src={Merc} alt="" /></div>
+          
         </motion.div>
       </div>
 
@@ -351,7 +354,9 @@ const LandingPage = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: false }}
         >
-          <h2 className="text-5xl mb-8 text-center">Contact Us</h2>
+           <div className=" min-h-screen  p-4">
+           <ContactUs/>
+    </div>
         
         </motion.div>
       </div>
