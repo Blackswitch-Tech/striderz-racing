@@ -5,6 +5,11 @@ import backgroundImage from '../assets/images/home_bg.jpg';
 import Gallery from '../components/Gallery';
 import Merchandise from '../components/Merchandise';
 import carImage from '../assets/images/car1.png';
+import sponsor1 from '../assets/images/sponsor1.png';
+import sponsor2 from '../assets/images/sponsor2.png';
+import teamImage from '../assets/images/team.png';
+import featured1 from '../assets/images/featured1.png';
+import featured2 from '../assets/images/featured2.png';
 
 const AnimatedSection = ({ children, className }) => {
   const controls = useAnimation();
@@ -144,7 +149,7 @@ const LandingPage = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: false }}
         >
-          <h5 className="text-4xl font-bold">MEET THE BUGGY</h5>
+          <h5 className="text-4xl font-bold ml-16">MEET THE BUGGY</h5>
         </motion.div>
         <motion.div 
           className="flex flex-col items-center justify-center w-full mt-12"
@@ -205,115 +210,158 @@ const LandingPage = () => {
       </div>
 
       <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
-        <div className="w-full bg-white h-[1px] opacity-50"></div>
-      </div> {/* Separator */}
+  <div className="w-full bg-white h-[1px] opacity-50"></div>
+</div> {/* Separator */}
 
-      <div className={`min-h-screen bg-[#0033CC] text-white flex items-center justify-center ${sectionPadding}`}>
-        <motion.div 
-          className="text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: false }}
-        >
-          <h2 className="text-5xl mb-8">Our Sponsors</h2>
-          <motion.div 
-            className="grid grid-cols-2 md:grid-cols-4 gap-8"
-            variants={staggerChildren}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false }}
-          >
-            {[...Array(4)].map((_, index) => (
-              <motion.div 
-                key={index}
-                className="bg-white h-24 w-full rounded-lg"
-                variants={fadeInUp}
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 10 }}
-              />
-            ))}
-          </motion.div>
-        </motion.div>
+<div className="bg-[#0033CC] text-white p-8">
+  <motion.div 
+    className="w-full"
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+    viewport={{ once: false }}
+  >
+    <div className="flex items-center">
+      <div className="flex-shrink-0 ml-16">
+        <h5 className="text-4xl font-bold text-left">Proudly</h5>
+        <h5 className="text-4xl font-bold text-left">Sponsored By</h5>
       </div>
-
-      <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
-        <div className="w-full bg-white h-[1px] opacity-50"></div>
-      </div> {/* Separator */}
-
-      <div className={`min-h-screen bg-[#0033CC] text-white flex items-center justify-center ${sectionPadding}`}>
+      <motion.div 
+        className="flex justify-center space-x-12 ml-32"
+        variants={staggerChildren}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false }}
+      >
         <motion.div 
-          className="text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: false }}
+          className="w-40 h-32 flex items-center justify-center"
+          variants={fadeInUp}
         >
-          <h2 className="text-5xl mb-8">Meet the Team</h2>
-          <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-            variants={staggerChildren}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false }}
-          >
-            {[
-              { name: "John Doe", role: "Engineer" },
-              { name: "Jane Smith", role: "Designer" },
-              { name: "Mike Johnson", role: "Mechanic" }
-            ].map((member, index) => (
-              <motion.div 
-                key={index}
-                className="bg-white text-black p-4 rounded-lg"
-                variants={fadeInUp}
-                whileHover={{ y: -5 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 10 }}
-              >
-                <div className="w-full h-48 bg-gray-300 rounded mb-4" />
-                <h3 className="text-xl font-bold">{member.name}</h3>
-                <p>{member.role}</p>
-              </motion.div>
-            ))}
-          </motion.div>
+          <img 
+            src={sponsor1} 
+            alt="Sponsor 1"
+            className="max-w-full max-h-full object-contain"
+          />
         </motion.div>
-      </div>
-
-      <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
-        <div className="w-full bg-white h-[1px] opacity-50"></div>
-      </div> {/* Separator */}
-
-      <div className={`min-h-screen bg-[#0033CC] text-white flex items-center justify-center ${sectionPadding}`}>
         <motion.div 
-          className="text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: false }}
+          className="w-40 h-32 flex items-center justify-center"
+          variants={fadeInUp}
         >
-          <h2 className="text-5xl mb-8">Featured On</h2>
-          <motion.div 
-            className="grid grid-cols-2 md:grid-cols-4 gap-8"
-            variants={staggerChildren}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false }}
-          >
-            {[...Array(4)].map((_, index) => (
-              <motion.div 
-                key={index}
-                className="bg-white h-24 w-full rounded-lg"
-                variants={fadeInUp}
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 10 }}
-              />
-            ))}
-          </motion.div>
+          <img 
+            src={sponsor2} 
+            alt="Sponsor 2"
+            className="max-w-full max-h-full object-contain"
+          />
         </motion.div>
-      </div>
+      </motion.div>
+    </div>
+  </motion.div>
+</div>
 
-      <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
-        <div className="w-full bg-white h-[1px] opacity-50"></div>
-      </div> {/* Separator */}
+<div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
+  <div className="w-full bg-white h-[1px] opacity-50"></div>
+</div> {/* Separator */}
+
+<div className={`min-h-screen bg-[#0033CC] text-white flex flex-col ${sectionPadding}`}>
+  <motion.div 
+    className="w-full"
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+    viewport={{ once: false }}
+  >
+     <Link to="/team" className="flex-shrink-0 ml-24 mb-8 flex items-center group hover:text-yellow-500 transition-colors duration-300">
+      <div className="flex items-center">
+        <h5 className="text-4xl font-bold text-left">Meet the Team</h5>
+        <motion.span 
+          style={{ 
+            display: 'inline-block', 
+            marginLeft: '12px', // Increased margin for better spacing
+            fontSize: '24px', // Increased from 15px to 24px
+          }}
+          className="rotate-arrow"
+          whileHover={{ x: 5 }}
+          transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+        >
+          ➔
+        </motion.span>
+      </div>
+    </Link>
+
+    <div className="flex flex-col items-center">
+      <motion.img 
+        src={teamImage}
+        alt="STRIDERZ RACING Team"
+        className="w-3/4 h-auto mb-8"
+        variants={fadeInUp}
+      />
+      <motion.div 
+  className="w-full pr-48 text-right"
+  variants={fadeInUp}
+>
+<p className="text-base inline-block max-w-xl">
+  Meet the team behind <strong>STRIDERZ RACING</strong>, showcasing exceptional
+  <br />
+  engineering talent and a passion for racing. Join us as we push
+  <br />
+  boundaries and achieve racing excellence.
+</p>
+</motion.div>
+    </div>
+  </motion.div>
+</div>
+
+<div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
+  <div className="w-full bg-white h-[1px] opacity-50"></div>
+</div> {/* Separator */}
+
+<div className="bg-[#0033CC] text-white p-8">
+  <motion.div 
+    className="w-full"
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+    viewport={{ once: false }}
+  >
+    <div className="flex items-center">
+      <div className="flex-shrink-0 ml-16">
+        <h5 className="text-4xl font-bold text-left">Featured On</h5>
+      </div>
+      <motion.div 
+        className="flex justify-center space-x-12 ml-32"
+        variants={staggerChildren}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false }}
+      >
+        <motion.div 
+          className="w-40 h-32 flex items-center justify-center"
+          variants={fadeInUp}
+        >
+          <img 
+            src={featured1} 
+            alt="featured 1"
+            className="max-w-full max-h-full object-contain"
+          />
+        </motion.div>
+        <motion.div 
+          className="w-40 h-32 flex items-center justify-center"
+          variants={fadeInUp}
+        >
+          <img 
+            src={featured2} 
+            alt="featured 2"
+            className="max-w-full max-h-full object-contain"
+          />
+        </motion.div>
+      </motion.div>
+    </div>
+  </motion.div>
+</div>
+
+<div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
+  <div className="w-full bg-white h-[1px] opacity-50"></div>
+</div> {/* Separator */}
 
       <div className={`min-h-screen bg-[#0033CC] text-white flex items-center justify-center ${sectionPadding}`}>
         <motion.div 
