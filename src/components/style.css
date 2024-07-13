@@ -9,3 +9,17 @@
     .react-multi-carousel-dot.react-multi-carousel-dot--active button{
     background: rgb(247, 247, 247) !important;
     }
+    
+      
+      .carousel-item-padding {
+        padding: 0 10px; /* Adjust as needed */
+      }
+      
+      .carousel-image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        cursor: pointer;
+        border-radius: 8px; /* Example: Add border-radius for rounded corners */
+      }
+      

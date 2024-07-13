@@ -8,18 +8,17 @@ const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
     items: 3,
-    
-    slidesToSlide: 3 // optional, default to 1.
+    slidesToSlide: 3
   },
   tablet: {
     breakpoint: { max: 1024, min: 768 },
     items: 5,
-    slidesToSlide: 3 // optional, default to 1.
+    slidesToSlide: 3
   },
   mobile: {
     breakpoint: { max: 767, min: 300 },
     items: 2,
-    slidesToSlide: 1 // optional, default to 1.
+    slidesToSlide: 1
   }
 };
 
@@ -64,13 +63,17 @@ const Carouselc = () => {
         infinite={true}
         partialVisible={false}
         dotListClass="custom-dot-list-style"
+        dynamicHeight={true}
+        containerClass="carousel-container"
+        itemClass="carousel-item-padding"
+        transitionDuration={500}
       >
         {sliderImages.map((image, index) => (
-          <div className="slider" key={index}>
+          <div key={index} className="slider">
             <img
               src={image.url}
               alt={`Slide ${index + 1}`}
-              className="h-full w-full object-cover hover:scale-110 transition duration-200 cursor-pointer"
+              className="carousel-image"
               onClick={() => nav(image.eventlink)}
             />
           </div>
