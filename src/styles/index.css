@@ -1,0 +1,64 @@
+/* src/styles/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add any custom styles below this line */
+
+:root {
+  font-family: 'Exo 2', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom styles that don't conflict with Tailwind */
+a {
+  font-weight: 500;
+  text-decoration: inherit;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+/* index.css */
+.group:hover .rotate-arrow {
+  transform: rotate(-30deg);
+  color: #f5cb42; /* Change to your desired hover color */
+}
+
+
+/* You can keep the button styles if you're not using Tailwind's button utilities */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+/* Media query for light/dark mode can be handled by Tailwind's dark mode feature */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+  }
+}
