@@ -1,24 +1,18 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
 import backgroundImage from '../assets/images/home_bg.jpg';
 
-
-import ContactUs from "./ContactPage"
 import carImage from '../assets/images/car1.png'
-import Autocar from '../assets/images/autocar.png'
-import Manorama from "../assets/images/malayalamanorama.png"
+import Autocar from '../assets/images/featured1.png'
+import Manorama from "../assets/images/featured2.png"
 import Carousel from "../components/Carousel"
 import Merc from "../assets/images/merch.png"
-
 import sponsor1 from '../assets/images/sponsor1.png';
 import sponsor2 from '../assets/images/sponsor2.png';
 import teamImage from '../assets/images/team.png';
-
-
-
-
-
+import ContactUs from './ContactPage'
 const AnimatedSection = ({ children, className }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
@@ -33,6 +27,7 @@ const AnimatedSection = ({ children, className }) => {
       controls.start('hidden');
     }
   }, [controls, inView]);
+  
 
   return (
     <motion.div
@@ -52,11 +47,16 @@ const AnimatedSection = ({ children, className }) => {
 };
 
 const LandingPage = () => {
-  const merchandiseItems = [
-    { name: 'T-Shirt', price: 19.99, image: '/path/to/tshirt.jpg' },
-    { name: 'Cap', price: 14.99, image: '/path/to/cap.jpg' },
-    { name: 'Poster', price: 9.99, image: '/path/to/poster.jpg' },
-  ];
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.scrollToContact) {
+      const contactSection = document.getElementById('contact-us');
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    } else if (location.state?.scrollToTop) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [location]);
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
@@ -75,6 +75,19 @@ const LandingPage = () => {
   };
 
   const sectionPadding = 'py-16';
+  const mobileMotion = {
+  
+    hidden: { opacity: 0, x: -1000 },
+    visible: { opacity: 1, x: 100,scale:1 },
+    transition: { type: 'spring', stiffness: 80, damping: 50 }
+  };
+
+  const desktopMotion = {
+    hidden: { opacity: 0, x: -1000 },
+    visible: { opacity: 1, x: 200,y:100 },
+    transition: { type: 'spring', stiffness: 80, damping: 50 }
+  };
+
 
   return (
     <div className='w-full'>
@@ -100,30 +113,32 @@ const LandingPage = () => {
         <div className="w-full bg-white h-[1px] opacity-50"></div>
       </div>
 
-      <div className={`min-h-screen bg-[#0033CC] text-white flex items-center justify-end pr-4 sm:pr-16 relative overflow-hidden ${sectionPadding}`}>
-      <motion.img 
-        src={carImage} 
-        alt="Car"
-        className="absolute left-0 h-[200px] sm:h-[400px] lg:h-[600px] w-auto"
-        style={{ top: '-5%' }}
-        initial={{ x: -1000 }}
-        animate={{ x: 250 }}
-        transition={{ type: 'spring', stiffness: 80, damping: 50 }}
-      />
+      <div className={`min-h-screen bg-[#0033CC] text-white flex  items-center justify-end pr-4 sm:pr-16 relative overflow-hidden ${sectionPadding}`}>
+      <motion.img
+          src={carImage}
+          alt="Car"
+          className="absolute left-0 sm:b top-0 h-[400px] lg:h-[600px] w-auto "
+          initial="hidden"
+          animate="visible"
+          transition={{ type: 'spring', stiffness: 80, damping: 50 }}
+          variants={window.innerWidth < 600 ? mobileMotion : desktopMotion}
+          viewport={{ once: false }}
+        />
+
       <motion.div 
-        className="relative w-full"
+        className="relative w-full sm:max-w-2xl"
         initial="hidden"
         animate="visible"
         variants={staggerChildren}
       >
         <div className="absolute right-0 top-1/2 transform -translate-y-1/2 text-right p-4 sm:p-0">
-          <motion.h5 variants={fadeInUp} className="text-2xl sm:text-4xl mb-2 font-bold">Fueling Passion,</motion.h5>
-          <motion.h2 variants={fadeInUp} className="text-2xl sm:text-4xl mb-2 font-bold">Engineering Excellence</motion.h2>
-          <motion.p variants={fadeInUp} className="text-base sm:text-xl">We take pride in our dedication, talent, and the</motion.p>
-          <motion.p variants={fadeInUp} className="text-base sm:text-xl">incredible performances that define us. Driven</motion.p>
-          <motion.p variants={fadeInUp} className="text-base sm:text-xl">by a love for racing, we represent our college</motion.p>
-          <motion.p variants={fadeInUp} className="text-base sm:text-xl">with genuine passion and engineering prowess.</motion.p>
-          <motion.p variants={fadeInUp} className="text-base sm:text-xl mb-6">Dive deeper into our story.</motion.p>
+          <motion.h5 variants={fadeInUp} className="text-3xl sm:text-4xl mb-2 font-bold">Fueling Passion,</motion.h5>
+          <motion.h2 variants={fadeInUp} className="text-3xl sm:text-4xl mb-2 font-bold">Engineering Excellence</motion.h2>
+          <motion.p variants={fadeInUp} className="text-base sm:text-2xl">We take pride in our dedication, talent, and the</motion.p>
+          <motion.p variants={fadeInUp} className="text-base sm:text-2xl">incredible performances that define us. Driven</motion.p>
+          <motion.p variants={fadeInUp} className="text-base sm:text-2xl">by a love for racing, we represent our college</motion.p>
+          <motion.p variants={fadeInUp} className="text-base sm:text-2xl">with genuine passion and engineering prowess.</motion.p>
+          <motion.p variants={fadeInUp} className="text-base sm:text-2xl mb-6">Dive deeper into our story.</motion.p>
           <motion.div variants={fadeInUp}>
             <Link to="/about" className="flex items-center justify-end group hover:text-yellow-500 transition-colors duration-300 text-base sm:text-xl text-white">
               READ MORE
@@ -169,7 +184,7 @@ const LandingPage = () => {
         <motion.img 
           src={carImage} 
           alt="Buggy Car"
-          className="h-[300px] sm:h-[600px] w-auto mb-12 sm:mt-[-150px]"
+          className="h-[400px] sm:h-[600px] w-auto mb-12 mt-[-100px] sm:mt-[-150px]"
           variants={fadeInUp}
         />
         
@@ -324,9 +339,7 @@ const LandingPage = () => {
       <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
         <div className="w-full bg-white h-[1px] opacity-50"></div>
       </div>
-
       
-
       <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
         <div className="w-full bg-white h-[1px] opacity-50"></div>
       </div> {/* Separator */}
@@ -356,7 +369,29 @@ const LandingPage = () => {
         <div className="w-full bg-white h-[1px] opacity-50"></div>
       </div> {/* Separator */}
 
-<div className={`min-h-screen bg-[#0033CC] text-white flex items-center justify-center ${sectionPadding}`}>
+      <div className={`min-h-screen bg-[#0033CC] text-white flex items-center justify-center ${sectionPadding}`}>
+      <motion.div 
+      className="w-full relative"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: false }}
+    >
+      <div className="flex-shrink-0 ml-4 sm:ml-24 absolute top-0 mt-[-68px]"> {/* Adjusted to absolute positioning */}
+        <h5 className="text-4xl font-bold text-left">Gallery</h5>
+      </div>
+
+      <div className=" sm:px-10 mx-auto pt-10 sm:pt-16"> {/* Add padding-top to make space for the absolutely positioned text */}
+        <Carousel />
+      </div>
+    </motion.div>
+</div>
+
+      <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
+        <div className="w-full bg-white h-[1px] opacity-50"></div>
+      </div> {/* Separator */}
+
+      <div className={`min-h-screen bg-[#0033CC] text-white flex items-center justify-center ${sectionPadding}`}>
   <motion.div 
     className="w-full"
     initial={{ opacity: 0, y: 20 }}
@@ -364,55 +399,28 @@ const LandingPage = () => {
     transition={{ duration: 0.5 }}
     viewport={{ once: false }}
   >
-    <h2 className="text-5xl mb-24 text-center">Gallery</h2>
-    <div className="px-24  mx-auto">
-      <Carousel  />
+    <div className="flex-shrink-0 ml-24">
+      <h5 className="text-4xl font-bold text-left">Merchandise</h5>
+    </div>
+    <div className='flex items-center justify-center'>
+      <img src={Merc} alt="" className="sm:w-1/2  mt-10" />
     </div>
   </motion.div>
 </div>
 
+{/* Separator after Merchandise section */}
+<div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
+  <div className="w-full bg-white h-[1px] opacity-50"></div>
+</div>
 
+<ContactUs fadeInUp={fadeInUp} sectionPadding={sectionPadding} />
 
+<div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
+  <div className="w-full bg-white h-[1px] opacity-50"></div>
+</div>
 
-      <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
-        <div className="w-full bg-white h-[1px] opacity-50"></div>
-      </div> {/* Separator */}
-
-      <div className={`min-h-screen bg-[#0033CC] text-white flex items-center justify-center ${sectionPadding}`}>
-        <motion.div 
-          className="w-full"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: false }}
-        >
-          <h2 className="text-5xl mb-20 text-center">Merchandise</h2>
-          <div className='flex items-center justify-center'><img src={Merc} alt="" /></div>
-          
-        </motion.div>
-      </div>
-
-      <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
-        <div className="w-full bg-white h-[1px] opacity-50"></div>
-      </div>
-
-      <div className={`min-h-screen bg-[#0033CC] text-white flex items-center justify-center ${sectionPadding}`}>
-        <motion.div 
-          className="w-full"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: false }}
-        >
-           <div className=" min-h-screen  p-4">
-           <ContactUs/>
-    </div>
-        
-        </motion.div>
-      </div>
-      
-    </div>
-  );
+</div>
+);
 };
 
 export default LandingPage;

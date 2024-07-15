@@ -1,55 +1,87 @@
 import React from 'react';
 import { ImFacebook2 } from "react-icons/im";
-import { FaWhatsapp } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
+import { FaWhatsapp, FaInstagram } from "react-icons/fa";
+import { motion } from 'framer-motion';
 
-const ContactPage = () => {
+const ContactPage = ({ fadeInUp, sectionPadding }) => {
   return (
     <div className="bg-[#0033CC] min-h-screen flex items-center justify-start pl-4 md:pl-20">
       <div className="w-full px-4 md:px-0">
         <h1 className="text-3xl md:text-5xl font-bold text-white mb-8">Contact Us</h1>
-        <form className="space-y-6">
-          <div>
-            <label htmlFor="name" className="block text-white mb-2">Name <span className='text-red-700'>*</span></label>
-            <input type="text" id="name" className="w-full md:w-[720px] p-3 rounded" required />
-          </div>
-          <div>
-            <label htmlFor="contact" className="block text-white mb-2">Contact No. <span className='text-red-700'>*</span></label>
-            <input type="tel" id="contact" className="w-full md:w-[720px] p-3 rounded" required />
-          </div>
-          <div>
-            <label htmlFor="email" className="block text-white mb-2">Email <span className='text-red-700'>*</span></label>
-            <input type="email" id="email" className="w-full md:w-[720px] p-3 rounded" required />
-          </div>
-          <div className="flex items-center justify-start">
-            <button type="submit" className="bg-blue-400 text-white py-2 px-6 rounded hover:bg-blue-500 transition duration-300">
-              SUBMIT →
-            </button>
-          </div>
-        </form>
-        <div className="pt-20 flex flex-col lg:flex-row text-white">
-          <div className="flex flex-col justify-center text-white">
-            <p>+91 70126 06474</p>
-            <div className="pl-2 text-gray-50" style={{ opacity: 0.7 }}>
-              <p className="mt-2">Paul J Illickan</p>
-              <p>Team Captain</p>
+        <motion.form 
+            className="w-full max-w-2xl space-y-6 mb-8 sm:ml-20"
+            variants={fadeInUp}
+          >        {['Name', 'Contact No.', 'Email'].map((label) => (
+              <div key={label} className="relative">
+                <label htmlFor={label.toLowerCase()} className="block text-sm font-medium text-white mb-2">
+                  {label} <span className='text-red-400'>*</span>
+                </label>
+                <input
+                  type={label === 'Email' ? 'email' : label === 'Contact No.' ? 'tel' : 'text'}
+                  id={label.toLowerCase()}
+                  className="w-full p-3 rounded-md bg-white bg-opacity-10 text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white"
+                  placeholder={label}
+                  required
+                  style={{
+                    '::placeholder': {
+                      color: 'white',
+                      opacity: '1'
+                    }
+                  }}
+                />
+              </div>
+            ))}
+            <div className='flex justify-end'>
+              <motion.button
+                type="submit"
+                className="rounded-md bg-white bg-opacity-10 text-white border-2 text-white py-2 px-6 rounded-full hover:bg-white hover:text-[#0033CC] transition duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+                whileHover={{ scale: 1.05 }}
+              >
+                SUBMIT <motion.span 
+                  style={{ 
+                    display: 'inline-block', 
+                    marginLeft: '8px', 
+                    fontSize: '15px',
+                  }}
+                  className="rotate-arrow"
+                  animate={{ rotate: 0 }}
+                  whileHover={{ rotate: -30 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+                >
+                  ➔
+                </motion.span>   
+              </motion.button>
             </div>
-          </div>
-          <div className="flex items-center justify-center mt-4 lg:mt-0 lg:ml-auto">
-            <p>teamstriderz.saintgits@gmail.com</p>
-          </div>
-          <div className="flex flex-row justify-center mt-4 lg:mt-0 lg:ml-auto space-x-3">
-            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
-              <ImFacebook2 className="text-white text-2xl" />
-            </a>
-            <a href="https://wa.me/917012606474" target="_blank" rel="noopener noreferrer">
-              <FaWhatsapp className="text-white text-2xl" />
-            </a>
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
-              <FaInstagram className="text-white text-2xl" />
-            </a>
-          </div>
-        </div>
+        </motion.form>
+        <motion.div 
+            className="w-full flex flex-col gap-5 sm:flex-row sm:justify-between sm:items-start sm:px-10"
+            variants={fadeInUp}
+          >
+            {/* Left side: Phone and Captain info */}
+            <div className="text-left text-white">
+              <p className="font-semibold text-lg">+91 70126 06474</p>
+              <p className="text-sm opacity-80">Paul J Illickan</p>
+              <p className="text-sm opacity-80">Team Captain</p>
+            </div>
+
+            {/* Center: Email */}
+            <div className="text-center text-white">
+              <p className="text-lg">teamstriderz.saintgits@gmail.com</p>
+            </div>
+
+            {/* Right side: Social media icons */}
+            <div className="flex space-x-8 justify-center">
+              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-opacity-80 transition-opacity duration-300">
+                <ImFacebook2 className="text-3xl" />
+              </a>
+              <a href="https://wa.me/917012606474" target="_blank" rel="noopener noreferrer" className="text-white hover:text-opacity-80 transition-opacity duration-300">
+                <FaWhatsapp className="text-3xl" />
+              </a>
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-opacity-80 transition-opacity duration-300">
+                <FaInstagram className="text-3xl" />
+              </a>
+            </div>
+          </motion.div>
       </div>
     </div>
   );

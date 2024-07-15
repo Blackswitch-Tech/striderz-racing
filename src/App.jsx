@@ -5,7 +5,6 @@ import LandingPage from './pages/LandingPage';
 import TeamPage from './pages/TeamPage';
 import JourneyPage from './pages/JourneyPage';
 import AboutPage from './pages/AboutPage';
-import ContactPage from './pages/ContactPage';
 import './App.css';
 
 function App() {
@@ -17,7 +16,9 @@ function App() {
           <Route path="/team" element={<TeamPage />} />
           <Route path="/journey" element={<JourneyPage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/" element={<LandingPage />}>
+  <Route path="/#contact-us" element={<LandingPage />} />
+</Route>
         </Routes>
       </MainLayout>
     </Router>
