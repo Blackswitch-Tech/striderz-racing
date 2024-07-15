@@ -1,23 +1,18 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
 import backgroundImage from '../assets/images/home_bg.jpg';
-
-
-import ContactUs from "./ContactPage"
 import carImage from '../assets/images/car1.png'
-import Autocar from '../assets/images/autocar.png'
-import Manorama from "../assets/images/malayalamanorama.png"
 import Carousel from "../components/Carousel"
 import Merc from "../assets/images/merch.png"
 
 import sponsor1 from '../assets/images/sponsor1.png';
 import sponsor2 from '../assets/images/sponsor2.png';
 import teamImage from '../assets/images/team.png';
-
-
-
-
+import featured1 from '../assets/images/featured1.png';
+import featured2 from '../assets/images/featured2.png';
+import ContactUs from '../components/ContactUs';
 
 const AnimatedSection = ({ children, className }) => {
   const controls = useAnimation();
@@ -52,11 +47,16 @@ const AnimatedSection = ({ children, className }) => {
 };
 
 const LandingPage = () => {
-  const merchandiseItems = [
-    { name: 'T-Shirt', price: 19.99, image: '/path/to/tshirt.jpg' },
-    { name: 'Cap', price: 14.99, image: '/path/to/cap.jpg' },
-    { name: 'Poster', price: 9.99, image: '/path/to/poster.jpg' },
-  ];
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.scrollToContact) {
+      const contactSection = document.getElementById('contact-us');
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    } else if (location.state?.scrollToTop) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [location]);
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
@@ -128,7 +128,7 @@ const LandingPage = () => {
                     fontSize: '15px',
                   }}
                   className="rotate-arrow"
-                  whileHover={{ x: 5 }}
+                  whileHover={{ x: 1 }}
                   transition={{ type: 'spring', stiffness: 400, damping: 10 }}
                 >
                   ➔
@@ -177,7 +177,7 @@ const LandingPage = () => {
                   fontSize: '15px',
                 }}
                 className="rotate-arrow"
-                whileHover={{ x: 5 }}
+                whileHover={{ x: 1 }}
                 transition={{ type: 'spring', stiffness: 400, damping: 10 }}
               >
                 ➔
@@ -281,7 +281,7 @@ const LandingPage = () => {
                   fontSize: '24px',
                 }}
                 className="rotate-arrow"
-                whileHover={{ x: 5 }}
+                whileHover={{ x: 1 }}
                 transition={{ type: 'spring', stiffness: 400, damping: 10 }}
               >
                 ➔
@@ -315,35 +315,81 @@ const LandingPage = () => {
       <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
         <div className="w-full bg-white h-[1px] opacity-50"></div>
       </div>
-
       
-
       <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
         <div className="w-full bg-white h-[1px] opacity-50"></div>
       </div> {/* Separator */}
 
-      <div className={` bg-[#0033CC] text-white flex items-center justify-center ${sectionPadding}`}>
-  <motion.div
-    className="text-center"
+      <div className="bg-[#0033CC] text-white p-8">
+        <motion.div 
+          className="w-full"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: false }}
+        >
+          <div className="flex items-center">
+            <div className="flex-shrink-0 ml-16">
+              <h5 className="text-4xl font-bold text-left">Featured On</h5>
+            </div>
+            <motion.div 
+              className="flex justify-center space-x-12 ml-32"
+              variants={staggerChildren}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false }}
+            >
+              <motion.div 
+                className="w-40 h-32 flex items-center justify-center"
+                variants={fadeInUp}
+              >
+                <img 
+                  src={featured1} 
+                  alt="featured 1"
+                  className="max-w-full max-h-full object-contain"
+                />
+              </motion.div>
+              <motion.div 
+                className="w-40 h-32 flex items-center justify-center"
+                variants={fadeInUp}
+              >
+                <img 
+                  src={featured2} 
+                  alt="featured 2"
+                  className="max-w-full max-h-full object-contain"
+                />
+              </motion.div>
+            </motion.div>
+          </div>
+        </motion.div>
+      </div>
+<div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
+        <div className="w-full bg-white h-[1px] opacity-50"></div>
+      </div> {/* Separator */}
+
+      <div className={`min-h-screen bg-[#0033CC] text-white flex items-center justify-center ${sectionPadding}`}>
+  <motion.div 
+    className="w-full relative" // Add relative positioning here
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
     viewport={{ once: false }}
   >
-    <div className="text-center flex flex-col sm:flex-row sm:items-center sm:justify-between sm:gap-48 w-full max-w-6xl px-4">
-      <h2 className="text-5xl sm:mb-0">Featured On</h2>
-      <div className="flex gap-10 space-x-4">
-        <div className=" h-32 rounded-lg "><img src={Autocar} alt="Autocar" className="h-full w-auto" /></div>
-        <div className=" h-32   rounded-lg"><img src={Manorama} alt="Manorama" className="h-full w-auto" /></div>
-      </div>
+    <div className="flex-shrink-0 ml-24 absolute top-0 mt-[-68px]"> {/* Adjusted to absolute positioning */}
+      <h5 className="text-4xl font-bold text-left">Gallery</h5>
+    </div>
+
+    <div className="px-20 mx-auto pt-[60px]"> {/* Add padding-top to make space for the absolutely positioned text */}
+      <Carousel />
     </div>
   </motion.div>
 </div>
-<div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
+
+      <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
         <div className="w-full bg-white h-[1px] opacity-50"></div>
       </div> {/* Separator */}
 
-<div className={`min-h-screen bg-[#0033CC] text-white flex items-center justify-center ${sectionPadding}`}>
+      <div className={`min-h-screen bg-[#0033CC] text-white flex items-center justify-center ${sectionPadding}`}>
   <motion.div 
     className="w-full"
     initial={{ opacity: 0, y: 20 }}
@@ -351,55 +397,28 @@ const LandingPage = () => {
     transition={{ duration: 0.5 }}
     viewport={{ once: false }}
   >
-    <h2 className="text-5xl mb-24 text-center">Gallery</h2>
-    <div className="px-24  mx-auto">
-      <Carousel  />
+    <div className="flex-shrink-0 ml-24">
+      <h5 className="text-4xl font-bold text-left">Merchandise</h5>
+    </div>
+    <div className='flex items-center justify-center'>
+      <img src={Merc} alt="" className="w-1/2 mt-4" />
     </div>
   </motion.div>
 </div>
 
+{/* Separator after Merchandise section */}
+<div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
+  <div className="w-full bg-white h-[1px] opacity-50"></div>
+</div>
 
+<ContactUs fadeInUp={fadeInUp} sectionPadding={sectionPadding} />
 
+<div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
+  <div className="w-full bg-white h-[1px] opacity-50"></div>
+</div>
 
-      <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
-        <div className="w-full bg-white h-[1px] opacity-50"></div>
-      </div> {/* Separator */}
-
-      <div className={`min-h-screen bg-[#0033CC] text-white flex items-center justify-center ${sectionPadding}`}>
-        <motion.div 
-          className="w-full"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: false }}
-        >
-          <h2 className="text-5xl mb-20 text-center">Merchandise</h2>
-          <div className='flex items-center justify-center'><img src={Merc} alt="" /></div>
-          
-        </motion.div>
-      </div>
-
-      <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
-        <div className="w-full bg-white h-[1px] opacity-50"></div>
-      </div>
-
-      <div className={`min-h-screen bg-[#0033CC] text-white flex items-center justify-center ${sectionPadding}`}>
-        <motion.div 
-          className="w-full"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: false }}
-        >
-           <div className=" min-h-screen  p-4">
-           <ContactUs/>
-    </div>
-        
-        </motion.div>
-      </div>
-      
-    </div>
-  );
+</div>
+);
 };
 
 export default LandingPage;

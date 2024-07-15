@@ -16,8 +16,13 @@ const AboutPage = () => {
         </motion.h1>
         {/* Add team member cards or grid here */}
       </Section>
+
+      
     </div>
   );
 };
+
+
+
 
 export default AboutPage;
