@@ -5,7 +5,7 @@ import ScrollIndicator from '../components/ScrollIndicator';
 
 const MainLayout = ({ children }) => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col ">
       <Navigation />
       <ScrollIndicator />
       <main className="flex-grow">{children}</main>

@@ -22,7 +22,7 @@ const Navigation = () => {
   }, [scrolled]);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black bg-opacity-50 backdrop-filter backdrop-blur-lg' : 'bg-transparent'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black bg-opacity-50 backdrop-filter backdrop-blur-lg' : 'bg-transparent'} hidden md:block`}>
       <div className="container mx-auto px-8">
         <div className="flex justify-between items-center py-2">
           <motion.div
