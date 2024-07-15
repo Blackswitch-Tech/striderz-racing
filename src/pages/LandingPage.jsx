@@ -12,7 +12,7 @@ import Merc from "../assets/images/merch.png"
 import sponsor1 from '../assets/images/sponsor1.png';
 import sponsor2 from '../assets/images/sponsor2.png';
 import teamImage from '../assets/images/team.png';
-import ContactUs from './ContactPage'
+import ContactUs from '../components/ContactUs'
 const AnimatedSection = ({ children, className }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({

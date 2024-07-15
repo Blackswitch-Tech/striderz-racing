@@ -54,7 +54,7 @@ const ContactPage = ({ fadeInUp, sectionPadding }) => {
             </div>
         </motion.form>
         <motion.div 
-            className="w-full flex justify-between items-start px-24"
+            className="w-full flex flex-col gap-5 sm:flex-row sm:justify-between sm:items-start sm:px-10"
             variants={fadeInUp}
           >
             {/* Left side: Phone and Captain info */}
@@ -70,7 +70,7 @@ const ContactPage = ({ fadeInUp, sectionPadding }) => {
             </div>
 
             {/* Right side: Social media icons */}
-            <div className="flex space-x-8">
+            <div className="flex space-x-8 justify-center">
               <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-opacity-80 transition-opacity duration-300">
                 <ImFacebook2 className="text-3xl" />
               </a>
