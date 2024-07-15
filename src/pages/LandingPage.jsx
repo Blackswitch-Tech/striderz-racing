@@ -117,7 +117,7 @@ const LandingPage = () => {
         <motion.img
           src={carImage}
           alt="Car"
-          className="absolute left-0 sm:b top-0 h-[400px] lg:h-[800px] w-auto "
+          className="absolute left-0 sm:b top-0 h-[400px] lg:h-[800px] lg:mt-10 w-auto "
           initial="hidden"
           animate="visible"
           transition={{ type: "spring", stiffness: 80, damping: 50 }}
