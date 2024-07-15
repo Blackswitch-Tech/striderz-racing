@@ -34,7 +34,7 @@ const ContactPage = ({ fadeInUp, sectionPadding }) => {
             <div className='flex justify-end'>
               <motion.button
                 type="submit"
-                className="rounded-md bg-white bg-opacity-10 text-white border-2 text-white py-2 px-6 rounded-full hover:bg-white hover:text-[#0033CC] transition duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+                className=" bg-white bg-opacity-10 text-white border-2  py-2 px-6 rounded-full hover:bg-white hover:text-[#0033CC] transition duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
                 whileHover={{ scale: 1.05 }}
               >
                 SUBMIT <motion.span 
