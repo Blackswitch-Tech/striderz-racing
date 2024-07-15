@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
-import backgroundImage from '../assets/images/home_bg.jpg';
-
+import desktopbg from '../assets/images/home_bg.jpg';
+import mobilebg from '../assets/images/mobilebg.png';
 import carImage from '../assets/images/car1.png'
 import Autocar from '../assets/images/featured1.png'
 import Manorama from "../assets/images/featured2.png"
@@ -13,6 +13,7 @@ import sponsor1 from '../assets/images/sponsor1.png';
 import sponsor2 from '../assets/images/sponsor2.png';
 import teamImage from '../assets/images/team.png';
 import ContactUs from '../components/ContactUs'
+
 const AnimatedSection = ({ children, className }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
@@ -48,6 +49,9 @@ const AnimatedSection = ({ children, className }) => {
 
 const LandingPage = () => {
   const location = useLocation();
+  const [width, setWidth] = useState(window.innerWidth);
+  const isMobile = width < 600;
+  const backgroundImage = isMobile ? mobilebg : desktopbg;
 
   useEffect(() => {
     if (location.state?.scrollToContact) {
@@ -121,7 +125,7 @@ const LandingPage = () => {
           initial="hidden"
           animate="visible"
           transition={{ type: 'spring', stiffness: 80, damping: 50 }}
-          variants={window.innerWidth < 600 ? mobileMotion : desktopMotion}
+          variants={window.innerWidth < 760? mobileMotion : desktopMotion}
           viewport={{ once: false }}
         />
 
