@@ -49,7 +49,7 @@ const AnimatedSection = ({ children, className }) => {
 const LandingPage = () => {
   const location = useLocation();
   const [width, setWidth] = useState(window.innerWidth);
-  const isMobile = width < 600;
+  const isMobile = width < 700;
   const backgroundImage = isMobile ? mobilebg : desktopbg;
 
   useEffect(() => {
@@ -86,7 +86,7 @@ const LandingPage = () => {
 
   const desktopMotion = {
     hidden: { opacity: 0, x: -1000 },
-    visible: { opacity: 1, x: 200, y: 100 },
+    visible: { opacity: 1, x: 200, y: -100 },
     transition: { type: "spring", stiffness: 80, damping: 50 },
   };
 
@@ -315,39 +315,36 @@ const LandingPage = () => {
       <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
         <div className="w-full bg-white h-[1px] opacity-50"></div>
       </div>
-      <div
-        className={`max-h-[95vh] bg-[#0033CC] text-white flex flex-col justify-center items-center  ${sectionPadding}`}
+
+      <div className={`min-h-screen bg-[#0033CC] text-white flex flex-col justify-center items-center  ${sectionPadding}`}>
+      <motion.div
+        className="w-full"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: false }}
       >
-        <motion.div
-          className="w-full"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: false }}
+        <Link
+          to="/team"
+          className="flex-shrink-0 mb-8 flex items-center group p-2 hover:text-yellow-500 transition-colors duration-300"
         >
-          <Link
-            to="/team"
-            className="flex-shrink-0 mb-8 flex items-center group p-2 hover:text-yellow-500 transition-colors duration-300"
-          >
-            <div className="flex items-center ml-0 sm:ml-24">
-              <h5 className="text-2xl sm:text-4xl font-bold text-left">
-                Meet the Team
-              </h5>
-              <motion.span
-                style={{
-                  display: "inline-block",
-                  marginLeft: "12px",
-                  fontSize: "18px",
-                  sm: { fontSize: "24px" },
-                }}
-                className="rotate-arrow"
-                whileHover={{ x: 5 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
-              >
-                ➔
-              </motion.span>
-            </div>
-          </Link>
+          <div className="flex items-center ml-0 sm:ml-24">
+            <h5 className="text-2xl sm:text-4xl font-bold text-left">Meet the Team</h5>
+            <motion.span
+              style={{
+                display: 'inline-block',
+                marginLeft: '12px',
+                fontSize: '18px',
+                sm: { fontSize: '24px' },
+              }}
+              className="rotate-arrow"
+              whileHover={{ x: 5 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+            >
+              ➔
+            </motion.span>
+          </div>
+        </Link>
 
           <div className="flex flex-col items-center">
             <motion.img
