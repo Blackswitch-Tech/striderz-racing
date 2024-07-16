@@ -50,7 +50,7 @@ const AnimatedSection = ({ children, className }) => {
 const LandingPage = () => {
   const location = useLocation();
   const [width, setWidth] = useState(window.innerWidth);
-  const isMobile = width < 600;
+  const isMobile = width < 700;
   const backgroundImage = isMobile ? mobilebg : desktopbg;
 
   useEffect(() => {
@@ -287,7 +287,7 @@ const LandingPage = () => {
         <div className="w-full bg-white h-[1px] opacity-50"></div>
       </div>
 
-      <div className={`max-h-[95vh] bg-[#0033CC] text-white flex flex-col justify-center items-center  ${sectionPadding}`}>
+      <div className={`min-h-screen bg-[#0033CC] text-white flex flex-col justify-center items-center  ${sectionPadding}`}>
       <motion.div
         className="w-full"
         initial={{ opacity: 0, y: 20 }}
