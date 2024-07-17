@@ -21,7 +21,6 @@ const AnimatedSection = ({ children, className }) => {
     threshold: 0.2,
   });
 
-  const nav=useNavigate();
   React.useEffect(() => {
     if (inView) {
       controls.start("visible");
@@ -81,13 +80,13 @@ const LandingPage = () => {
   const sectionPadding = "py-16";
   const mobileMotion = {
     hidden: { opacity: 0, x: -1000 },
-    visible: { opacity: 1, x: 100, scale: 1,y:30 },
+    visible: { opacity: 1, x: 100, scale: 1 },
     transition: { type: "spring", stiffness: 80, damping: 50 },
   };
 
   const desktopMotion = {
     hidden: { opacity: 0, x: -1000 },
-    visible: { opacity: 1, x: 200, y: -30 },
+    visible: { opacity: 1, x: 200, y: -100 },
     transition: { type: "spring", stiffness: 80, damping: 50 },
   };
 
@@ -113,12 +112,12 @@ const LandingPage = () => {
         <div className="w-full bg-white h-[1px] opacity-50"></div>
       </div>
       <div
-        className={`min-h-screen bg-[#0033CC] text-white flex items-center justify-end pr-4 sm:pr-16 relative overflow-hidden ${sectionPadding}`}
+        className={`min-h-screen bg-[#0033CC] text-white flex  items-center justify-end pr-4 sm:pr-16 relative overflow-hidden ${sectionPadding}`}
       >
         <motion.img
           src={carImage}
           alt="Car"
-          className="absolute left-0 sm:top-0 h-[400px] lg:h-[800px] lg:mt-10 w-auto"
+          className="absolute left-0 sm:b top-0 h-[400px] lg:h-[800px] lg:mt-10 w-auto "
           initial="hidden"
           animate="visible"
           transition={{ type: "spring", stiffness: 80, damping: 50 }}
