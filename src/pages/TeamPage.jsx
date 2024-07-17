@@ -4,6 +4,7 @@ import teamData from '../components/teamData.json';
 import carImage from '../assets/images/car1.png';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import buggimg from "../assets/images/Group 7.svg";
 
 const TeamPage = () => {
   const location = useLocation();
@@ -19,7 +20,7 @@ const TeamPage = () => {
 
   const renderPeople = () => {
     return (
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center m-5">
         <p className="text-center mb-12 max-w-2xl">
           {teamData.people.description}
         </p>
@@ -64,9 +65,9 @@ const TeamPage = () => {
     return (
       <div className="flex flex-col items-center">
         <div className="relative w-full flex justify-center items-center mb-8">
-          <img src={carImage} alt="Buggy Car" className="h-[300px] lg:h-[600px] w-auto" />
+          <img src={buggimg} alt="Buggy Car" className="h-[300px] lg:h-[600px] w-auto" />
         </div>
-        <div className="flex flex-col sm:flex-row items-center space-y-8 sm:space-y-0 sm:space-x-40">
+        <div className="flex flex-col sm:flex-row items-center space-y-8 sm:space-y-0 sm:space-x-40 mt-10">
           {teamData.buggy.performance.map((perf, index) => (
             <div key={index} className="text-center">
               {perf.value.includes('@') ? (
