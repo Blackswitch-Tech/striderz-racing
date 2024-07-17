@@ -57,7 +57,7 @@ const Gallery = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
-            <div onClick={closeLightbox} className="text-white absolute top-4 right-4 cursor-pointer">
+            <div onClick={closeLightbox} className="text-white absolute top-6 right-8 hover:scale-110 cursor-pointer">
               <AiOutlineClose className="h-8 w-8 text-white hover:text-gray-300" />
             </div>
             <motion.div
