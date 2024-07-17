@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { useLocation,useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 import desktopbg from "../assets/images/home_bg.jpg";
@@ -21,6 +21,7 @@ const AnimatedSection = ({ children, className }) => {
     threshold: 0.2,
   });
 
+  const nav=useNavigate();
   React.useEffect(() => {
     if (inView) {
       controls.start("visible");
@@ -80,13 +81,13 @@ const LandingPage = () => {
   const sectionPadding = "py-16";
   const mobileMotion = {
     hidden: { opacity: 0, x: -1000 },
-    visible: { opacity: 1, x: 100, scale: 1 },
+    visible: { opacity: 1, x: 100, scale: 1,y:30 },
     transition: { type: "spring", stiffness: 80, damping: 50 },
   };
 
   const desktopMotion = {
     hidden: { opacity: 0, x: -1000 },
-    visible: { opacity: 1, x: 200, y: -100 },
+    visible: { opacity: 1, x: 200, y: -30 },
     transition: { type: "spring", stiffness: 80, damping: 50 },
   };
 
@@ -112,12 +113,12 @@ const LandingPage = () => {
         <div className="w-full bg-white h-[1px] opacity-50"></div>
       </div>
       <div
-        className={`min-h-screen bg-[#0033CC] text-white flex  items-center justify-end pr-4 sm:pr-16 relative overflow-hidden ${sectionPadding}`}
+        className={`min-h-screen bg-[#0033CC] text-white flex items-center justify-end pr-4 sm:pr-16 relative overflow-hidden ${sectionPadding}`}
       >
         <motion.img
           src={carImage}
           alt="Car"
-          className="absolute left-0 sm:b top-0 h-[400px] lg:h-[800px] lg:mt-10 w-auto "
+          className="absolute left-0 sm:top-0 h-[400px] lg:h-[800px] lg:mt-10 w-auto"
           initial="hidden"
           animate="visible"
           transition={{ type: "spring", stiffness: 80, damping: 50 }}
@@ -374,14 +375,10 @@ const LandingPage = () => {
       <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
         <div className="w-full bg-white h-[1px] opacity-50"></div>
       </div>
-      <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
-        <div className="w-full bg-white h-[1px] opacity-50"></div>
-      </div>{" "}
-      {/* Separator */}
       <div
         className={` bg-[#0033CC] text-white flex items-center justify-center ${sectionPadding}`}
       >
-       <motion.div
+        <motion.div
           className="w-full"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -427,8 +424,7 @@ const LandingPage = () => {
       </div>
       <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
         <div className="w-full bg-white h-[1px] opacity-50"></div>
-      </div>{" "}
-      {/* Separator */}
+      </div>
       <div
         className={`min-h-screen bg-[#0033CC] text-white flex items-center justify-center ${sectionPadding}`}
       >
@@ -439,23 +435,35 @@ const LandingPage = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: false }}
         >
-          <div className="flex-shrink-0 ml-4 sm:ml-24 absolute top-0 mt-[-68px]">
-            {" "}
-            {/* Adjusted to absolute positioning */}
-            <h5 className="text-4xl font-bold text-left">Gallery</h5>
-          </div>
-
+          <Link
+      to="/gallery"
+      className="flex-shrink-0 mb-8 flex items-center group p-2 hover:text-yellow-500 transition-colors duration-300"
+    >
+      <div className="flex items-center ml-0 sm:ml-24">
+        <h5 className="text-2xl sm:text-4xl font-bold text-left">Gallery</h5>
+        <motion.span
+          style={{
+            display: 'inline-block',
+            marginLeft: '12px',
+            fontSize: '18px',
+            sm: { fontSize: '24px' },
+          }}
+          className="rotate-arrow"
+          whileHover={{ x: 5, rotate: 90 }} // Rotate by 90 degrees on hover
+          transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+        >
+          ➔
+        </motion.span>
+      </div>
+    </Link>
           <div className=" sm:px-10 mx-auto pt-10 sm:pt-16">
-            {" "}
-            {/* Add padding-top to make space for the absolutely positioned text */}
             <Carousel />
           </div>
         </motion.div>
       </div>
       <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
         <div className="w-full bg-white h-[1px] opacity-50"></div>
-      </div>{" "}
-      {/* Separator */}
+      </div>
       <div
         className={`min-h-screen bg-[#0033CC] text-white flex items-center justify-center ${sectionPadding}`}
       >
@@ -470,11 +478,10 @@ const LandingPage = () => {
             <h5 className="text-4xl font-bold text-left">Merchandise</h5>
           </div>
           <div className="flex items-center justify-center">
-            <img src={Merc} alt="" className="sm:w-1/2  mt-10" />
+            <img src={Merc} alt="" className="sm:w-1/2 mt-10" />
           </div>
         </motion.div>
       </div>
-      {/* Separator after Merchandise section */}
       <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
         <div className="w-full bg-white h-[1px] opacity-50"></div>
       </div>
