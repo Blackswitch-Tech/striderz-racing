@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { useLocation,useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 import desktopbg from "../assets/images/home_bg.jpg";
@@ -21,6 +21,7 @@ const AnimatedSection = ({ children, className }) => {
     threshold: 0.2,
   });
 
+  const nav=useNavigate();
   React.useEffect(() => {
     if (inView) {
       controls.start("visible");
@@ -80,13 +81,13 @@ const LandingPage = () => {
   const sectionPadding = "py-16";
   const mobileMotion = {
     hidden: { opacity: 0, x: -1000 },
-    visible: { opacity: 1, x: 100, scale: 1 },
+    visible: { opacity: 1, x: 100, scale: 1,y:30 },
     transition: { type: "spring", stiffness: 80, damping: 50 },
   };
 
   const desktopMotion = {
     hidden: { opacity: 0, x: -1000 },
-    visible: { opacity: 1, x: 200, y: -100 },
+    visible: { opacity: 1, x: 200, y: -30 },
     transition: { type: "spring", stiffness: 80, damping: 50 },
   };
 
@@ -325,26 +326,26 @@ const LandingPage = () => {
         viewport={{ once: false }}
       >
         <Link
-          to="/team"
-          className="flex-shrink-0 mb-8 flex items-center group p-2 hover:text-yellow-500 transition-colors duration-300"
+      to="/team"
+      className="flex-shrink-0 mb-8 flex items-center group p-2 hover:text-yellow-500 transition-colors duration-300"
+    >
+      <div className="flex items-center ml-0 sm:ml-24">
+        <h5 className="text-2xl sm:text-4xl font-bold text-left">Meet the Team</h5>
+        <motion.span
+          style={{
+            display: 'inline-block',
+            marginLeft: '12px',
+            fontSize: '18px',
+            sm: { fontSize: '24px' },
+          }}
+          className="rotate-arrow"
+          whileHover={{ x: 5, rotate: 90 }} // Rotate by 90 degrees on hover
+          transition={{ type: 'spring', stiffness: 400, damping: 10 }}
         >
-          <div className="flex items-center ml-0 sm:ml-24">
-            <h5 className="text-2xl sm:text-4xl font-bold text-left">Meet the Team</h5>
-            <motion.span
-              style={{
-                display: 'inline-block',
-                marginLeft: '12px',
-                fontSize: '18px',
-                sm: { fontSize: '24px' },
-              }}
-              className="rotate-arrow"
-              whileHover={{ x: 5 }}
-              transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-            >
-              ➔
-            </motion.span>
-          </div>
-        </Link>
+          ➔
+        </motion.span>
+      </div>
+    </Link>
 
           <div className="flex flex-col items-center">
             <motion.img
@@ -413,12 +414,27 @@ const LandingPage = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: false }}
         >
-          <div className="flex-shrink-0 ml-4 sm:ml-24 absolute top-0 mt-[-68px]">
-            {" "}
-            {/* Adjusted to absolute positioning */}
-            <h5 className="text-4xl font-bold text-left">Gallery</h5>
-          </div>
-
+          <Link
+      to="/gallery"
+      className="flex-shrink-0 mb-8 flex items-center group p-2 hover:text-yellow-500 transition-colors duration-300"
+    >
+      <div className="flex items-center ml-0 sm:ml-24">
+        <h5 className="text-2xl sm:text-4xl font-bold text-left">Gallery</h5>
+        <motion.span
+          style={{
+            display: 'inline-block',
+            marginLeft: '12px',
+            fontSize: '18px',
+            sm: { fontSize: '24px' },
+          }}
+          className="rotate-arrow"
+          whileHover={{ x: 5, rotate: 90 }} // Rotate by 90 degrees on hover
+          transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+        >
+          ➔
+        </motion.span>
+      </div>
+    </Link>
           <div className=" sm:px-10 mx-auto pt-10 sm:pt-16">
             {" "}
             {/* Add padding-top to make space for the absolutely positioned text */}

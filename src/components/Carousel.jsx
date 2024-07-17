@@ -3,6 +3,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./style.css";
 import { useNavigate } from "react-router-dom";
+import photos from './photos.json'; 
 
 const responsive = {
   desktop: {
@@ -22,32 +23,7 @@ const responsive = {
   }
 };
 
-const sliderImages = [
-  {
-    url: "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80",
-    eventlink: "/link1"
-  },
-  {
-    url: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80",
-    eventlink: "/link2"
-  },
-  {
-    url: "https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80",
-    eventlink: "/link3"
-  },
-  {
-    url: "https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80",
-    eventlink: "/link3"
-  },
-  {
-    url: "https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80",
-    eventlink: "/link3"
-  },
-  {
-    url: "https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80",
-    eventlink: "/link3"
-  }
-];
+
 
 const Carouselc = () => {
   const nav = useNavigate();
@@ -68,13 +44,13 @@ const Carouselc = () => {
         itemClass="carousel-item-padding"
         transitionDuration={500}
       >
-        {sliderImages.map((image, index) => (
+        {photos.map((photos, index) => (
           <div key={index} className="slider">
             <img
-              src={image.url}
+              src={photos.url}
               alt={`Slide ${index + 1}`}
               className="carousel-image"
-              onClick={() => nav(image.eventlink)}
+              onClick={() =>  nav("/gallery")}
             />
           </div>
         ))}

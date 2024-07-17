@@ -6,6 +6,7 @@ import TeamPage from "./pages/TeamPage";
 import JourneyPage from "./pages/JourneyPage";
 import AboutPage from "./pages/AboutPage";
 import "./App.css";
+import Gallery from "./pages/Gallery"
 
 function App() {
   return (
@@ -18,7 +19,9 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/" element={<LandingPage />}>
             <Route path="/#contact-us" element={<LandingPage />} />
+            
           </Route>
+          <Route path="/gallery" element={<Gallery />} />
         </Routes>
       </MainLayout>
     </Router>
