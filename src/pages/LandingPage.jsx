@@ -5,13 +5,13 @@ import { motion, useInView, useAnimation } from "framer-motion";
 import desktopbg from "../assets/images/home_bg.jpg";
 import mobilebg from "../assets/images/mobilebg.png";
 import carImage from "../assets/images/car1.png";
-import Autocar from "../assets/images/featured1.png";
-import Manorama from "../assets/images/featured2.png";
 import Carousel from "../components/Carousel";
 import Merc from "../assets/images/merch.png";
 import sponsor1 from "../assets/images/sponsor1.png";
 import sponsor2 from "../assets/images/sponsor2.png";
 import teamImage from "../assets/images/team.png";
+import featured1 from "../assets/images/featured1.png";
+import featured2 from "../assets/images/featured2.png";
 import ContactUs from "../components/ContactUs";
 
 const AnimatedSection = ({ children, className }) => {
@@ -380,23 +380,47 @@ const LandingPage = () => {
       <div
         className={` bg-[#0033CC] text-white flex items-center justify-center ${sectionPadding}`}
       >
-        <motion.div
-          className="text-center"
+       <motion.div
+          className="w-full"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: false }}
         >
-          <div className="text-center flex flex-col sm:flex-row sm:items-center sm:justify-between w-full max-w-6xl px-4 mx-auto">
-            <h2 className="text-3xl sm:text-5xl sm:p-10">Featured On</h2>
-            <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10 mt-6 sm:mt-0">
-              <div className="h-20 sm:h-32 rounded-lg flex items-center justify-center">
-                <img src={Autocar} alt="Autocar" className="h-full w-auto" />
-              </div>
-              <div className="h-20 sm:h-32 rounded-lg flex items-center justify-center">
-                <img src={Manorama} alt="Manorama" className="h-full w-auto" />
-              </div>
+          <div className="flex flex-col sm:flex-row items-center">
+            <div className="flex-shrink-0 mb-8 sm:mb-0 sm:ml-24">
+              <h5 className="text-2xl sm:text-4xl font-bold text-left">
+                Featured On
+              </h5>
             </div>
+            <motion.div
+              className="flex flex-wrap gap-2 justify-center space-x-0 sm:space-x-12 sm:ml-32"
+              variants={staggerChildren}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false }}
+            >
+              <motion.div
+                className="w-32 h-24 sm:w-40 sm:h-32 flex items-center justify-center mb-8 sm:mb-0"
+                variants={fadeInUp}
+              >
+                <img
+                  src={featured1}
+                  alt="featured1"
+                  className="max-w-full max-h-full object-contain"
+                />
+              </motion.div>
+              <motion.div
+                className="w-32 h-24 sm:w-40 sm:h-32 flex items-center justify-center"
+                variants={fadeInUp}
+              >
+                <img
+                  src={featured2}
+                  alt="featured2"
+                  className="max-w-full max-h-full object-contain"
+                />
+              </motion.div>
+            </motion.div>
           </div>
         </motion.div>
       </div>
