@@ -218,24 +218,25 @@ const LandingPage = () => {
           />
 
           <motion.div variants={fadeInUp}>
-            <Link
-              to="/journey"
-              className="flex items-center text-xl text-white group hover:text-yellow-500 transition-colors duration-300 mb-12 sm:mt-[-100px] font-bold"
-            >
-              Discover More
-              <motion.span
-                style={{
-                  display: "inline-block",
-                  marginLeft: "8px",
-                  fontSize: "15px",
-                }}
-                className="rotate-arrow"
-                whileHover={{ x: 5 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
-              >
-                ➔
-              </motion.span>
-            </Link>
+          <Link
+  to="/team"
+  state={{ activeTab: 'buggy' }}
+  className="flex items-center text-xl text-white group hover:text-yellow-500 transition-colors duration-300 mb-12 sm:mt-[-100px] font-bold"
+>
+  Discover More
+  <motion.span
+    style={{
+      display: "inline-block",
+      marginLeft: "8px",
+      fontSize: "15px",
+    }}
+    className="rotate-arrow"
+    whileHover={{ x: 5 }}
+    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+  >
+    ➔
+  </motion.span>
+</Link>
           </motion.div>
 
           <motion.div
@@ -326,26 +327,27 @@ const LandingPage = () => {
         viewport={{ once: false }}
       >
         <Link
-      to="/team"
-      className="flex-shrink-0 mb-8 flex items-center group p-2 hover:text-yellow-500 transition-colors duration-300"
+  to="/team"
+  state={{ activeTab: 'people' }}
+  className="flex-shrink-0 mb-8 flex items-center group p-2 hover:text-yellow-500 transition-colors duration-300"
+>
+  <div className="flex items-center ml-0 sm:ml-24">
+    <h5 className="text-2xl sm:text-4xl font-bold text-left">Meet the Team</h5>
+    <motion.span
+      style={{
+        display: 'inline-block',
+        marginLeft: '12px',
+        fontSize: '18px',
+        sm: { fontSize: '24px' },
+      }}
+      className="rotate-arrow"
+      whileHover={{ x: 5 }}
+      transition={{ type: 'spring', stiffness: 400, damping: 10 }}
     >
-      <div className="flex items-center ml-0 sm:ml-24">
-        <h5 className="text-2xl sm:text-4xl font-bold text-left">Meet the Team</h5>
-        <motion.span
-          style={{
-            display: 'inline-block',
-            marginLeft: '12px',
-            fontSize: '18px',
-            sm: { fontSize: '24px' },
-          }}
-          className="rotate-arrow"
-          whileHover={{ x: 5, rotate: 90 }} // Rotate by 90 degrees on hover
-          transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-        >
-          ➔
-        </motion.span>
-      </div>
-    </Link>
+      ➔
+    </motion.span>
+  </div>
+</Link>
 
           <div className="flex flex-col items-center">
             <motion.img

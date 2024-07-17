@@ -1,85 +1,162 @@
 import React from 'react';
-import { Chrono } from "react-chrono";
+import {
+  Timeline,
+  TimelineItem,
+  TimelineConnector,
+  TimelineHeader,
+  TimelineIcon,
+  TimelineBody,
+  Typography,
+} from "@material-tailwind/react";
 
-const TimelineComponent = () => {
-  const items = [
-    {
-      title: "2012",
-      cardTitle: "Inception",
-      cardSubtitle: "First team registered, cleared virtuals but did not participate in the event.",
-    },
-    {
-      title: "2014",
-      cardTitle: "SAE Effi-cycle",
-      cardSubtitle: "Successfully participated in the 2014 virtual round hosted at RIT Chennai on 28-29 June 2014.",
-    },
-    {
-      title: "2016",
-      cardTitle: "Car #113",
-      cardDetailedText: [
-        "First team from Saintgits to clear external technical evaluation and qualify for the main event.",
-        "First team to clear Technical Inspection and virtuals to participate in the final race.",
-      ],
-    },
-    {
-      title: "2017",
-      cardTitle: "Car #40",
-      cardSubtitle: "Achieved significant weight reduction from 325kg to 239.5kg.",
-    },
-    {
-      title: "2018",
-      cardTitle: "Car #89",
-      cardDetailedText: [
-        "Completed 11 laps in the endurance race and recorded the fastest acceleration time (6.49 seconds) among Kerala teams.",
-        "First time achieving a kerb weight below 200 kg.",
-      ],
-    },
-    {
-      title: "2019",
-      cardTitle: "Car #83",
-      cardDetailedText: [
-        "SAE BAJA: Secured first prize in the SLED PULL event, marking the first podium finish for a Kerala team and received a cash prize of Rs 60,000.",
-        "Overall first position in ATV Competition held in IHRD Adoor, where all BAJA teams from Kerala competed.",
-      ],
-    },
-  ];
-
+export default function DefaultTimeline() {
   return (
-    <div className="w-full h-screen bg-blue-600 text-white">
-      <h1 className="text-center text-3xl font-bold pt-8">Our Journey</h1>
-      <p className="text-center px-4 pb-8">
-        TEAM STRIDERZ Racing began its journey at Saintgits College of Engineering, born from the 
-        Mechanical Engineering Department. Driven by a shared passion for racing and engineering, our 
-        team was formed to push the limits of innovation and performance.
-      </p>
-      <div className="h-[calc(100vh-200px)]">
-        <Chrono
-          items={items}
-          mode="VERTICAL"
-          theme={{
-            primary: 'white',
-            secondary: '#2563eb', // Tailwind's blue-600
-            cardBgColor: 'rgba(255, 255, 255, 0.1)',
-            cardForeColor: 'white',
-            titleColor: 'white',
-          }}
-          fontSizes={{
-            cardTitle: '1.2rem',
-            cardText: '1rem',
-            cardSubtitle: '1rem',
-            title: '1rem',
-          }}
-          classNames={{
-            card: 'my-card',
-            cardText: 'my-card-text',
-            cardTitle: 'my-card-title',
-            cardSubtitle: 'my-card-subtitle',
-            title: 'my-title',
-          }}
-        />
+    <div className="bg-[#0033CC] min-h-screen flex flex-col items-center justify-center pt-20 md:px-4">
+      <div className="w-full md:px-0">
+        <h1 className='flex items-center justify-center pb-6 text-white text-3xl font-bold'>Our Journey</h1>
+        <Typography className='md:px-64 lg:px-64 pb-8 text-center'>
+  TEAM STRIDERZ Racing began its journey at Saintgits College of Engineering, born from the Mechanical Engineering Department. Driven by a shared passion for racing and engineering, our team was formed to push the limits of innovation and performance.
+</Typography>
+
+        <Timeline className='md:px-64 lg:px-96   px-10 py-4'>
+        
+          <TimelineItem>
+         
+          <TimelineConnector className="bg-white !w-[3px]  !ml-1.5" />
+          <TimelineHeader className="flex items-center h-3">
+              <TimelineIcon className="bg-white text-white p-2 rounded-full"
+              
+               />
+              <Typography variant="h6" color="blue-gray" className="leading-none pl-4">
+                Inception
+              </Typography>
+            </TimelineHeader>
+            <TimelineBody className="pb-8">
+            <Typography variant="small" color="gray" className="font-thin white">
+            First team registered, cleared virtuals but did not participate in the event.
+              </Typography>
+            </TimelineBody>
+          </TimelineItem>
+          <TimelineItem>
+          <TimelineConnector className="bg-white !w-[3px] !ml-1.5" />
+          <TimelineHeader className="flex items-center h-3">
+              <TimelineIcon className=" text-white p-2 rounded-full bg-white" />
+              <Typography variant="h6" color="blue-gray" className="leading-none pl-4">
+                SAE Effi-cycle
+              </Typography>
+            </TimelineHeader>
+            <TimelineBody className="pb-8">
+            <Typography variant="small" color="gray" className="font-thin white ">
+            Successfully participated in the 2014 virtual round hosted at RIT Chennai on 28-29 June 2014.
+              </Typography>
+            </TimelineBody>
+          </TimelineItem>
+          <TimelineItem>
+          <TimelineConnector className="bg-white !w-[3px]  !ml-1.5" />
+          <TimelineHeader className="flex items-center h-3">
+          <TimelineIcon className=" text-white p-2 rounded-full bg-white" />
+          <Typography variant="h6" color="blue-gray" className="leading-none pl-4">
+                Car #113
+              </Typography>
+            </TimelineHeader>
+            <TimelineBody className="pb-8">
+            <Typography variant="small" color="gray" className="font-thin white">
+            -First team from Saintgits to clear external technical evaluation and qualify for the main event.
+            <Typography/>
+            <Typography variant="small" color="gray" className="font-thin white"></Typography>
+                -First team to clear Technical Inspection and virtuals to participate in the final race.
+              </Typography>
+            </TimelineBody>
+          </TimelineItem>
+          <TimelineItem>
+          <TimelineConnector className="bg-white !w-[3px]  !ml-1.5" />
+          <TimelineHeader className="flex items-center h-3">
+          <TimelineIcon className=" text-white p-2 rounded-full bg-white" />
+          <Typography variant="h6" color="blue-gray" className="leading-none pl-4">
+                Car #40
+              </Typography>
+            </TimelineHeader>
+            <TimelineBody className="pb-8">
+            <Typography variant="small" color="gray" className="font-normal white">
+            Achieved significant weight reduction from 325kg to 239.5kg.
+              </Typography>
+            </TimelineBody>
+          </TimelineItem>
+          <TimelineItem>
+          <TimelineConnector className="bg-white !w-[3px]  !ml-1.5" />
+          <TimelineHeader className="flex items-center h-3">
+          <TimelineIcon className=" text-white p-2 rounded-full bg-white" />
+          <Typography variant="h6" color="blue-gray" className="leading-none pl-4">
+                Car #89
+              </Typography>
+            </TimelineHeader>
+            <TimelineBody className="pb-8">
+              <Typography variant="small" color="gray" className="font-thin white">
+                -Completed 11 laps in the endurance race and recorded the fastest acceleration time (6.49 seconds) among Kerala teams.
+               
+              </Typography>
+              <Typography variant="small" color="gray" className="font-thin white">
+              -First time achieving a kerb weight below 200 kg.
+               
+              </Typography>
+              
+            </TimelineBody>
+          </TimelineItem>
+          <TimelineItem>
+          <TimelineConnector className="bg-white !w-[3px]  !ml-1.5" />
+            <TimelineHeader className="flex items-center h-3">
+            <TimelineIcon className=" text-white p-2 rounded-full bg-white" />
+            <Typography variant="h6" color="blue-gray" className="leading-none pl-4">
+                Car #83
+              </Typography>
+            </TimelineHeader>
+            <TimelineBody className="pb-8">
+            <Typography variant="small" color="gray" className="font-thin white">
+            -SAE BAJA: Secured first prize in the SLED PULL event, marking the first podium finish for a Kerala team and received a cash prize of Rs 60,000.
+               
+              </Typography>
+              <Typography variant="small" color="gray" className="font-thin white">
+              -Overall first position in ATV Competition held in IHRD Adoor, where all BAJA teams from Kerala competed.              </Typography>
+            </TimelineBody>
+          </TimelineItem>
+
+          <TimelineItem>
+          <TimelineConnector className="bg-white !w-[3px]  !ml-1.5" />
+          <TimelineHeader className="flex items-center h-3">
+          <TimelineIcon className=" text-white p-2 rounded-full bg-white" />
+          <Typography variant="h6" color="blue-gray" className="leading-none pl-4">
+                Car #113
+              </Typography>
+            </TimelineHeader>
+            <TimelineBody className="pb-8">
+            <Typography variant="small" color="gray" className="font-thin white">
+            -First team from Saintgits to clear external technical evaluation and qualify for the main event.
+            <Typography/>
+            <Typography variant="small" color="gray" className="font-normal white"></Typography>
+                -First team to clear Technical Inspection and virtuals to participate in the final race.
+              </Typography>
+            </TimelineBody>
+          </TimelineItem>
+          <TimelineItem>
+          <TimelineConnector className="bg-white !w-[3px]  !ml-1.5" />
+          <TimelineHeader className="flex items-center h-3">
+          <TimelineIcon className=" text-white p-2 rounded-full bg-white" />
+          <Typography variant="h6" color="blue-gray" className="leading-none pl-4">
+                Car #113
+              </Typography>
+            </TimelineHeader>
+            <TimelineBody className="pb-8">
+            <Typography variant="small" color="gray" className="font-thin white">
+            -First team from Saintgits to clear external technical evaluation and qualify for the main event.
+            <Typography/>
+            <Typography variant="small" color="gray" className="font-normal white"></Typography>
+                -First team to clear Technical Inspection and virtuals to participate in the final race.
+              </Typography>
+            </TimelineBody>
+          </TimelineItem>
+          
+        </Timeline>
       </div>
     </div>
   );
-};
-
-export default TimelineComponent;
+}
