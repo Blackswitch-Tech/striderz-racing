@@ -19,7 +19,7 @@ const TeamPage = () => {
 
   const renderPeople = () => {
     return (
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center m-5">
         <p className="text-center mb-12 max-w-2xl">
           {teamData.people.description}
         </p>
