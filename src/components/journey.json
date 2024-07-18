@@ -1,0 +1,45 @@
+[
+  {
+      "time": "2012",
+      "title": "Inception",
+      "description": "First team registered, cleared virtuals but did not participate in the event."
+  },
+  {
+      "time": "2014",
+      "title": "SAE Effi-cycle",
+      "description": "Successfully participated in the 2014 virtual round hosted at RIT Chennai on 28-29 June 2014."
+  },
+  {
+      "time": "2016",
+      "title": "Car #113",
+      "description": "- First team from Saintgits to clear external technical evaluation and qualify for the main event.\n- First team to clear Technical Inspection and virtuals to participate in the final race.",
+      "image": "URL_TO_IMAGE_1"
+  },
+  {
+      "time": "2017",
+      "title": "Car #40",
+      "description": "Achieved significant weight reduction from 325kg to 239.5kg.",
+      "image": "URL_TO_IMAGE_2"
+  },
+  {
+      "time": "2018",
+      "title": "Car #89",
+      "description": "- Completed 11 laps in the endurance race and recorded the fastest acceleration time (6.49 seconds) among Kerala teams.\n- First time achieving a kerb weight below 200 kg."
+  },
+  {
+      "time": "2019",
+      "title": "Car #83",
+      "description": "- SAE BAJA: Secured first prize in the SLED PULL event, marking the first podium finish for a Kerala team and received a cash prize of Rs 60,000.\n- Overall first position in ATV Competition held in IHRD Adoor, where all BAJA teams from Kerala competed.",
+      "image": "URL_TO_IMAGE_3"
+  },
+  {
+      "time": "2016",
+      "title": "Car #113",
+      "description": "- First team from Saintgits to clear external technical evaluation and qualify for the main event.\n- First team to clear Technical Inspection and virtuals to participate in the final race."
+  },
+  {
+      "time": "2016",
+      "title": "Car #40",
+      "description": "Achieved significant weight reduction from 325kg to 239.5kg."
+  }
+]
