@@ -13,7 +13,9 @@ import teamImage from "../assets/images/team.png";
 import featured1 from "../assets/images/featured1.png";
 import featured2 from "../assets/images/featured2.png";
 import ContactUs from "../components/ContactUs";
+import { Spinner } from "@material-tailwind/react";
 
+import tsrLogo from "../assets/images/tsr_logo.png";
 const AnimatedSection = ({ children, className }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
@@ -51,15 +53,28 @@ const LandingPage = () => {
   const [width, setWidth] = useState(window.innerWidth);
   const isMobile = width < 700;
   const backgroundImage = isMobile ? mobilebg : desktopbg;
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     if (location.state?.scrollToContact) {
       const contactSection = document.getElementById("contact-us");
-      contactSection.scrollIntoView({ behavior: "smooth" });
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: "smooth" });
+      }
     } else if (location.state?.scrollToTop) {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [location]);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = backgroundImage;
+    img.onload = () => {
+      setTimeout(() => {
+        setIsLoaded(true);
+      }, 2000);
+    };
+  }, [backgroundImage]);
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
@@ -80,7 +95,7 @@ const LandingPage = () => {
   const sectionPadding = "py-16";
   const mobileMotion = {
     hidden: { opacity: 0, x: -1000 },
-    visible: { opacity: 1, x: 80, scale: 1 },
+    visible: { opacity: 1, x: 60, scale: 1 },
     transition: { type: "spring", stiffness: 80, damping: 50 },
   };
 
@@ -89,6 +104,19 @@ const LandingPage = () => {
     visible: { opacity: 1, x: 200, y: 30 },
     transition: { type: "spring", stiffness: 80, damping: 50 },
   };
+  if (!isLoaded) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-[#0033CC]">
+        <motion.img
+          src={tsrLogo}
+          initial={{ scale: 0 }}
+          animate={{ scale: [0, 2] }}
+          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+          className="w-24 h-24"
+        ></motion.img>
+      </div>
+    );
+  }
 
   return (
     <div className="w-full ">
