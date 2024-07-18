@@ -11,7 +11,7 @@ const Section = ({ children, className, ...props }) => {
       viewport={{ once: true }}
       {...props}
     >
-      <div className="">
+      <div className=" mt-8">
         {children}
       </div>
     </motion.section>
