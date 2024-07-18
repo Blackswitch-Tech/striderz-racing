@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { useLocation,useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 import desktopbg from "../assets/images/home_bg.jpg";
@@ -91,7 +91,7 @@ const LandingPage = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full ">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -374,14 +374,10 @@ const LandingPage = () => {
       <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
         <div className="w-full bg-white h-[1px] opacity-50"></div>
       </div>
-      <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
-        <div className="w-full bg-white h-[1px] opacity-50"></div>
-      </div>{" "}
-      {/* Separator */}
       <div
         className={` bg-[#0033CC] text-white flex items-center justify-center ${sectionPadding}`}
       >
-       <motion.div
+        <motion.div
           className="w-full"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -427,8 +423,7 @@ const LandingPage = () => {
       </div>
       <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
         <div className="w-full bg-white h-[1px] opacity-50"></div>
-      </div>{" "}
-      {/* Separator */}
+      </div>
       <div
         className={`min-h-screen bg-[#0033CC] text-white flex items-center justify-center ${sectionPadding}`}
       >
@@ -439,23 +434,35 @@ const LandingPage = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: false }}
         >
-          <div className="flex-shrink-0 ml-4 sm:ml-24 absolute top-0 mt-[-68px]">
-            {" "}
-            {/* Adjusted to absolute positioning */}
-            <h5 className="text-4xl font-bold text-left">Gallery</h5>
-          </div>
-
+          <Link
+      to="/gallery"
+      className="flex-shrink-0 mb-8 flex items-center group p-2 hover:text-yellow-500 transition-colors duration-300"
+    >
+      <div className="flex items-center ml-0 sm:ml-24">
+        <h5 className="text-2xl sm:text-4xl font-bold text-left">Gallery</h5>
+        <motion.span
+          style={{
+            display: 'inline-block',
+            marginLeft: '12px',
+            fontSize: '18px',
+            sm: { fontSize: '24px' },
+          }}
+          className="rotate-arrow"
+          whileHover={{ x: 5, rotate: 90 }} // Rotate by 90 degrees on hover
+          transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+        >
+          ➔
+        </motion.span>
+      </div>
+    </Link>
           <div className=" sm:px-10 mx-auto pt-10 sm:pt-16">
-            {" "}
-            {/* Add padding-top to make space for the absolutely positioned text */}
             <Carousel />
           </div>
         </motion.div>
       </div>
       <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
         <div className="w-full bg-white h-[1px] opacity-50"></div>
-      </div>{" "}
-      {/* Separator */}
+      </div>
       <div
         className={`min-h-screen bg-[#0033CC] text-white flex items-center justify-center ${sectionPadding}`}
       >
@@ -470,11 +477,10 @@ const LandingPage = () => {
             <h5 className="text-4xl font-bold text-left">Merchandise</h5>
           </div>
           <div className="flex items-center justify-center">
-            <img src={Merc} alt="" className="sm:w-1/2  mt-10" />
+            <img src={Merc} alt="" className="sm:w-1/2 mt-10" />
           </div>
         </motion.div>
       </div>
-      {/* Separator after Merchandise section */}
       <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
         <div className="w-full bg-white h-[1px] opacity-50"></div>
       </div>

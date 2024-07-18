@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Section from '../components/Section';
 import teamData from '../components/teamData.json';
-import carImage from '../assets/images/car1.png';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import buggimg from "../assets/images/Group 7.svg";

@@ -1,3 +1,4 @@
+
 import React from "react";
 import { motion } from "framer-motion";
 import Section from "../components/Section";
@@ -46,3 +47,4 @@ const JourneyPage = () => {
 };
 
 export default JourneyPage;
+
