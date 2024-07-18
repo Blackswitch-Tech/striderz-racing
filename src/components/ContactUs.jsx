@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const ContactPage = ({ fadeInUp, sectionPadding }) => {
   return (
-    <div className="bg-[#0033CC] min-h-screen flex items-center justify-start pl-4 md:pl-20">
+    <div id="contact-us" className="bg-[#0033CC] min-h-screen flex items-center justify-start pl-4 md:pl-20">
       <div className="w-full px-4 md:px-0">
         <h1 className="text-3xl md:text-5xl font-bold text-white mb-8">Contact Us</h1>
         <motion.form 

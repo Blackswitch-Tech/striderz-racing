@@ -1,0 +1,89 @@
+{
+  "people": {
+    "description": "Our team has a proven track record of stellar performances and unwavering dedication, making us proud representatives of our college at various prestigious events. We push boundaries, innovate, and consistently strive for racing excellence, driven by true passion and teamwork. Every member of our team contributes their unique skills and expertise, creating a powerful synergy that fuels our success.",
+    "leadership": [
+      {
+        "role": "Captain",
+        "name": "Paul J Illickan"
+      },
+      {
+        "role": "Vice-Captain",
+        "name": "Diyan Reji"
+      },
+      {
+        "role": "Financial Head",
+        "name": "Nevan Chacko"
+      }
+    ],
+    "teams": [
+      {
+        "teamName": "Chassis Team",
+        "members": [
+          { "role": "Head", "name": "Paul J Illickan" },
+          { "name": "Mathew Johnson" },
+          { "name": "M Easa K A" },
+          { "name": "Sidharth Krishna" },
+          { "name": "Arjun Krishna" }
+        ]
+      },
+      {
+        "teamName": "Suspension Team",
+        "members": [
+          { "role": "Head", "name": "Jerin Mathew" },
+          { "name": "Diyan Reji Alex" },
+          { "name": "Cherian Joseph" },
+          { "name": "John Mathew" }
+        ]
+      },
+      {
+        "teamName": "Steering Team",
+        "members": [
+          { "role": "Head", "name": "Melvin Santhosh" },
+          { "name": "Ben Philip Sam" },
+          { "name": "Joel C Thomas" }
+        ]
+      },
+      {
+        "teamName": "Braking Team",
+        "members": [
+          { "role": "Head", "name": "Alwin P" },
+          { "name": "Aswin Biju" },
+          { "name": "Alan Z Shelly" },
+          { "name": "Siddharth S" }
+        ]
+      },
+      {
+        "teamName": "Transmission Team",
+        "members": [
+          { "role": "Head", "name": "Aravindh S" },
+          { "name": "Pavan K" },
+          { "name": "Derik Shaji" },
+          { "name": "Arun P Manoj" }
+        ]
+      },
+      {
+        "teamName": "Cost & Sales Team",
+        "members": [
+          { "role": "Head", "name": "Nevan Chacko" },
+          { "name": "Amritha T" },
+          { "name": "Neeraj Kumar" }
+        ]
+      },
+      {
+        "teamName": "Operation & Assembly Team",
+        "members": [
+          { "role": "Head", "name": "Aaron Moni Roy" },
+          { "name": "Karthik S Nair" },
+          { "name": "Nishanth Manu" }
+        ]
+      }
+    ]
+  },
+  "buggy": {
+    "performance": [
+      { "value": "10hp @ 3600rpm", "label": "Peak Power" },
+      { "value": "CVT", "label": "Transmission Type" },
+      { "value": "19.66 Nm @ 2800rpm", "label": "Peak Torque" }
+    ]
+  }
+}
