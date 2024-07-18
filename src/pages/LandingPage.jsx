@@ -361,9 +361,9 @@ const LandingPage = () => {
             >
               <p className="text-md sm:text-base inline-block p-5 max-w-xl">
                 Meet the team behind <strong>STRIDERZ RACING</strong>,
-                showcasing exceptional
+                showcasing exceptional 
                 <br className="hidden sm:block" />
-                engineering talent and a passion for racing. Join us as we push
+                 engineering talent and a passion for racing. Join us as we push
                 <br className="hidden sm:block" />
                 boundaries and achieve racing excellence.
               </p>
@@ -436,7 +436,7 @@ const LandingPage = () => {
         >
           <Link
       to="/gallery"
-      className="flex-shrink-0 mb-8 flex items-center group p-2 hover:text-yellow-500 transition-colors duration-300"
+      className="flex-shrink-0 mb-8 flex items-center  p-2 hover:text-yellow-500 transition-colors duration-300"
     >
       <div className="flex items-center ml-0 sm:ml-24">
         <h5 className="text-2xl sm:text-4xl font-bold text-left">Gallery</h5>

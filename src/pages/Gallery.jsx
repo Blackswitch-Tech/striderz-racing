@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { AiOutlineLeft, AiOutlineRight, AiOutlineClose } from 'react-icons/ai'; 
 import photos from '../components/photos.json';
@@ -6,6 +6,11 @@ import photos from '../components/photos.json';
 const Gallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [lightboxPhoto, setLightboxPhoto] = useState(null);
+
+  // Ensure the page scrolls to the top and sets the initial state
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const openLightbox = (index) => {
     setCurrentIndex(index);
@@ -30,7 +35,7 @@ const Gallery = () => {
 
   return (
     <div className="bg-[#0033CC] min-h-screen flex flex-col items-center justify-center pt-20 md:px-4">
-      <div className="w-full  md:px-0">
+      <div className="w-full md:px-0">
         <h1 className='flex items-center justify-center pb-6 text-white text-3xl font-bold'>Gallery</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
           {photos.map((photo, index) => (
@@ -51,6 +56,12 @@ const Gallery = () => {
             </motion.div>
           ))}
         </div>
+        {/* Separator */}
+        {/* Separator */}
+<div className="w-full bg-[#0033CC] flex justify-center">
+  <div className="w-full max-w-7xl bg-white h-[1px] opacity-50"></div>
+</div>
+
         {lightboxPhoto && (
           <motion.div
             className="fixed top-0 left-0 z-50 w-full h-full bg-black bg-opacity-75 flex items-center justify-center"

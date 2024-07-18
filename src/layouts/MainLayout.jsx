@@ -11,7 +11,7 @@ const MainLayout = ({ children }) => {
     <div className="flex flex-col min-h-screen">
       <Navigation />
       <ScrollIndicator />
-      <main className="flex-grow">{children}</main>
+      <main className="">{children}</main>
       <Footer />
       
     </div>

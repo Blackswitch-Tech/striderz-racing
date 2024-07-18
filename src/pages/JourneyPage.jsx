@@ -8,14 +8,14 @@ const JourneyPage = () => {
   return (
     <div className="min-h-screen bg-[#0033CC] text-white ">
       <Section>
-        <motion.h1
-          className="text-6xl text-center mb-8"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
+      <motion.h5
+          className="text-5xl pt-1 font-bold text-center mb-8"
+          initial={{ opacity: 0, y: 0 }}
+          animate={{ opacity: 1, y: 1 }}
           transition={{ duration: 1 }}
         >
           Our Journey
-        </motion.h1>
+        </motion.h5>
         {/* Add team member cards or grid here */}
 
         <Typography className="md:px-64 lg:px-64 pb-8 text-center m-5 ">
