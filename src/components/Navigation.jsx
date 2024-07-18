@@ -79,13 +79,13 @@ const Navigation = () => {
         </div>
       </nav>
 
-      <div className="fixed top-0 left-0 md:hidden z-50 flex justify-between items-center w-full px-4 bg-black bg-opacity-20 backdrop-filter backdrop-blur-lg">
+      <div className="fixed top-0 left-0 md:hidden z-50 flex justify-between items-center w-full  bg-black bg-opacity-20 backdrop-filter backdrop-blur-lg">
         {!overlayVisible && (
           <Link to="/" onClick={handleLogoClick}>
             <motion.img
               src={tsrLogo}
               alt="TSR Logo"
-              className="h-16 w-auto cursor-pointer"
+              className="h-16 w-auto cursor-pointer ml-6"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             />
