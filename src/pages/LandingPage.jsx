@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 import desktopbg from "../assets/images/home_bg.jpg";
-import mobilebg from "../assets/images/newmob.png";
+import mobilebg from "../assets/images/mobnew.jpg";
 import carImage from "../assets/images/car1.png";
 import Carousel from "../components/Carousel";
 import Merc from "../assets/images/merch.png";
