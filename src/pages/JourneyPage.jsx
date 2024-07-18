@@ -20,11 +20,11 @@ const JourneyPage = () => {
 
         {/* Add team member cards or grid here */}
 
-        <Typography className="md:px-64 lg:px-64 pb-8 text-center m-5 ">
-          TEAM STRIDERZ Racing began its journey at Saintgits College of
-          Engineering, born from the Mechanical Engineering Department. Driven
-          by a shared passion for racing and engineering, our team was formed to
-          push the limits of innovation and performance.
+        <Typography className="md:px-64 lg:px-64 pb-8 text-center m-5 md:text-xl ">
+        Striderz Racing, a distinguished motorsports team from the Mechanical Engineering Department at Saintgits College of Engineering, boasts over a decade of rich heritage and pedigree in the motorsports domain. Our team has continually pushed the boundaries of innovation and excellence.
+
+<br></br>Over the years, Striderz Racing has earned numerous awards and prizes in various competitions, showcasing our dedication and prowess in the field.
+
         </Typography>
         <ol className="relative border-l border-gray-200 dark:border-gray-700 m-5  md:w-6/12 md:mx-auto">
           {timelineData.map((item, index) => (

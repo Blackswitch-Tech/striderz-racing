@@ -57,6 +57,7 @@ const LandingPage = () => {
 
   useEffect(() => {
     if (location.state?.scrollToContact) {
+      setIsLoaded(true)
       const contactSection = document.getElementById("contact-us");
       if (contactSection) {
         contactSection.scrollIntoView({ behavior: "smooth" });
