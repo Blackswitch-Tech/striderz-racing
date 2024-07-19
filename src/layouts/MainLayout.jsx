@@ -12,7 +12,7 @@ const MainLayout = ({ children }) => {
       <Navigation />
       <ScrollIndicator />
       <main className="">{children}</main>
-      <Footer />
+      
       
     </div>
   );

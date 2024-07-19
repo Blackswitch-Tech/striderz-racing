@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { useLocation,useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 import desktopbg from "../assets/images/home_bg.jpg";
-import mobilebg from "../assets/images/mobilebg.png";
+import mobilebg from "../assets/images/mobnew.jpg";
 import carImage from "../assets/images/car1.png";
 import Carousel from "../components/Carousel";
 import Merc from "../assets/images/merch.png";
@@ -13,7 +13,9 @@ import teamImage from "../assets/images/team.png";
 import featured1 from "../assets/images/featured1.png";
 import featured2 from "../assets/images/featured2.png";
 import ContactUs from "../components/ContactUs";
+import Footer from "../components/Footer"
 
+import tsrLogo from "../assets/images/tsr_logo.png";
 const AnimatedSection = ({ children, className }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
@@ -51,15 +53,29 @@ const LandingPage = () => {
   const [width, setWidth] = useState(window.innerWidth);
   const isMobile = width < 700;
   const backgroundImage = isMobile ? mobilebg : desktopbg;
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     if (location.state?.scrollToContact) {
+      setIsLoaded(true)
       const contactSection = document.getElementById("contact-us");
-      contactSection.scrollIntoView({ behavior: "smooth" });
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: "smooth" });
+      }
     } else if (location.state?.scrollToTop) {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [location]);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = backgroundImage;
+    img.onload = () => {
+      setTimeout(() => {
+        setIsLoaded(true);
+      }, 2000);
+    };
+  }, [backgroundImage]);
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
@@ -80,15 +96,28 @@ const LandingPage = () => {
   const sectionPadding = "py-16";
   const mobileMotion = {
     hidden: { opacity: 0, x: -1000 },
-    visible: { opacity: 1, x: 100, scale: 1 },
+    visible: { opacity: 1, x: 60, scale: 1 },
     transition: { type: "spring", stiffness: 80, damping: 50 },
   };
 
   const desktopMotion = {
     hidden: { opacity: 0, x: -1000 },
-    visible: { opacity: 1, x: 200, y: -100 },
+    visible: { opacity: 1, x: 200, y: 30 },
     transition: { type: "spring", stiffness: 80, damping: 50 },
   };
+  if (!isLoaded) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-[#0033CC]">
+        <motion.img
+          src={tsrLogo}
+          initial={{ scale: 0 }}
+          animate={{ scale: [0, 2] }}
+          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+          className="w-24 h-24"
+        ></motion.img>
+      </div>
+    );
+  }
 
   return (
     <div className="w-full ">
@@ -117,7 +146,7 @@ const LandingPage = () => {
         <motion.img
           src={carImage}
           alt="Car"
-          className="absolute left-0 sm:b top-0 h-[400px] lg:h-[800px] lg:mt-10 w-auto "
+          className="absolute left-0 sm:b top-0 h-1/2 md:h-5/6  w-auto "
           initial="hidden"
           animate="visible"
           transition={{ type: "spring", stiffness: 80, damping: 50 }}
@@ -217,25 +246,25 @@ const LandingPage = () => {
           />
 
           <motion.div variants={fadeInUp}>
-          <Link
-  to="/team"
-  state={{ activeTab: 'buggy' }}
-  className="flex items-center text-xl text-white group hover:text-yellow-500 transition-colors duration-300 mb-12 sm:mt-[-100px] font-bold"
->
-  Discover More
-  <motion.span
-    style={{
-      display: "inline-block",
-      marginLeft: "8px",
-      fontSize: "15px",
-    }}
-    className="rotate-arrow"
-    whileHover={{ x: 5 }}
-    transition={{ type: "spring", stiffness: 400, damping: 10 }}
-  >
-    ➔
-  </motion.span>
-</Link>
+            <Link
+              to="/team"
+              state={{ activeTab: "buggy" }}
+              className="flex items-center text-xl text-white group hover:text-yellow-500 transition-colors duration-300 mb-12 sm:mt-[-100px] font-bold"
+            >
+              Discover More
+              <motion.span
+                style={{
+                  display: "inline-block",
+                  marginLeft: "8px",
+                  fontSize: "15px",
+                }}
+                className="rotate-arrow"
+                whileHover={{ x: 5 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                ➔
+              </motion.span>
+            </Link>
           </motion.div>
 
           <motion.div
@@ -317,36 +346,40 @@ const LandingPage = () => {
         <div className="w-full bg-white h-[1px] opacity-50"></div>
       </div>
 
-      <div className={`min-h-screen bg-[#0033CC] text-white flex flex-col justify-center items-center  ${sectionPadding}`}>
-      <motion.div
-        className="w-full"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: false }}
+      <div
+        className={`min-h-screen bg-[#0033CC] text-white flex flex-col justify-center items-center  ${sectionPadding}`}
       >
-        <Link
-  to="/team"
-  state={{ activeTab: 'people' }}
-  className="flex-shrink-0 mb-8 flex items-center group p-2 hover:text-yellow-500 transition-colors duration-300"
->
-  <div className="flex items-center ml-0 sm:ml-24">
-    <h5 className="text-2xl sm:text-4xl font-bold text-left">Meet the Team</h5>
-    <motion.span
-      style={{
-        display: 'inline-block',
-        marginLeft: '12px',
-        fontSize: '18px',
-        sm: { fontSize: '24px' },
-      }}
-      className="rotate-arrow"
-      whileHover={{ x: 5 }}
-      transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-    >
-      ➔
-    </motion.span>
-  </div>
-</Link>
+        <motion.div
+          className="w-full"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: false }}
+        >
+          <Link
+            to="/team"
+            state={{ activeTab: "people" }}
+            className="flex-shrink-0 mb-8 flex items-center group p-2 hover:text-yellow-500 transition-colors duration-300"
+          >
+            <div className="flex items-center ml-0 sm:ml-24">
+              <h5 className="text-2xl sm:text-4xl font-bold text-left">
+                Meet the Team
+              </h5>
+              <motion.span
+                style={{
+                  display: "inline-block",
+                  marginLeft: "12px",
+                  fontSize: "18px",
+                  sm: { fontSize: "24px" },
+                }}
+                className="rotate-arrow"
+                whileHover={{ x: 5 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                ➔
+              </motion.span>
+            </div>
+          </Link>
 
           <div className="flex flex-col items-center">
             <motion.img
@@ -436,7 +469,7 @@ const LandingPage = () => {
         >
           <Link
       to="/gallery"
-      className="flex-shrink-0 mb-8 flex items-center  p-2 hover:text-yellow-500 transition-colors duration-300"
+      className="flex-shrink-0 mb-8 flex items-center group p-2 hover:text-yellow-500 transition-colors duration-300"
     >
       <div className="flex items-center ml-0 sm:ml-24">
         <h5 className="text-2xl sm:text-4xl font-bold text-left">Gallery</h5>
@@ -488,6 +521,7 @@ const LandingPage = () => {
       <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
         <div className="w-full bg-white h-[1px] opacity-50"></div>
       </div>
+      <Footer />
     </div>
   );
 };

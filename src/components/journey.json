@@ -2,44 +2,67 @@
     {
         "time": "2012",
         "title": "Inception",
-        "description": "First team registered, cleared virtuals but did not participate in the event."
+        "description": "First team registered, cleared virtuals but did not participate in the event.",
+        "image": ""
     },
     {
         "time": "2014",
         "title": "SAE Effi-cycle",
-        "description": "Successfully participated in the 2014 virtual round hosted at RIT Chennai on 28-29 June 2014."
+        "description": "Successfully participated in the 2014 virtual round hosted at RIT Chennai on 28-29 June 2014.",
+        "image": ""
     },
     {
         "time": "2016",
         "title": "Car #113",
         "description": "- First team from Saintgits to clear external technical evaluation and qualify for the main event.\n- First team to clear Technical Inspection and virtuals to participate in the final race.",
-        "image": "URL_TO_IMAGE_1"
+        "image": ""
     },
     {
         "time": "2017",
         "title": "Car #40",
-        "description": "Achieved significant weight reduction from 325kg to 239.5kg.",
-        "image": "URL_TO_IMAGE_2"
+        "description": "- Achieved significant weight reduction from 325kg to 239.5kg.\n- Placement: Sandip M Jayram placed at Endurance Technologies Ltd.",
+        "image": ""
     },
     {
         "time": "2018",
         "title": "Car #89",
-        "description": "- Completed 11 laps in the endurance race and recorded the fastest acceleration time (6.49 seconds) among Kerala teams.\n- First time achieving a kerb weight below 200 kg."
+        "description": "- Completed 11 laps in the endurance race and recorded the fastest acceleration time (6.49 seconds) among Kerala teams.\n- First time achieving a kerb weight below 200 kg.",
+        "image": ""
     },
     {
         "time": "2019",
         "title": "Car #83",
-        "description": "- SAE BAJA: Secured first prize in the SLED PULL event, marking the first podium finish for a Kerala team and received a cash prize of Rs 60,000.\n- Overall first position in ATV Competition held in IHRD Adoor, where all BAJA teams from Kerala competed.",
-        "image": "URL_TO_IMAGE_3"
+        "description": "- SAE BAJA: Secured first prize in the SLED PULL event, marking the first podium finish for a Kerala team and received a cash prize of Rs 60,000.\n- Placement: Team member placed at ELEATION.\n- Overall first position in ATV Competition held in IHRD Adoor, where all BAJA teams from Kerala competed.",
+        "image": ""
     },
     {
-        "time": "2016",
-        "title": "Car #113",
-        "description": "- First team from Saintgits to clear external technical evaluation and qualify for the main event.\n- First team to clear Technical Inspection and virtuals to participate in the final race."
+        "time": "2020",
+        "title": "Car #57",
+        "description": "- Dynamic milestones: Shortest turning radius ever achieved and most oversteering Striderz buggy with aggressive steering and handling DNA.\n- Achieved the lowest weight of roll cage: 174 kg.",
+        "image": ""
     },
     {
-        "time": "2016",
-        "title": "Car #40",
-        "description": "Achieved significant weight reduction from 325kg to 239.5kg."
+        "time": "2022",
+        "title": "Car #55",
+        "description": "- Cleared brake test on the first attempt.\n- Completed the endurance race.\n- Placements: Four members placed at Mahindra & Mahindra.",
+        "image": ""
+    },
+    {
+        "time": "2023",
+        "title": "Car #103",
+        "description": "- Vision Board Challenge: Won the OC Choice Award.\n- Only team from Kerala to pass Technical Inspection and participate in the endurance race.\n- Achieved 2nd best in acceleration and braking (A.I.R).\n- Completed maneuverability with a good score.",
+        "image": ""
+    },
+    {
+        "time": "2024",
+        "title": "Car #51",
+        "description": "- M-Baja: Launched the first-ever four-wheel drive vehicle from Saintgits College.\n- Cleared Technical Inspection, participated in all static and dynamic events, and finished the endurance race with a commendable record.\n- Go Green Event: Achieved All India Rank 2 in phase 2.\n- Placements: Two members placed at TVS Motors.",
+        "image": ""
+    },
+    {
+        "time": "2024",
+        "title": "ATVC: Car #43",
+        "description": "- Attained All India Rank 3 in the endurance race, won awards for Best Innovation, and received a cash prize of Rs 25,000. The buggy remained in pristine condition after the events.",
+        "image": ""
     }
 ]
