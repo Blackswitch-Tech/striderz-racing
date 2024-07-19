@@ -35,7 +35,7 @@ const JourneyPage = () => {
               </time>
               <h3 className="text-lg font-semibold text-white">{item.title}</h3>
               {item.image && (
-                <img src={item.image} alt={item.title} className="mb-4" />
+                <img src={item.image} alt={item.title} className="mb-4 h-32"  />
               )}
               <p className="text-base font-normal text-white whitespace-pre-line">
                 {item.description}
