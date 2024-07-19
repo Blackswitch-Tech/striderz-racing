@@ -23,11 +23,13 @@ const TeamPage = () => {
         <p className="text-center mb-12 max-w-2xl">
           {teamData.people.description}
         </p>
-        <div className="flex flex-wrap justify-center mb-16 gap-48">
+        <div className="flex flex-wrap justify-center mb-16 gap-8 md:gap-24 lg:gap-48">
           {teamData.people.leadership.map((member, index) => (
             <div key={index} className="text-center flex flex-col items-center">
               <p className="font-bold mb-3">{member.role}</p>
-              <div className="bg-gray-200 rounded-full w-32 h-32 mb-3"></div>
+              <div className="bg-gray-200 rounded-full w-32 h-32 mb-3 overflow-hidden">
+                <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+              </div>
               <p>{member.name}</p>
             </div>
           ))}
@@ -35,30 +37,37 @@ const TeamPage = () => {
         {teamData.people.teams.map((team, index) => (
           <div key={index} className="mb-16 w-full">
             <h2 className="text-center text-2xl font-bold mb-8">{team.teamName}</h2>
-            <div className="flex flex-wrap justify-center mb-8 gap-48">
-              {team.members.slice(0, 3).map((member, idx) => (
-                <div key={idx} className="text-center">
-                  <div className="bg-gray-200 rounded-full w-32 h-32 mb-3"></div>
-                  <p>{member.name}</p>
-                  {idx === 0 && <p className="font-bold mb-3">Head</p>}
-                </div>
-              ))}
+            <div className="flex flex-wrap justify-center mb-8 gap-8 md:gap-24 lg:gap-48">
+              {team.members
+                .filter((member) => member.role === "Head")
+                .map((member, idx) => (
+                  <div key={idx} className="text-center flex flex-col items-center">
+                    <div className="bg-gray-200 rounded-full w-32 h-32 mb-3 overflow-hidden">
+                      <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                    </div>
+                    <p>{member.name}</p>
+                    <p className="font-bold mb-3">Head</p>
+                  </div>
+                ))}
             </div>
-            {team.members.length > 3 && (
-              <div className="flex flex-wrap justify-center gap-48">
-                {team.members.slice(3).map((member, idx) => (
-                  <div key={idx} className="text-center">
-                    <div className="bg-gray-200 rounded-full w-32 h-32 mb-3"></div>
+            <div className="flex flex-wrap justify-center gap-8 md:gap-24 lg:gap-48">
+              {team.members
+                .filter((member) => member.role !== "Head")
+                .map((member, idx) => (
+                  <div key={idx} className="text-center flex flex-col items-center">
+                    <div className="bg-gray-200 rounded-full w-32 h-32 mb-3 overflow-hidden">
+                      <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                    </div>
                     <p>{member.name}</p>
                   </div>
                 ))}
-              </div>
-            )}
+            </div>
           </div>
         ))}
       </div>
     );
   };
+  
 
   const renderBuggy = () => {
     return (

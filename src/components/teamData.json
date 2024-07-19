@@ -4,77 +4,174 @@
     "leadership": [
       {
         "role": "Captain",
-        "name": "Paul J Illickan"
+        "name": "Paul J Illickan",
+        "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/Paul%20J%20Illickan.jpg"
       },
       {
         "role": "Vice-Captain",
-        "name": "Diyan Reji"
+        "name": "Diyan Reji",
+        "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/Diyan%20Reji%20Alex.jpg"
       },
       {
         "role": "Financial Head",
-        "name": "Nevan Chacko"
+        "name": "Nevan Chacko",
+        "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/nevan_nadavallil-17-07-2024-0001.jpg"
       }
     ],
     "teams": [
       {
         "teamName": "Chassis Team",
         "members": [
-          { "role": "Head", "name": "Paul J Illickan" },
-          { "name": "Mathew Johnson" },
-          { "name": "M Easa K A" },
-          { "name": "Sidharth Krishna" },
-          { "name": "Arjun Krishna" }
+          {
+            "role": "Head",
+            "name": "Paul J Illickan",
+            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/Paul%20J%20Illickan.jpg"
+          },
+          {
+            "name": "Mathew Johnson",
+            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/Mathew%20Johnson.jpg"
+          },
+          {
+            "name": "M Easa K A",
+            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/Muhammed%20easa.jpg"
+          },
+          {
+            "name": "Sidharth Krishna",
+            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/Sidharth%20Krishna.jpg"
+          },
+          {
+            "name": "Arjun Krishna",
+            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/Arjun%20krishna.jpg"
+          }
         ]
       },
       {
         "teamName": "Suspension Team",
         "members": [
-          { "role": "Head", "name": "Jerin Mathew" },
-          { "name": "Diyan Reji Alex" },
-          { "name": "Cherian Joseph" },
-          { "name": "John Mathew" }
+          {
+            "role": "Head",
+            "name": "Jerin Mathew",
+            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/Jerin%20mathew.jpg"
+          },
+          {
+            "name": "Diyan Reji Alex",
+            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/Diyan%20Reji%20Alex.jpg"
+          },
+          {
+            "name": "Cherian Joseph",
+            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/Cherian%20Joseph.JPG"
+          },
+          {
+            "name": "John Mathew",
+            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/John%20mathew.jpg"
+          }
         ]
       },
       {
         "teamName": "Steering Team",
         "members": [
-          { "role": "Head", "name": "Melvin Santhosh" },
-          { "name": "Ben Philip Sam" },
-          { "name": "Joel C Thomas" }
+          {
+            "role": "Head",
+            "name": "Melvin Santhosh",
+            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/Melvin%20Santhosh.jpg"
+          },
+          {
+            "name": "Ben Philip Sam",
+            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/Ben%20Philip%20Saji.jpg"
+          },
+          {
+            "name": "Joel C Thomas",
+            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/Joel_Chandy%20Thomas_Current%20Image.jpg"
+          }
         ]
       },
       {
         "teamName": "Braking Team",
         "members": [
-          { "role": "Head", "name": "Alwin P" },
-          { "name": "Aswin Biju" },
-          { "name": "Alan Z Shelly" },
-          { "name": "Siddharth S" }
+          {
+            "role": "Head",
+            "name": "Alwin P",
+            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/alwin%20p%20abraham.jpeg"
+          },
+          {
+            "name": "Aswin Biju",
+            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/Aswin%20Biju.jpg"
+          },
+          {
+            "name": "Alan Z Shelly",
+            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/Alan%20Zachariah%20shelly.jpg"
+          },
+          {
+            "name": "Siddharth S",
+            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/Siddharth%20S.jpg"
+          }
         ]
       },
       {
         "teamName": "Transmission Team",
         "members": [
-          { "role": "Head", "name": "Aravindh S" },
-          { "name": "Pavan K" },
-          { "name": "Derik Shaji" },
-          { "name": "Arun P Manoj" }
+          {
+            "role": "Head",
+            "name": "Aravindh S",
+            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/Aravindh%20S.JPG"
+          },
+          {
+            "name": "Pavan K",
+            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/PAVAN_KUNJUMON.JPG"
+          },
+          {
+            "name": "Derik Shaji",
+            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/Derik%20shaji.jpg"
+          },
+          {
+            "name": "Arun P Manoj",
+            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/Arjun%20P%20Manoj%20.JPG"
+          }
         ]
       },
       {
         "teamName": "Cost & Sales Team",
         "members": [
-          { "role": "Head", "name": "Nevan Chacko" },
-          { "name": "Amritha T" },
-          { "name": "Neeraj Kumar" }
+          {
+            "role": "Head",
+            "name": "Nevan Chacko",
+            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/nevan_nadavallil-17-07-2024-0001.jpg"
+          },
+          {
+            "name": "Amritha T",
+            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/Amritha%20T_Ajayan_Current%20image.JPG"
+          },
+          {
+            "name": "Neeraj Kumar",
+            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/Neeraj_Kumar_V.jpg"
+          }
         ]
       },
       {
         "teamName": "Operation & Assembly Team",
         "members": [
-          { "role": "Head", "name": "Aaron Moni Roy" },
-          { "name": "Karthik S Nair" },
-          { "name": "Nishanth Manu" }
+          {
+            "role": "Head",
+            "name": "Aaron Moni Roy",
+            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/Aaron%20moni.jpg"
+          },
+          {
+            "name": "Karthik S Nair",
+            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/Karthik%20S%20Nair.jpg"
+          },
+          {
+            "name": "Nishanth Manu",
+            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/Nishanth%20manu.jpg"
+          }
+        ]
+      },
+      {
+        "teamName": "Marketing and outreach",
+        "members": [
+          {
+            "name": "Karthik S Nair",
+            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/Karthik%20S%20Nair.jpg"
+          }
         ]
       }
     ]

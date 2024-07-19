@@ -508,7 +508,7 @@ const LandingPage = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: false }}
         >
-          <div className="flex-shrink-0 ml-24">
+          <div className="flex-shrink-0 flex justify-center">
             <h5 className="text-4xl font-bold text-left">Merchandise</h5>
           </div>
           <div className="flex items-center justify-center">
