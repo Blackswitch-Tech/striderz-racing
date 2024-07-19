@@ -2,12 +2,12 @@ import React, { useState, useRef } from 'react';
 import { ImFacebook2 } from "react-icons/im";
 import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 import { motion } from 'framer-motion';
-
+import { useNavigate } from 'react-router-dom';
 const ContactPage = ({ fadeInUp, sectionPadding }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const formRef = useRef(null);
   const iframeRef = useRef(null);
-
+const nav=useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -19,9 +19,11 @@ const ContactPage = ({ fadeInUp, sectionPadding }) => {
       setIsSubmitting(false);
       alert('Form submitted successfully!');
       form.reset();
+      nav('/')
     };
 
     form.submit();
+    
   };
 
   return (

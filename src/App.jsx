@@ -7,6 +7,7 @@ import JourneyPage from "./pages/JourneyPage";
 import AboutPage from "./pages/AboutPage";
 import "./App.css";
 import Gallery from "./pages/Gallery"
+import ContactPage from "./components/ContactUs";
 
 function App() {
   return (
@@ -17,10 +18,8 @@ function App() {
           <Route path="/team" element={<TeamPage />} />
           <Route path="/journey" element={<JourneyPage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/" element={<LandingPage />}>
-            <Route path="/#contact-us" element={<LandingPage />} />
-            
-          </Route>
+
+          <Route path="/contact-us" element={<ContactPage />} />
           <Route path="/gallery" element={<Gallery />} />
         </Routes>
       </MainLayout>
