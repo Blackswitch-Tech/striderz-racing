@@ -4,7 +4,7 @@ import logoImage from '../assets/images/tsr_logo.png'; // Adjust the path as nec
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0033CC] text-white py-4">
+    <footer className="bg-[#0033CC]  text-white py-4">
       <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
         <div className="mb-4 md:mb-0">
           <h3 className="text-lg font-semibold"><Link to="/terms" className="hover:text-gray-300">Terms of Service</Link></h3>

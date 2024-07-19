@@ -13,7 +13,7 @@ import teamImage from "../assets/images/team.png";
 import featured1 from "../assets/images/featured1.png";
 import featured2 from "../assets/images/featured2.png";
 import ContactUs from "../components/ContactUs";
-import { Spinner } from "@material-tailwind/react";
+import Footer from "../components/Footer"
 
 import tsrLogo from "../assets/images/tsr_logo.png";
 const AnimatedSection = ({ children, className }) => {
@@ -394,9 +394,9 @@ const LandingPage = () => {
             >
               <p className="text-md sm:text-base inline-block p-5 max-w-xl">
                 Meet the team behind <strong>STRIDERZ RACING</strong>,
-                showcasing exceptional
+                showcasing exceptional 
                 <br className="hidden sm:block" />
-                engineering talent and a passion for racing. Join us as we push
+                 engineering talent and a passion for racing. Join us as we push
                 <br className="hidden sm:block" />
                 boundaries and achieve racing excellence.
               </p>
@@ -468,28 +468,26 @@ const LandingPage = () => {
           viewport={{ once: false }}
         >
           <Link
-            to="/gallery"
-            className="flex-shrink-0 mb-8 flex items-center group p-2 hover:text-yellow-500 transition-colors duration-300"
-          >
-            <div className="flex items-center ml-0 sm:ml-24">
-              <h5 className="text-2xl sm:text-4xl font-bold text-left">
-                Gallery
-              </h5>
-              <motion.span
-                style={{
-                  display: "inline-block",
-                  marginLeft: "12px",
-                  fontSize: "18px",
-                  sm: { fontSize: "24px" },
-                }}
-                className="rotate-arrow"
-                whileHover={{ x: 5, rotate: 90 }} // Rotate by 90 degrees on hover
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
-              >
-                ➔
-              </motion.span>
-            </div>
-          </Link>
+      to="/gallery"
+      className="flex-shrink-0 mb-8 flex items-center group p-2 hover:text-yellow-500 transition-colors duration-300"
+    >
+      <div className="flex items-center ml-0 sm:ml-24">
+        <h5 className="text-2xl sm:text-4xl font-bold text-left">Gallery</h5>
+        <motion.span
+          style={{
+            display: 'inline-block',
+            marginLeft: '12px',
+            fontSize: '18px',
+            sm: { fontSize: '24px' },
+          }}
+          className="rotate-arrow"
+          whileHover={{ x: 5, rotate: 90 }} // Rotate by 90 degrees on hover
+          transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+        >
+          ➔
+        </motion.span>
+      </div>
+    </Link>
           <div className=" sm:px-10 mx-auto pt-10 sm:pt-16">
             <Carousel />
           </div>
@@ -523,6 +521,7 @@ const LandingPage = () => {
       <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
         <div className="w-full bg-white h-[1px] opacity-50"></div>
       </div>
+      <Footer />
     </div>
   );
 };
