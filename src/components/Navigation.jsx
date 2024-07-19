@@ -73,7 +73,7 @@ const Navigation = () => {
                 </Link>
               </motion.div>
               <NavLink to="/about">About</NavLink>
-              <NavLink to="/#contact-us" onClick={handleContactClick}>Contact Us</NavLink>
+              <NavLink to="/contact-us" onClick={handleContactClick}>Contact Us</NavLink>
             </motion.div>
           </div>
         </div>
@@ -113,8 +113,8 @@ const Navigation = () => {
           </motion.div>
           <NavLink to="/team" onClick={toggleOverlay}>Team</NavLink>
           <NavLink to="/journey" onClick={toggleOverlay}>Journey</NavLink>
-          <NavLink to="/about" onClick={toggleOverlay}>About</NavLink>
-          <NavLink to="/#contact-us" onClick={(e) => { toggleOverlay(); handleContactClick(e); }}>Contact Us</NavLink>
+          <NavLink to="/gallery" onClick={toggleOverlay}>Gallery</NavLink>
+          <NavLink to="/contact-us" onClick={(e) => { toggleOverlay();  }}>Contact Us</NavLink>
         </div>
       )}
     </div>
