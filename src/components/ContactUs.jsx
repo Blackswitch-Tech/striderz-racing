@@ -27,12 +27,12 @@ const nav=useNavigate();
   };
 
   return (
-    <div id="contact-us" className="bg-[#0033CC] min-h-screen flex items-center justify-start pl-4 md:pl-20">
+    <div id="contact-us" className="bg-[#0033CC] min-h-screen w-full flex items-center justify-start pl-4 md:pl-20">
       <div className="w-full px-4 md:px-0">
         <h1 className="text-3xl md:text-5xl font-bold text-white mb-8">Contact Us</h1>
         <motion.form 
           ref={formRef}
-          className="w-full max-w-2xl space-y-6 mb-8 sm:ml-20"
+          className="w-full md:max-w-xl xl:max-w-2xl space-y-6 mb-8 sm:ml-20"
           variants={fadeInUp}
           onSubmit={handleSubmit}
           method='POST'
@@ -48,7 +48,7 @@ const nav=useNavigate();
                 type={label === 'Email' ? 'email' : label === 'Contact No.' ? 'tel' : 'text'}
                 id={label.toLowerCase()}
                 name={["entry.2005620554", "entry.1166974658", "entry.1045781291"][index]}
-                className="w-full p-3 rounded-md bg-white bg-opacity-10 text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white"
+                className="w-full  p-3 rounded-md bg-white bg-opacity-10 text-white placeholder-white focus:outline-none focus:ring-2  focus:ring-white"
                 placeholder={label}
                 required
                 style={{

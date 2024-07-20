@@ -49,11 +49,31 @@ const AnimatedSection = ({ children, className }) => {
 };
 
 const LandingPage = () => {
+  const getScreenSize = () => {
+    const width = window.innerWidth;
+    
+    if (width < 700) return 'mobile';
+    if (width < 1100) return 'tablet';
+    return 'desktop';
+  };
   const location = useLocation();
+  const [screenSize, setScreenSize] = useState(getScreenSize());
   const [width, setWidth] = useState(window.innerWidth);
-  const isMobile = width < 700;
+  const isMobile = width < 600;
   const backgroundImage = isMobile ? mobilebg : desktopbg;
   const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setScreenSize(getScreenSize());
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  
+
+
+ 
+  
 
   useEffect(() => {
     if (location.state?.scrollToContact) {
@@ -94,17 +114,32 @@ const LandingPage = () => {
   };
 
   const sectionPadding = "py-16";
+ 
   const mobileMotion = {
     hidden: { opacity: 0, x: -1000 },
-    visible: { opacity: 1, x: 60, scale: 1 },
+    visible: { opacity: 1, x: 60, scale: 0.8 },
     transition: { type: "spring", stiffness: 80, damping: 50 },
+  };
+  const tabletMotion = {
+    
+    hidden: { opacity: 0, x: -1000 },
+    visible: { opacity: 1, x: -190, scale:0.5  },
+    transition: { type: 'spring', stiffness: 70, damping: 45 },
   };
 
   const desktopMotion = {
     hidden: { opacity: 0, x: -1000 },
-    visible: { opacity: 1, x: 200, y: 30 },
+    visible: { opacity: 1, x: 200, y: 30  },
     transition: { type: "spring", stiffness: 80, damping: 50 },
   };
+  console.log(screenSize)
+  const motionConfig =
+    
+      screenSize === 'mobile'
+      ? mobileMotion
+      : screenSize === 'tablet'
+      ? tabletMotion
+      : desktopMotion;
   if (!isLoaded) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#0033CC]">
@@ -141,53 +176,52 @@ const LandingPage = () => {
         <div className="w-full bg-white h-[1px] opacity-50"></div>
       </div>
       <div
-        className={`min-h-screen bg-[#0033CC] text-white flex  items-center justify-end pr-4 sm:pr-16 relative overflow-hidden ${sectionPadding}`}
+        className={`min-h-screen bg-[#0033CC] text-white flex  items-center justify-end pr-4 md:pr-16 relative overflow-hidden ${sectionPadding}`}
       >
-        <motion.img
+         <motion.img
           src={carImage}
           alt="Car"
-          className="absolute left-0 sm:b top-0 h-1/2 md:h-5/6  w-auto "
+          className="absolute left-0 sm:b top-0 h-1/2 md:h-5/6 w-auto"
           initial="hidden"
           animate="visible"
-          transition={{ type: "spring", stiffness: 80, damping: 50 }}
-          variants={window.innerWidth < 760 ? mobileMotion : desktopMotion}
+          variants={motionConfig}
           viewport={{ once: false }}
         />
 
         <motion.div
-          className="relative w-full sm:max-w-2xl"
+          className="absolute w-full sm:max-w-2xl"
           initial="hidden"
           animate="visible"
           variants={staggerChildren}
         >
-          <div className="absolute right-0 top-1/2 transform -translate-y-1/2 text-right p-4 sm:p-0 mt-24 md:mt-0">
+          <div className="absolute font-exo-2 right-0 top-1/2 transform -translate-y-1/2 text-right p-4 sm:p-0 mt-24 md:mt-0">
             <motion.h5
               variants={fadeInUp}
-              className="text-3xl sm:text-4xl mb-2 font-bold"
+              className="text-3xl md:text-4xl mb-2 font-bold"
             >
               Fueling Passion,
             </motion.h5>
             <motion.h2
               variants={fadeInUp}
-              className="text-3xl sm:text-4xl mb-2 font-bold"
+              className="text-3xl sm:text-4xl mb-2 font-bold font-exo-2"
             >
               Engineering Excellence
             </motion.h2>
-            <motion.p variants={fadeInUp} className="text-base sm:text-2xl">
+            <motion.p variants={fadeInUp} className="text-base md:text-lg lg:text-xl 2xl:text-2xl sm:text-2xl">
               We take pride in our dedication, talent, and the
             </motion.p>
-            <motion.p variants={fadeInUp} className="text-base sm:text-2xl">
+            <motion.p variants={fadeInUp} className="text-base md:text-lg lg:text-xl 2xl:text-2xl sm:text-2xl">
               incredible performances that define us. Driven
             </motion.p>
-            <motion.p variants={fadeInUp} className="text-base sm:text-2xl">
+            <motion.p variants={fadeInUp} className="text-base md:text-lg lg:text-xl 2xl:text-2xl sm:text-2xl">
               by a love for racing, we represent our college
             </motion.p>
-            <motion.p variants={fadeInUp} className="text-base sm:text-2xl">
+            <motion.p variants={fadeInUp} className="text-base md:text-lg  lg:text-xl 2xl:text-2xl sm:text-2xl">
               with genuine passion and engineering prowess.
             </motion.p>
             <motion.p
               variants={fadeInUp}
-              className="text-base sm:text-2xl mb-6"
+              className="text-base md:text-xl 2xl:text-2xl sm:text-2xl   mb-6"
             >
               Dive deeper into our story.
             </motion.p>
@@ -218,7 +252,7 @@ const LandingPage = () => {
         <div className="w-full bg-white h-[1px] opacity-50"></div>
       </div>
       <div
-        className={`min-h-screen bg-[#0033CC] text-white flex flex-col items-center sm:items-start justify-center p-4 sm:pl-12 ${sectionPadding}`}
+        className={`min-h-screen font-exo-2 bg-[#0033CC] text-white flex flex-col items-center sm:items-start justify-center p-4 sm:pl-12 ${sectionPadding}`}
       >
         <motion.div
           className="mb-8"
@@ -303,8 +337,8 @@ const LandingPage = () => {
           viewport={{ once: false }}
         >
           <div className="flex flex-col sm:flex-row items-center">
-            <div className="flex-shrink-0 mb-8 sm:mb-0 sm:ml-16">
-              <h5 className="text-2xl sm:text-4xl font-bold text-left">
+            <div className="flex-shrink-0 mb-8 sm:mb-0 sm:ml-16 font-exo-2">
+              <h5 className="text-2xl sm:text-4xl font-bold text-left ">
                 Proudly
               </h5>
               <h5 className="text-2xl sm:text-4xl font-bold text-left">
@@ -361,7 +395,7 @@ const LandingPage = () => {
             state={{ activeTab: "people" }}
             className="flex-shrink-0 mb-8 flex items-center group p-2 hover:text-yellow-500 transition-colors duration-300"
           >
-            <div className="flex items-center ml-0 sm:ml-24">
+            <div className="flex items-center ml-0 sm:ml-24 font-exo-2">
               <h5 className="text-2xl sm:text-4xl font-bold text-left">
                 Meet the Team
               </h5>
@@ -392,7 +426,7 @@ const LandingPage = () => {
               className="w-full text-center sm:pr-48 sm:text-right"
               variants={fadeInUp}
             >
-              <p className="text-md sm:text-base inline-block p-5 max-w-xl">
+              <p className="text-md sm:text-base inline-block p-5 max-w-xl font-exo-2">
                 Meet the team behind <strong>STRIDERZ RACING</strong>,
                 showcasing exceptional 
                 <br className="hidden sm:block" />
@@ -419,7 +453,7 @@ const LandingPage = () => {
         >
           <div className="flex flex-col sm:flex-row items-center">
             <div className="flex-shrink-0 mb-8 sm:mb-0 sm:ml-24">
-              <h5 className="text-2xl sm:text-4xl font-bold text-left">
+              <h5 className="text-2xl sm:text-4xl font-bold text-left font-exo-2">
                 Featured On
               </h5>
             </div>

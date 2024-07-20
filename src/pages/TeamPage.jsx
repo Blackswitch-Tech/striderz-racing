@@ -26,7 +26,7 @@ const TeamPage = () => {
         <div className="flex flex-wrap justify-center mb-16 gap-8 md:gap-24 lg:gap-48">
           {teamData.people.leadership.map((member, index) => (
             <div key={index} className="text-center flex flex-col items-center">
-              <p className="font-bold mb-3">{member.role}</p>
+              <p className="font-bold font-exo-2 mb-3">{member.role}</p>
               <div className="bg-gray-200 rounded-full w-32 h-32 mb-3 overflow-hidden">
                 <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
               </div>
@@ -98,9 +98,9 @@ const TeamPage = () => {
   return (
     <div className="min-h-screen bg-[#0033CC] text-white">
       <Section>
-        <h5 className="text-5xl text-center font-bold mb-8">Meet the Team</h5>
+        <h5 className="text-5xl text-center font-exo-2 font-bold mb-8">Meet the Team</h5>
         <div className="flex justify-center mb-8">
-          <div className="flex items-center text-xl font-bold">
+          <div className="flex items-center text-xl font-bold font-exo-2">
             <button
               className={`px-4 py-2 relative ${
                 activeTab === 'people' ? 'text-white' : 'text-gray-300'

@@ -20,6 +20,23 @@
     ],
     "teams": [
       {
+        "teamName": "Faculty",
+        "members": [
+          {
+            "name": "ER. Bibin Varkey",
+            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/Sreejith%20S.jpg"
+          },
+          {
+            "name": "Er. Arun K",
+            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/Sreejith%20S.jpg"
+          },
+          {
+            "name": "Mr. Sooraj Sukumaran",
+            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/Sreejith%20S.jpg"
+          }
+        ]
+      },
+      {
         "teamName": "Chassis Team",
         "members": [
           {
@@ -129,24 +146,7 @@
           }
         ]
       },
-      {
-        "teamName": "Cost & Sales Team",
-        "members": [
-          {
-            "role": "Head",
-            "name": "Nevan Chacko",
-            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/nevan_nadavallil-17-07-2024-0001.jpg"
-          },
-          {
-            "name": "Amritha T",
-            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/Amritha%20T_Ajayan_Current%20image.JPG"
-          },
-          {
-            "name": "Neeraj Kumar",
-            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/Neeraj_Kumar_V.jpg"
-          }
-        ]
-      },
+
       {
         "teamName": "Operation & Assembly Team",
         "members": [
@@ -162,6 +162,18 @@
           {
             "name": "Nishanth Manu",
             "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/Nishanth%20manu.jpg"
+          },
+          {
+            "name": "Nevan Chacko",
+            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/nevan_nadavallil-17-07-2024-0001.jpg"
+          },
+          {
+            "name": "Amritha T",
+            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/Amritha%20T_Ajayan_Current%20image.JPG"
+          },
+          {
+            "name": "Neeraj Kumar",
+            "image": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/src/assets/profpics/Neeraj_Kumar_V.jpg"
           }
         ]
       },
