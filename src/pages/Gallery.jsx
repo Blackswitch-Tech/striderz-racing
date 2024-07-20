@@ -48,7 +48,7 @@ const Gallery = () => {
               <motion.img
                 src={photo.url}
                 alt={photo.alt}
-                className="w-full h-auto object-cover"
+                className="w-full h-48 object-cover" // Set fixed height and cover image, allowing clipping
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.3 }}
@@ -57,10 +57,9 @@ const Gallery = () => {
           ))}
         </div>
         {/* Separator */}
-        {/* Separator */}
-<div className="w-full bg-[#0033CC] flex justify-center">
-  <div className="w-full max-w-7xl bg-white h-[1px] opacity-50"></div>
-</div>
+        <div className="w-full bg-[#0033CC] flex justify-center">
+          <div className="w-full max-w-7xl bg-white h-[1px] opacity-50"></div>
+        </div>
 
         {lightboxPhoto && (
           <motion.div
@@ -93,11 +92,11 @@ const Gallery = () => {
                 <img
                   src={lightboxPhoto.url}
                   alt={lightboxPhoto.alt}
-                  className="w-full  h-auto object-contain"
+                  className="w-full h-96 object-cover" // Maintain aspect ratio and fit within height
                 />
               </motion.div>
               <motion.button
-                className="text-xl  text-white hover:bg-white hover:text-black focus:outline-none"
+                className="text-xl text-white hover:bg-white hover:text-black focus:outline-none"
                 onClick={goToNext}
                 whileHover={{ scale: 1.1 }}
               >

@@ -9,7 +9,7 @@ import Carousel from "../components/Carousel";
 import Merc from "../assets/images/merch.png";
 import sponsor1 from "../assets/images/sponsor1.png";
 import sponsor2 from "../assets/images/sponsor2.png";
-import teamImage from "../assets/images/team.png";
+import teamImage from "../assets/images/newteam.png";
 import featured1 from "../assets/images/featured1.png";
 import featured2 from "../assets/images/featured2.png";
 import ContactUs from "../components/ContactUs";

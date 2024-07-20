@@ -1,55 +1,222 @@
 [
   {
     "id": 1,
-    "url": "https://c6.staticflickr.com/9/8890/28897154101_a8f55be225_b.jpg",
-    "alt": "Photo 1"
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/20240112_162600.jpg",
+    "alt": "20240112_162600"
   },
   {
     "id": 2,
-    "url": "https://c7.staticflickr.com/9/8785/28687743710_3580fcb5f0_b.jpg",
-    "alt": "Photo 2"
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/IMG_7294.jpg",
+    "alt": "IMG_7294"
   },
   {
     "id": 3,
-    "url": "https://c3.staticflickr.com/9/8583/28354353794_9f2d08d8c0_b.jpg",
-
-    "alt": "Photo 3"
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/Team%204%20Car%2389.jpg",
+    "alt": "Team 4 Car#89"
   },
   {
     "id": 4,
-    "url": "https://c7.staticflickr.com/9/8569/28941134686_d57273d933_b.jpg",
-
-    "alt": "Photo 4"
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/DSCN2887.jpg",
+    "alt": "DSCN2887"
   },
   {
     "id": 5,
-"url":"https://c3.staticflickr.com/9/8583/28354353794_9f2d08d8c0_b.jpg",
-    "alt": "Photo 5"
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/IMG_7336.jpg",
+    "alt": "IMG_7336"
   },
   {
     "id": 6,
-    "url": "https://c1.staticflickr.com/9/8330/28941240416_71d2a7af8e_b.jpg",
-    "alt": "Photo 6"
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/WhatsApp%20Image%202024-07-11%20at%2001.38.41_ae2fe6a7.jpg",
+    "alt": "WhatsApp Image 2024-07-11 at 01.38.41"
   },
   {
     "id": 7,
-    "url": "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80",
-    "alt": "Photo 7"
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/DSCN3027.jpg",
+    "alt": "DSCN3027"
   },
   {
     "id": 8,
-"url": "https://c4.staticflickr.com/9/8578/28357117603_97a8233cf5_b.jpg",
-
-"alt": "Photo 8"
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/IMG_7387.jpg",
+    "alt": "IMG_7387"
   },
   {
     "id": 9,
-    "url": "https://c1.staticflickr.com/9/8330/28941240416_71d2a7af8e_b.jpg",
-    "alt": "Photo 9"
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/WhatsApp%20Image%202024-07-11%20at%2001.38.42_12acc1bd.jpg",
+    "alt": "WhatsApp Image 2024-07-11 at 01.38.42 12acc1bd"
   },
   {
     "id": 10,
-"url":"https://c3.staticflickr.com/9/8583/28354353794_9f2d08d8c0_b.jpg",
-    "alt": "Photo 10"
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/IMG-20240112-WA0003.jpg",
+    "alt": "IMG-20240112-WA0003"
+  },
+  {
+    "id": 11,
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/IMG_7397.jpg",
+    "alt": "IMG_7397"
+  },
+  {
+    "id": 12,
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/WhatsApp%20Image%202024-07-11%20at%2001.38.42_9118f198.jpg",
+    "alt": "WhatsApp Image 2024-07-11 at 01.38.42 9118f198"
+  },
+  {
+    "id": 13,
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/IMG-20240113-WA0006.jpg",
+    "alt": "IMG-20240113-WA0006"
+  },
+  {
+    "id": 14,
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/IMG_7572.jpg",
+    "alt": "IMG_7572"
+  },
+  {
+    "id": 15,
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/WhatsApp%20Image%202024-07-11%20at%2001.38.46_d93608d0.jpg",
+    "alt": "WhatsApp Image 2024-07-11 at 01.38.46 d93608d0"
+  },
+  {
+    "id": 16,
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/IMG-20240113-WA0023.jpg",
+    "alt": "IMG-20240113-WA0023"
+  },
+  {
+    "id": 17,
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/IMG_8783.jpg",
+    "alt": "IMG_8783"
+  },
+  {
+    "id": 18,
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/WhatsApp%20Image%202024-07-11%20at%2001.39.50_686159c8.jpg",
+    "alt": "WhatsApp Image 2024-07-11 at 01.39.50 686159c8"
+  },
+  {
+    "id": 19,
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/IMG-20240116-WA0016.jpg",
+    "alt": "IMG-20240116-WA0016"
+  },
+  {
+    "id": 20,
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/IMG_8784.jpg",
+    "alt": "IMG_8784"
+  },
+  {
+    "id": 21,
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/WhatsApp%20Image%202024-07-11%20at%2001.39.51_e0895684.jpg",
+    "alt": "WhatsApp Image 2024-07-11 at 01.39.51 e0895684"
+  },
+  {
+    "id": 22,
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/IMG_3845.jpg",
+    "alt": "IMG_3845"
+  },
+  {
+    "id": 23,
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/IMG_8836.jpg",
+    "alt": "IMG_8836"
+  },
+  {
+    "id": 24,
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/WhatsApp%20Image%202024-07-11%20at%2001.39.53_7c5f3ee8.jpg",
+    "alt": "WhatsApp Image 2024-07-11 at 01.39.53 7c5f3ee8"
+  },
+  {
+    "id": 25,
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/IMG_3975.jpg",
+    "alt": "IMG_3975"
+  },
+  {
+    "id": 26,
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/IMG_8886.jpg",
+    "alt": "IMG_8886"
+  },
+  {
+    "id": 27,
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/WhatsApp%20Image%202024-07-11%20at%2001.39.56_6f5061e2.jpg",
+    "alt": "WhatsApp Image 2024-07-11 at 01.39.56 6f5061e2"
+  },
+  {
+    "id": 28,
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/IMG_3976.jpg",
+    "alt": "IMG_3976"
+  },
+  {
+    "id": 29,
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/IMG_8891.jpg",
+    "alt": "IMG_8891"
+  },
+  {
+    "id": 30,
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/WhatsApp%20Image%202024-07-11%20at%2001.39.57_fa373610.jpg",
+    "alt": "WhatsApp Image 2024-07-11 at 01.39.57 fa373610"
+  },
+  {
+    "id": 31,
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/IMG_4005.jpg",
+    "alt": "IMG_4005"
+  },
+  {
+    "id": 32,
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/IMG_9051.jpg",
+    "alt": "IMG_9051"
+  },
+  {
+    "id": 33,
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/WhatsApp%20Image%202024-07-11%20at%2001.40.03_0303340d.jpg",
+    "alt": "WhatsApp Image 2024-07-11 at 01.40.03 0303340d"
+  },
+  {
+    "id": 34,
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/IMG_4382.jpg",
+    "alt": "IMG_4382"
+  },
+  {
+    "id": 35,
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/photo1705735380.jpg",
+    "alt": "photo1705735380"
+  },
+  {
+    "id": 36,
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/WhatsApp%20Image%202024-07-11%20at%2001.40.03_5b830136.jpg",
+    "alt": "WhatsApp Image 2024-07-11 at 01.40.03 5b830136"
+  },
+  {
+    "id": 37,
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/IMG_5357.jpg",
+    "alt": "IMG_5357"
+  },
+  {
+    "id": 38,
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/Team%201.jpg",
+    "alt": "Team 1"
+  },
+  {
+    "id": 39,
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/WhatsApp%20Image%202024-07-11%20at%2001.40.04_6c41e5f1.jpg",
+    "alt": "WhatsApp Image 2024-07-11 at 01.40.04 6c41e5f1"
+  },
+  {
+    "id": 40,
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/IMG_5432.jpg",
+    "alt": "IMG_5432"
+  },
+  {
+    "id": 41,
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/Team%202%20Car%20%23113.jpg",
+    "alt": "Team 2 Car #113"
+  },
+  {
+    "id": 42,
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/WhatsApp%20Image%202024-07-11%20at%2001.41.54_193ea510.jpg",
+    "alt": "WhatsApp Image 2024-07-11 at 01.41.54 193ea510"
+  },
+  {
+    "id": 43,
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/IMG_7255.jpg",
+    "alt": "IMG_7255"
+  },
+  {
+    "id": 44,
+    "url": "https://raw.githubusercontent.com/Elysium-X/baja-website/master/gallery/Team%20%233%20Car%2040.jpg",
+    "alt": "Team 3 Car 40"
   }
 ]

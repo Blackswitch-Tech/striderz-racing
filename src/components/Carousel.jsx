@@ -1,7 +1,6 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import "./style.css";
 import { useNavigate } from "react-router-dom";
 import photos from './photos.json'; 
 
@@ -23,13 +22,11 @@ const responsive = {
   }
 };
 
-
-
 const Carouselc = () => {
   const nav = useNavigate();
 
   return (
-    <div className="parent">
+    <div className="w-full mx-auto">
       <Carousel
         responsive={responsive}
         autoPlay={true}
@@ -40,17 +37,17 @@ const Carouselc = () => {
         partialVisible={false}
         dotListClass="custom-dot-list-style"
         dynamicHeight={true}
-        containerClass="carousel-container"
-        itemClass="carousel-item-padding"
+        containerClass="w-full h-96" // Set height for the carousel container
+        itemClass="p-2"
         transitionDuration={500}
       >
-        {photos.map((photos, index) => (
-          <div key={index} className="slider">
+        {photos.map((photo, index) => (
+          <div key={index} className="slider h-96"> {/* Set a fixed height for each slide */}
             <img
-              src={photos.url}
+              src={photo.url}
               alt={`Slide ${index + 1}`}
-              className="carousel-image"
-              onClick={() =>  nav("/gallery")}
+              className="w-full h-full object-contain" // Maintain aspect ratio and fit within height
+              onClick={() => nav("/gallery")}
             />
           </div>
         ))}
