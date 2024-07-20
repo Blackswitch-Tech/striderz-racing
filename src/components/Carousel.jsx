@@ -24,6 +24,7 @@ const responsive = {
 
 const Carouselc = () => {
   const nav = useNavigate();
+  const select_photos = photos.slice(0, 8);
 
   return (
     <div className="w-full mx-auto">
@@ -41,7 +42,7 @@ const Carouselc = () => {
         itemClass="p-2"
         transitionDuration={500}
       >
-        {photos.map((photo, index) => (
+        {select_photos.map((photo, index) => (
           <div key={index} className="slider h-96"> {/* Set a fixed height for each slide */}
             <img
               src={photo.url}
