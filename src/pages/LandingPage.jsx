@@ -428,7 +428,7 @@ const LandingPage = () => {
             >
               <p className="text-md sm:text-base inline-block p-5 max-w-xl font-exo-2">
                 Meet the team behind <strong>STRIDERZ RACING</strong>,
-                showcasing exceptional 
+                showcasing exceptional {" "}
                 <br className="hidden sm:block" />
                  engineering talent and a passion for racing. Join us as we push
                 <br className="hidden sm:block" />
