@@ -515,7 +515,7 @@ const LandingPage = () => {
             sm: { fontSize: '24px' },
           }}
           className="rotate-arrow"
-          whileHover={{ x: 5, rotate: 90 }} // Rotate by 90 degrees on hover
+          whileHover={{ x: 5, rotate: -30 }} // Rotate by -30 degrees on hover
           transition={{ type: 'spring', stiffness: 400, damping: 10 }}
         >
           ➔
