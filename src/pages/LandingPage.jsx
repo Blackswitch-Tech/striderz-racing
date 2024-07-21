@@ -225,26 +225,6 @@ const LandingPage = () => {
             >
               Dive deeper into our story.
             </motion.p>
-            <motion.div variants={fadeInUp}>
-              <Link
-                to="/about"
-                className="flex items-center justify-end group hover:text-yellow-500 transition-colors duration-300 text-base sm:text-xl text-white"
-              >
-                READ MORE
-                <motion.span
-                  style={{
-                    display: "inline-block",
-                    marginLeft: "8px",
-                    fontSize: "15px",
-                  }}
-                  className="rotate-arrow"
-                  whileHover={{ x: 5 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
-                  ➔
-                </motion.span>
-              </Link>
-            </motion.div>
           </div>
         </motion.div>
       </div>
