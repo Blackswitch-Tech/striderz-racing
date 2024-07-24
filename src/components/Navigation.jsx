@@ -73,7 +73,7 @@ const Navigation = () => {
                 </Link>
               </motion.div>
               <NavLink to="/gallery">Gallery</NavLink>
-              <NavLink to="/contact-us" onClick={handleContactClick}>Contact Us</NavLink>
+              <NavLink to="/contact-us">Contact Us</NavLink>
             </motion.div>
           </div>
         </div>
