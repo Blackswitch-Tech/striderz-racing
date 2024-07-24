@@ -69,11 +69,7 @@ const LandingPage = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  
 
-
- 
-  
 
   useEffect(() => {
     if (location.state?.scrollToContact) {
@@ -241,8 +237,8 @@ const LandingPage = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: false }}
         >
-          <h5 className="text-4xl font-bold sm:ml-16 text-center sm:text-left">
-            MEET THE BUGGY
+          <h5 className="text-4xl font-bold sm:ml-24 text-center sm:text-left">
+            Meet the Buggy
           </h5>
         </motion.div>
         <motion.div
@@ -309,53 +305,56 @@ const LandingPage = () => {
         <div className="w-full bg-white h-[1px] opacity-50"></div>
       </div>
       <div className="bg-[#0033CC] text-white p-8">
-        <motion.div
-          className="w-full"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: false }}
-        >
-          <div className="flex flex-col sm:flex-row items-center">
-            <div className="flex-shrink-0 mb-8 sm:mb-0 sm:ml-16 font-exo-2">
-              <h5 className="text-2xl sm:text-4xl font-bold text-left ">
-                Proudly
-              </h5>
-              <h5 className="text-2xl sm:text-4xl font-bold text-left">
-                Sponsored By
-              </h5>
-            </div>
-            <motion.div
-              className="flex flex-wrap gap-2 justify-center space-x-0 sm:space-x-12 sm:ml-32"
-              variants={staggerChildren}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: false }}
-            >
-              <motion.div
-                className="w-32 h-24 sm:w-40 sm:h-32 flex items-center justify-center mb-8 sm:mb-0"
-                variants={fadeInUp}
-              >
-                <img
-                  src={sponsor1}
-                  alt="Sponsor 1"
-                  className="max-w-full max-h-full object-contain"
-                />
-              </motion.div>
-              <motion.div
-                className="w-32 h-24 sm:w-40 sm:h-32 flex items-center justify-center"
-                variants={fadeInUp}
-              >
-                <img
-                  src={sponsor2}
-                  alt="Sponsor 2"
-                  className="max-w-full max-h-full object-contain"
-                />
-              </motion.div>
-            </motion.div>
-          </div>
-        </motion.div>
-      </div>
+  <motion.div
+    className="w-full max-w-7xl mx-auto"
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+    viewport={{ once: false }}
+  >
+            <div className="flex flex-col sm:flex-row items-center justify-between">
+  <div className="flex-shrink-0 mb-8 sm:mb-0 sm:ml-24 font-exo-2">
+    <h5 className="text-2xl sm:text-4xl font-bold text-left">
+      Proudly
+    </h5>
+    <h5 className="text-2xl sm:text-4xl font-bold text-left">
+      Sponsored By
+    </h5>
+  </div>
+  <motion.div
+    className="flex flex-wrap sm:flex-nowrap justify-center sm:justify-end w-full sm:w-auto sm:mr-24"
+    variants={staggerChildren}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: false }}
+  >
+    <motion.div
+      className="w-32 h-24 sm:w-48 sm:h-40 flex items-center justify-center mb-8 sm:mb-0 relative"
+      style={{ left: '-0.5rem' }}  // Adjusted value to move slightly to the left
+      variants={fadeInUp}
+    >
+      <img
+        src={sponsor1}
+        alt="Sponsor 1"
+        className="max-w-full max-h-full object-contain"
+      />
+    </motion.div>
+    <motion.div
+      className="w-32 h-24 sm:w-48 sm:h-40 flex items-center justify-center sm:ml-24"
+      variants={fadeInUp}
+    >
+      <img
+        src={sponsor2}
+        alt="Sponsor 2"
+        className="max-w-full max-h-full object-contain"
+      />
+    </motion.div>
+  </motion.div>
+</div>
+
+
+          </motion.div>
+        </div>
       <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
         <div className="w-full bg-white h-[1px] opacity-50"></div>
       </div>
@@ -375,7 +374,7 @@ const LandingPage = () => {
             state={{ activeTab: "people" }}
             className="flex-shrink-0 mb-8 flex items-center group p-2 hover:text-yellow-500 transition-colors duration-300"
           >
-            <div className="flex items-center ml-0 sm:ml-24 font-exo-2">
+            <div className="flex items-center ml-0 sm:ml-32 font-exo-2">
               <h5 className="text-2xl sm:text-4xl font-bold text-left">
                 Meet the Team
               </h5>
@@ -421,53 +420,53 @@ const LandingPage = () => {
       <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
         <div className="w-full bg-white h-[1px] opacity-50"></div>
       </div>
-      <div
-        className={` bg-[#0033CC] text-white flex items-center justify-center ${sectionPadding}`}
-      >
-        <motion.div
-          className="w-full"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: false }}
-        >
-          <div className="flex flex-col sm:flex-row items-center">
-            <div className="flex-shrink-0 mb-8 sm:mb-0 sm:ml-24">
-              <h5 className="text-2xl sm:text-4xl font-bold text-left font-exo-2">
-                Featured On
-              </h5>
-            </div>
-            <motion.div
-              className="flex flex-wrap gap-2 justify-center space-x-0 sm:space-x-12 sm:ml-32"
-              variants={staggerChildren}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: false }}
-            >
-              <motion.div
-                className="w-32 h-24 sm:w-40 sm:h-32 flex items-center justify-center mb-8 sm:mb-0"
-                variants={fadeInUp}
-              >
-                <img
-                  src={featured1}
-                  alt="featured1"
-                  className="max-w-full max-h-full object-contain"
-                />
-              </motion.div>
-              <motion.div
-                className="w-32 h-24 sm:w-40 sm:h-32 flex items-center justify-center"
-                variants={fadeInUp}
-              >
-                <img
-                  src={featured2}
-                  alt="featured2"
-                  className="max-w-full max-h-full object-contain"
-                />
-              </motion.div>
-            </motion.div>
-          </div>
-        </motion.div>
-      </div>
+      <div className="bg-[#0033CC] text-white p-8">
+  <motion.div
+    className="w-full max-w-7xl mx-auto"
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+    viewport={{ once: false }}
+  >
+    <div className="flex flex-col sm:flex-row items-center justify-between">
+  <div className="flex-shrink-0 mb-8 sm:mb-0 sm:ml-24 font-exo-2">
+    <h5 className="text-2xl sm:text-4xl font-bold text-left">
+      Featured On
+    </h5>
+  </div>
+  <motion.div
+    className="flex flex-wrap sm:flex-nowrap justify-center sm:justify-end w-full sm:w-auto sm:mr-24"
+    variants={staggerChildren}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: false }}
+  >
+    <motion.div
+      className="w-32 h-24 sm:w-48 sm:h-40 flex items-center justify-center mb-8 sm:mb-0 relative"
+      style={{ left: '-0.5rem' }}  // Adjusted value to move slightly to the left
+      variants={fadeInUp}
+    >
+      <img
+        src={featured1}
+        alt="featured1"
+        className="max-w-full max-h-full object-contain"
+      />
+    </motion.div>
+    <motion.div
+      className="w-32 h-24 sm:w-48 sm:h-40 flex items-center justify-center sm:ml-24"
+      variants={fadeInUp}
+    >
+      <img
+        src={featured2}
+        alt="featured2"
+        className="max-w-full max-h-full object-contain"
+      />
+    </motion.div>
+  </motion.div>
+</div>
+
+  </motion.div>
+</div>
       <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
         <div className="w-full bg-white h-[1px] opacity-50"></div>
       </div>
@@ -485,7 +484,7 @@ const LandingPage = () => {
       to="/gallery"
       className="flex-shrink-0 mb-8 flex items-center group p-2 hover:text-yellow-500 transition-colors duration-300"
     >
-      <div className="flex items-center ml-0 sm:ml-24">
+      <div className="flex items-center ml-0 sm:ml-32">
         <h5 className="text-2xl sm:text-4xl font-bold text-left">Gallery</h5>
         <motion.span
           style={{
@@ -520,12 +519,13 @@ const LandingPage = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: false }}
         >
-          <div className="flex-shrink-0 flex justify-center">
-            <h5 className="text-4xl font-bold text-left">Merchandise</h5>
-          </div>
-          <div className="flex items-center justify-center">
-            <img src={Merc} alt="" className="sm:w-1/2 mt-10" />
-          </div>
+          <div className="flex-shrink-0 flex justify-center sm:justify-start sm:ml-32">
+  <h5 className="text-4xl font-bold text-left">Merchandise</h5>
+</div>
+
+      <div className="flex items-center justify-center">
+  <img src={Merc} alt="" className="sm:w-2/5 mt-10" />
+</div>
         </motion.div>
       </div>
       <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
