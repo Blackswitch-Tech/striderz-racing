@@ -524,7 +524,7 @@ const LandingPage = () => {
 </div>
 
       <div className="flex items-center justify-center">
-  <img src={Merc} alt="" className="sm:w-2/5 mt-10" />
+  <img src={Merc} alt="" className="sm:w-2/5 mt-28" />
 </div>
         </motion.div>
       </div>
