@@ -318,7 +318,7 @@ const LandingPage = () => {
       Proudly
     </h5>
     <h5 className="text-2xl sm:text-4xl font-bold text-left">
-      Sponsored By
+      Supported By
     </h5>
   </div>
   <motion.div
