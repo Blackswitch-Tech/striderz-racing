@@ -1,68 +1,223 @@
 [
     {
-        "time": "2012",
-        "title": "Inception",
-        "description": "First team registered, cleared virtuals but did not participate in the event.",
-        "image": ""
+      "id": 1,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/20240112_162600.jpg",
+      "alt": "20240112_162600"
     },
     {
-        "time": "2014",
-        "title": "SAE Effi-cycle",
-        "description": "Successfully participated in the 2014 virtual round hosted at RIT Chennai on 28-29 June 2014.",
-        "image": ""
+      "id": 2,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/IMG_7294.jpg",
+      "alt": "IMG_7294"
     },
     {
-        "time": "2016",
-        "title": "Car #113",
-        "description": "- First team from Saintgits to clear external technical evaluation and qualify for the main event.\n- First team to clear Technical Inspection and virtuals to participate in the final race.",
-        "image": "/113.jpg"
+      "id": 3,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/Team%204%20Car%2389.jpg",
+      "alt": "Team 4 Car#89"
     },
     {
-        "time": "2017",
-        "title": "Car #40",
-        "description": "- Achieved significant weight reduction from 325kg to 239.5kg.\n- Placement: Sandip M Jayram placed at Endurance Technologies Ltd.",
-        "image": "/40.jpg"
+      "id": 4,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/DSCN2887.jpg",
+      "alt": "DSCN2887"
     },
     {
-        "time": "2018",
-        "title": "Car #89",
-        "description": "- Completed 11 laps in the endurance race and recorded the fastest acceleration time (6.49 seconds) among Kerala teams.\n- First time achieving a kerb weight below 200 kg.",
-        "image": "/89.jpg"
+      "id": 5,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/IMG_7336.jpg",
+      "alt": "IMG_7336"
     },
     {
-        "time": "2019",
-        "title": "Car #83",
-        "description": "- SAE BAJA: Secured first prize in the SLED PULL event, marking the first podium finish for a Kerala team and received a cash prize of Rs 60,000.\n- Placement: Team member placed at ELEATION.\n- Overall first position in ATV Competition held in IHRD Adoor, where all BAJA teams from Kerala competed.",
-        "image": "/83.jpg"
+      "id": 6,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/WhatsApp%20Image%202024-07-11%20at%2001.38.41_ae2fe6a7.jpg",
+      "alt": "WhatsApp Image 2024-07-11 at 01.38.41"
     },
     {
-        "time": "2020",
-        "title": "Car #57",
-        "description": "- Dynamic milestones: Shortest turning radius ever achieved and most oversteering Striderz buggy with aggressive steering and handling DNA.\n- Achieved the lowest weight of roll cage: 174 kg.",
-        "image": "/57.jpeg"
+      "id": 7,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/DSCN3027.jpg",
+      "alt": "DSCN3027"
     },
     {
-        "time": "2022",
-        "title": "Car #55",
-        "description": "- Cleared brake test on the first attempt.\n- Completed the endurance race.\n- Placements: Four members placed at Mahindra & Mahindra.",
-        "image": "/55.jpeg"
+      "id": 8,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/IMG_7387.jpg",
+      "alt": "IMG_7387"
     },
     {
-        "time": "2023",
-        "title": "Car #103",
-        "description": "- Vision Board Challenge: Won the OC Choice Award.\n- Only team from Kerala to pass Technical Inspection and participate in the endurance race.\n- Achieved 2nd best in acceleration and braking (A.I.R).\n- Completed maneuverability with a good score.",
-        "image": "/103.jpeg"
+      "id": 9,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/WhatsApp%20Image%202024-07-11%20at%2001.38.42_12acc1bd.jpg",
+      "alt": "WhatsApp Image 2024-07-11 at 01.38.42 12acc1bd"
     },
     {
-        "time": "2024",
-        "title": "Car #51",
-        "description": "- M-Baja: Launched the first-ever four-wheel drive vehicle from Saintgits College.\n- Cleared Technical Inspection, participated in all static and dynamic events, and finished the endurance race with a commendable record.\n- Go Green Event: Achieved All India Rank 2 in phase 2.\n- Placements: Two members placed at TVS Motors.",
-        "image": ""
+      "id": 10,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/IMG-20240112-WA0003.jpg",
+      "alt": "IMG-20240112-WA0003"
     },
     {
-        "time": "2024",
-        "title": "ATVC: Car #43",
-        "description": "- Attained All India Rank 3 in the endurance race, won awards for Best Innovation, and received a cash prize of Rs 25,000. The buggy remained in pristine condition after the events.",
-        "image": ""
+      "id": 11,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/IMG_7397.jpg",
+      "alt": "IMG_7397"
+    },
+    {
+      "id": 12,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/WhatsApp%20Image%202024-07-11%20at%2001.38.42_9118f198.jpg",
+      "alt": "WhatsApp Image 2024-07-11 at 01.38.42 9118f198"
+    },
+    {
+      "id": 13,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/IMG-20240113-WA0006.jpg",
+      "alt": "IMG-20240113-WA0006"
+    },
+    {
+      "id": 14,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/IMG_7572.jpg",
+      "alt": "IMG_7572"
+    },
+    {
+      "id": 15,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/WhatsApp%20Image%202024-07-11%20at%2001.38.46_d93608d0.jpg",
+      "alt": "WhatsApp Image 2024-07-11 at 01.38.46 d93608d0"
+    },
+    {
+      "id": 16,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/IMG-20240113-WA0023.jpg",
+      "alt": "IMG-20240113-WA0023"
+    },
+    {
+      "id": 17,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/IMG_8783.jpg",
+      "alt": "IMG_8783"
+    },
+    {
+      "id": 18,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/WhatsApp%20Image%202024-07-11%20at%2001.39.50_686159c8.jpg",
+      "alt": "WhatsApp Image 2024-07-11 at 01.39.50 686159c8"
+    },
+    {
+      "id": 19,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/IMG-20240116-WA0016.jpg",
+      "alt": "IMG-20240116-WA0016"
+    },
+    {
+      "id": 20,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/IMG_8784.jpg",
+      "alt": "IMG_8784"
+    },
+    {
+      "id": 21,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/WhatsApp%20Image%202024-07-11%20at%2001.39.51_e0895684.jpg",
+      "alt": "WhatsApp Image 2024-07-11 at 01.39.51 e0895684"
+    },
+    {
+      "id": 22,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/IMG_3845.jpg",
+      "alt": "IMG_3845"
+    },
+    {
+      "id": 23,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/IMG_8836.jpg",
+      "alt": "IMG_8836"
+    },
+    {
+      "id": 24,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/WhatsApp%20Image%202024-07-11%20at%2001.39.53_7c5f3ee8.jpg",
+      "alt": "WhatsApp Image 2024-07-11 at 01.39.53 7c5f3ee8"
+    },
+    {
+      "id": 25,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/IMG_3975.jpg",
+      "alt": "IMG_3975"
+    },
+    {
+      "id": 26,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/IMG_8886.jpg",
+      "alt": "IMG_8886"
+    },
+    {
+      "id": 27,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/WhatsApp%20Image%202024-07-11%20at%2001.39.56_6f5061e2.jpg",
+      "alt": "WhatsApp Image 2024-07-11 at 01.39.56 6f5061e2"
+    },
+    {
+      "id": 28,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/IMG_3976.jpg",
+      "alt": "IMG_3976"
+    },
+    {
+      "id": 29,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/IMG_8891.jpg",
+      "alt": "IMG_8891"
+    },
+    {
+      "id": 30,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/WhatsApp%20Image%202024-07-11%20at%2001.39.57_fa373610.jpg",
+      "alt": "WhatsApp Image 2024-07-11 at 01.39.57 fa373610"
+    },
+    {
+      "id": 31,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/IMG_4005.jpg",
+      "alt": "IMG_4005"
+    },
+    {
+      "id": 32,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/IMG_9051.jpg",
+      "alt": "IMG_9051"
+    },
+    {
+      "id": 33,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/WhatsApp%20Image%202024-07-11%20at%2001.40.03_0303340d.jpg",
+      "alt": "WhatsApp Image 2024-07-11 at 01.40.03 0303340d"
+    },
+    {
+      "id": 34,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/IMG_4382.jpg",
+      "alt": "IMG_4382"
+    },
+    {
+      "id": 35,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/photo1705735380.jpg",
+      "alt": "photo1705735380"
+    },
+    {
+      "id": 36,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/WhatsApp%20Image%202024-07-11%20at%2001.40.03_5b830136.jpg",
+      "alt": "WhatsApp Image 2024-07-11 at 01.40.03 5b830136"
+    },
+    {
+      "id": 37,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/IMG_5357.jpg",
+      "alt": "IMG_5357"
+    },
+    {
+      "id": 38,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/Team%201.jpg",
+      "alt": "Team 1"
+    },
+    {
+      "id": 39,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/WhatsApp%20Image%202024-07-11%20at%2001.40.04_6c41e5f1.jpg",
+      "alt": "WhatsApp Image 2024-07-11 at 01.40.04 6c41e5f1"
+    },
+    {
+      "id": 40,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/IMG_5432.jpg",
+      "alt": "IMG_5432"
+    },
+    {
+      "id": 41,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/Team%202%20Car%20%23113.jpg",
+      "alt": "Team 2 Car #113"
+    },
+    {
+      "id": 42,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/WhatsApp%20Image%202024-07-11%20at%2001.41.54_193ea510.jpg",
+      "alt": "WhatsApp Image 2024-07-11 at 01.41.54 193ea510"
+    },
+    {
+      "id": 43,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/IMG_7255.jpg",
+      "alt": "IMG_7255"
+    },
+    {
+      "id": 44,
+      "url": "https://raw.githubusercontent.com/Blackswitch-Tech/striderz-racing/master/gallery/Team%20%233%20Car%2040.jpg",
+      "alt": "Team 3 Car 40"
     }
-]
+  ]
+  
