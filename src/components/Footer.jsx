@@ -13,7 +13,8 @@ const Footer = () => {
           <img src={logoImage} alt="TSR Logo" className="h-32" /> {/* Adjusted the height of the logo */}
         </div>
         <div>
-          <p>&copy; 2024 TSR. All rights reserved.</p>
+          <p className='flex justify-center items-center '>&copy; 2024 TSR. All rights reserved </p>
+          <p>Powered by Blackswitch Technologies</p>
         </div>
       </div>
     </footer>
