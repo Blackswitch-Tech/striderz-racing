@@ -14,6 +14,12 @@ import featured1 from "../assets/images/featured1.png";
 import featured2 from "../assets/images/featured2.png";
 import ContactUs from "../components/ContactUs";
 import Footer from "../components/Footer"
+import bg1 from "../assets/images/bg1.png";
+import bg11 from "../assets/images/bg11.png";
+import bg22 from "../assets/images/bg22.png";
+import bg2 from "../assets/images/bg2.png";
+import bg3 from "../assets/images/bg3.png";
+
 
 import tsrLogo from "../assets/images/tsr_logo.png";
 const AnimatedSection = ({ children, className }) => {
@@ -171,136 +177,211 @@ const LandingPage = () => {
       <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
         <div className="w-full bg-white h-[1px] opacity-50"></div>
       </div>
+      <div className="relative bg-[#0033CC]">
       <div
-        className={`min-h-screen bg-[#0033CC] text-white flex  items-center justify-end pr-4 md:pr-16 relative overflow-hidden ${sectionPadding}`}
+  className={`min-h-screen text-white flex items-center justify-end pr-4 md:pr-16 relative overflow-hidden ${sectionPadding}`}
+>
+  {/* BG11 Image Positioned in the Background */}
+  <div
+    className="absolute inset-y-0 right-0 bg-no-repeat bg-contain bg-right"
+    style={{
+      backgroundImage: `url(${bg11})`,
+      width: "50%",          // Adjust width to a relative value
+      height: "130%",        // Keep height to cover the entire section
+      top: "-40%",            // Adjust top position using a percentage
+      right: "15%",          // Slightly move the image to the left with a relative value
+      zIndex: 0,             // Ensure it stays behind the content
+    }}
+    
+    
+  />
+
+  <motion.img
+    src={carImage}
+    alt="Car"
+    className="absolute left-0 top-0 h-1/2 md:h-5/6 w-auto"
+    initial="hidden"
+    animate="visible"
+    variants={motionConfig}
+    viewport={{ once: false }}
+  />
+
+  <motion.div
+    className="absolute w-full sm:max-w-2xl"
+    initial="hidden"
+    animate="visible"
+    variants={staggerChildren}
+  >
+    <div className="absolute font-exo-2 right-0 top-1/2 transform -translate-y-1/2 text-right p-4 sm:p-0 mt-24 md:mt-0">
+      <motion.h5
+        variants={fadeInUp}
+        className="text-3xl md:text-4xl mb-2 font-bold"
       >
-         <motion.img
-          src={carImage}
-          alt="Car"
-          className="absolute left-0 sm:b top-0 h-1/2 md:h-5/6 w-auto"
-          initial="hidden"
-          animate="visible"
-          variants={motionConfig}
-          viewport={{ once: false }}
-        />
-
-        <motion.div
-          className="absolute w-full sm:max-w-2xl"
-          initial="hidden"
-          animate="visible"
-          variants={staggerChildren}
-        >
-          <div className="absolute font-exo-2 right-0 top-1/2 transform -translate-y-1/2 text-right p-4 sm:p-0 mt-24 md:mt-0">
-            <motion.h5
-              variants={fadeInUp}
-              className="text-3xl md:text-4xl mb-2 font-bold"
-            >
-              Fueling Passion,
-            </motion.h5>
-            <motion.h2
-              variants={fadeInUp}
-              className="text-3xl sm:text-4xl mb-2 font-bold font-exo-2"
-            >
-              Engineering Excellence
-            </motion.h2>
-            <motion.p variants={fadeInUp} className="text-base md:text-lg lg:text-xl 2xl:text-2xl sm:text-2xl">
-              We take pride in our dedication, talent, and the
-            </motion.p>
-            <motion.p variants={fadeInUp} className="text-base md:text-lg lg:text-xl 2xl:text-2xl sm:text-2xl">
-              incredible performances that define us. Driven
-            </motion.p>
-            <motion.p variants={fadeInUp} className="text-base md:text-lg lg:text-xl 2xl:text-2xl sm:text-2xl">
-              by a love for racing, we represent our college
-            </motion.p>
-            <motion.p variants={fadeInUp} className="text-base md:text-lg  lg:text-xl 2xl:text-2xl sm:text-2xl">
-              with genuine passion and engineering prowess.
-            </motion.p>
-            <motion.p
-              variants={fadeInUp}
-              className="text-base md:text-xl 2xl:text-2xl sm:text-2xl   mb-6"
-            >
-              Dive deeper into our story.
-            </motion.p>
-          </div>
-        </motion.div>
-      </div>
-      <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
-        <div className="w-full bg-white h-[1px] opacity-50"></div>
-      </div>
-      <div
-        className={`min-h-screen font-exo-2 bg-[#0033CC] text-white flex flex-col items-center sm:items-start justify-center p-4 sm:pl-12 ${sectionPadding}`}
+        Fueling Passion,
+      </motion.h5>
+      <motion.h2
+        variants={fadeInUp}
+        className="text-3xl sm:text-4xl mb-2 font-bold font-exo-2"
       >
-        <motion.div
-          className="mb-8"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: false }}
-        >
-          <h5 className="text-4xl font-bold sm:ml-24 text-center sm:text-left">
-            Meet the Buggy
-          </h5>
-        </motion.div>
-        <motion.div
-          className="flex flex-col items-center justify-center w-full mt-12"
-          initial="hidden"
-          whileInView="visible"
-          variants={staggerChildren}
-          viewport={{ once: false }}
-        >
-          <motion.img
-            src={carImage}
-            alt="Buggy Car"
-            className="h-[500px] sm:h-[600px] w-auto mb-12 mt-[-100px] sm:mt-[-150px]"
-            variants={fadeInUp}
-          />
+        Engineering Excellence
+      </motion.h2>
+      <motion.p
+        variants={fadeInUp}
+        className="text-base md:text-lg lg:text-xl 2xl:text-2xl sm:text-2xl"
+      >
+        We take pride in our dedication, talent, and the
+      </motion.p>
+      <motion.p
+        variants={fadeInUp}
+        className="text-base md:text-lg lg:text-xl 2xl:text-2xl sm:text-2xl"
+      >
+        incredible performances that define us. Driven
+      </motion.p>
+      <motion.p
+        variants={fadeInUp}
+        className="text-base md:text-lg lg:text-xl 2xl:text-2xl sm:text-2xl"
+      >
+        by a love for racing, we represent our college
+      </motion.p>
+      <motion.p
+        variants={fadeInUp}
+        className="text-base md:text-lg lg:text-xl 2xl:text-2xl sm:text-2xl"
+      >
+        with genuine passion and engineering prowess.
+      </motion.p>
+      <motion.p
+        variants={fadeInUp}
+        className="text-base md:text-xl 2xl:text-2xl sm:text-2xl mb-6"
+      >
+        Dive deeper into our story.
+      </motion.p>
+    </div>
+  </motion.div>
+</div>
 
-          <motion.div variants={fadeInUp}>
-            <Link
-              to="/team"
-              state={{ activeTab: "buggy" }}
-              className="flex items-center text-xl text-white group hover:text-yellow-500 transition-colors duration-300 mb-12 sm:mt-[-100px] font-bold"
-            >
-              Discover More
-              <motion.span
-                style={{
-                  display: "inline-block",
-                  marginLeft: "8px",
-                  fontSize: "15px",
-                }}
-                className="rotate-arrow"
-                whileHover={{ x: 5 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
-              >
-                ➔
-              </motion.span>
-            </Link>
-          </motion.div>
 
-          <motion.div
-            className="flex flex-col items-center space-y-8"
-            variants={staggerChildren}
+<div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
+  <div className="bg-white h-[1px] opacity-50 w-full mr-[28%]"></div>  {/* Reduce length from right side */}
+</div>
+
+
+
+  <div
+    className={`min-h-screen font-exo-2 bg-[#0033CC] text-white flex flex-col items-center sm:items-start justify-center p-4 sm:pl-12 relative ${sectionPadding}`}
+  >
+    <motion.div
+      className="mb-8"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: false }}
+    >
+      <h5 className="text-4xl font-bold sm:ml-24 text-center sm:text-left">
+        Meet the Buggy
+      </h5>
+    </motion.div>
+    <motion.div
+      className="flex flex-col items-center justify-center w-full mt-12"
+      initial="hidden"
+      whileInView="visible"
+      variants={staggerChildren}
+      viewport={{ once: false }}
+    >
+      <motion.img
+        src={carImage}
+        alt="Buggy Car"
+        className="h-[500px] sm:h-[600px] w-auto mb-12 mt-[-100px] sm:mt-[-150px]"
+        variants={fadeInUp}
+      />
+
+      <motion.div variants={fadeInUp}>
+        <Link
+          to="/team"
+          state={{ activeTab: "buggy" }}
+          className="flex items-center text-xl text-white group hover:text-yellow-500 transition-colors duration-300 mb-12 sm:mt-[-100px] font-bold"
+        >
+          Discover More
+          <motion.span
+            style={{
+              display: "inline-block",
+              marginLeft: "8px",
+              fontSize: "15px",
+            }}
+            className="rotate-arrow"
+            whileHover={{ x: 5 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
-            <div className="flex flex-col sm:flex-row items-center space-y-8 sm:space-y-0 sm:space-x-40">
-              <motion.div className="text-center" variants={fadeInUp}>
-                <p className="text-xl font-extrabold">10hp @</p>
-                <p className="text-xl">3600rpm</p>
-                <p className="text-sm mt-2">Peak Power</p>
-              </motion.div>
-              <motion.div className="text-center" variants={fadeInUp}>
-                <p className="text-xl font-extrabold">CVT</p>
-                <p className="text-sm mt-2">Transmission</p>
-                <p className="text-sm">Type</p>
-              </motion.div>
-              <motion.div className="text-center" variants={fadeInUp}>
-                <p className="text-xl font-extrabold">19.66 Nm @</p>
-                <p className="text-xl">2800rpm</p>
-                <p className="text-sm mt-2">Peak Torque</p>
-              </motion.div>
-            </div>
+            ➔
+          </motion.span>
+        </Link>
+      </motion.div>
+
+      <motion.div
+        className="flex flex-col items-center space-y-8"
+        variants={staggerChildren}
+      >
+        <div className="flex flex-col sm:flex-row items-center space-y-8 sm:space-y-0 sm:space-x-40">
+          <motion.div className="text-center" variants={fadeInUp}>
+            <p className="text-xl font-extrabold">10hp @</p>
+            <p className="text-xl">3600rpm</p>
+            <p className="text-sm mt-2">Peak Power</p>
           </motion.div>
-        </motion.div>
-      </div>
+          <motion.div className="text-center" variants={fadeInUp}>
+            <p className="text-xl font-extrabold">CVT</p>
+            <p className="text-sm mt-2">Transmission</p>
+            <p className="text-sm">Type</p>
+          </motion.div>
+          <motion.div className="text-center" variants={fadeInUp}>
+            <p className="text-xl font-extrabold">19.66 Nm @</p>
+            <p className="text-xl">2800rpm</p>
+            <p className="text-sm mt-2">Peak Torque</p>
+          </motion.div>
+        </div>
+      </motion.div>
+    </motion.div>
+    
+    
+
+    {/* Background image positioned to the right side of the section */}
+    <div
+      className="absolute inset-y-0 right-0 bg-no-repeat bg-contain bg-right"
+      style={{
+        backgroundImage: `url(${bg1})`,
+        width: "40%",          // Adjust width to a relative value (e.g., 40% of the container's width)
+        height: "100%",        // Keep height to cover the entire section
+        top: "-48%",           // Adjust top position using a percentage relative to the container's height
+      }}
+      
+    />
+  </div>
+</div>
+<div
+  style={{
+    position: 'absolute',
+    width: '40%',
+    height: '130%',
+    top: '229%',
+    right: '0',
+    overflow: 'hidden', // This prevents any overflow
+  }}
+>
+  <div
+    style={{
+      position: 'absolute',
+      top: 0,
+      bottom: 0,
+      left: 0,
+      right: 0,
+      backgroundImage: `url(${bg22})`,
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'contain',
+      backgroundPosition: 'bottom right',
+      transform: 'translate(14px, 2px)', // Move 6 pixels right and 3 pixels down
+    }}
+  />
+</div>
+
+
       <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
         <div className="w-full bg-white h-[1px] opacity-50"></div>
       </div>
@@ -395,26 +476,34 @@ const LandingPage = () => {
           </Link>
 
           <div className="flex flex-col items-center">
-            <motion.img
-              src={teamImage}
-              alt="STRIDERZ RACING Team"
-              className="w-full sm:w-3/4 h-auto mb-8"
-              variants={fadeInUp}
-            />
-            <motion.div
-              className="w-full text-center sm:pr-48 sm:text-right"
-              variants={fadeInUp}
-            >
-              <p className="text-md sm:text-base inline-block p-5 max-w-xl font-exo-2">
-                Meet the team behind <strong>STRIDERZ RACING</strong>,
-                showcasing exceptional {" "}
-                <br className="hidden sm:block" />
-                 engineering talent and a passion for racing. Join us as we push
-                <br className="hidden sm:block" />
-                boundaries and achieve racing excellence.
-              </p>
-            </motion.div>
-          </div>
+  <motion.img
+    src={teamImage}
+    alt="STRIDERZ RACING Team"
+    className="w-full sm:w-3/4 h-auto mb-8"
+    variants={fadeInUp}
+  />
+  <motion.div
+    className="w-full text-center sm:pr-48 sm:text-right relative"
+    variants={fadeInUp}
+    style={{
+      backgroundImage: `url(${bg2})`,  // Adding the background image
+      backgroundRepeat: "no-repeat",   // No repeating the background image
+      backgroundPosition: "left center", // Position it to the left
+      backgroundSize: "200px auto",    // Increase the size (width: 200px, height: auto)
+    }}
+  >
+    <p className="text-md sm:text-base inline-block p-5 max-w-xl font-exo-2">
+      Meet the team behind <strong>STRIDERZ RACING</strong>,
+      showcasing exceptional {" "}
+      <br className="hidden sm:block" />
+       engineering talent and a passion for racing. Join us as we push
+      <br className="hidden sm:block" />
+      boundaries and achieve racing excellence.
+    </p>
+  </motion.div>
+</div>
+
+
         </motion.div>
       </div>
       <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
@@ -467,67 +556,83 @@ const LandingPage = () => {
 
   </motion.div>
 </div>
-      <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
+<div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
         <div className="w-full bg-white h-[1px] opacity-50"></div>
       </div>
-      <div
-        className={`min-h-screen bg-[#0033CC] text-white flex items-center justify-center ${sectionPadding}`}
-      >
-        <motion.div
-          className="w-full relative"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: false }}
-        >
-          <Link
-      to="/gallery"
-      className="flex-shrink-0 mb-8 flex items-center group p-2 hover:text-yellow-500 transition-colors duration-300"
+<div className="relative bg-[#0033CC] text-white">
+  {/* Gallery Section */}
+  <div className={`min-h-screen flex items-center justify-center ${sectionPadding}`}>
+    <motion.div
+      className="w-full relative"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: false }}
     >
-      <div className="flex items-center ml-0 sm:ml-32">
-        <h5 className="text-2xl sm:text-4xl font-bold text-left">Gallery</h5>
-        <motion.span
-          style={{
-            display: 'inline-block',
-            marginLeft: '12px',
-            fontSize: '18px',
-            sm: { fontSize: '24px' },
-          }}
-          className="rotate-arrow"
-          whileHover={{ x: 5, rotate: -30 }} // Rotate by -30 degrees on hover
-          transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-        >
-          ➔
-        </motion.span>
-      </div>
-    </Link>
-          <div className=" sm:px-10 mx-auto pt-10 sm:pt-16">
-            <Carousel />
-          </div>
-        </motion.div>
-      </div>
-      <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
-        <div className="w-full bg-white h-[1px] opacity-50"></div>
-      </div>
-      <div
-        className={`min-h-screen bg-[#0033CC] text-white flex items-center justify-center ${sectionPadding}`}
+      <Link
+        to="/gallery"
+        className="flex-shrink-0 mb-8 flex items-center group p-2 hover:text-yellow-500 transition-colors duration-300"
       >
-        <motion.div
-          className="w-full"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: false }}
-        >
-          <div className="flex-shrink-0 flex justify-center sm:justify-start sm:ml-32">
-  <h5 className="text-4xl font-bold text-left">Merchandise</h5>
+        <div className="flex items-center ml-0 sm:ml-32">
+          <h5 className="text-2xl sm:text-4xl font-bold text-left">Gallery</h5>
+          <motion.span
+            style={{
+              display: 'inline-block',
+              marginLeft: '12px',
+              fontSize: '18px',
+              sm: { fontSize: '24px' },
+            }}
+            className="rotate-arrow"
+            whileHover={{ x: 5, rotate: -30 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+          >
+            ➔
+          </motion.span>
+        </div>
+      </Link>
+      <div className="sm:px-10 mx-auto pt-10 sm:pt-16">
+        <Carousel />
+      </div>
+    </motion.div>
+  </div>
+
+  {/* Background Image */}
+  <div 
+  className="absolute left-1/2 transform -translate-x-1/2 w-3/4 h-[130%]"
+  style={{
+    backgroundImage: `url(${bg3})`,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "contain",
+    backgroundPosition: "left center", // Keep it to the left and centered vertically
+    zIndex: 0,
+    top: '-2%',
+    left: '50%', // Adjust position to the right
+  }}
+/>
+
+
+
+  {/* Merchandise Section */}
+  <div className={`min-h-screen flex items-center justify-center ${sectionPadding}`} style={{ marginTop: "20vh" }}>
+    <motion.div
+      className="w-full relative z-10"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: false }}
+    >
+      <div className="flex-shrink-0 flex justify-center sm:justify-start sm:ml-32">
+        <h5 className="text-4xl font-bold text-left">Merchandise</h5>
+      </div>
+
+      <div className="flex items-center justify-center mt-16">
+        <img src={Merc} alt="" className="sm:w-2/5" />
+      </div>
+    </motion.div>
+  </div>
 </div>
 
-      <div className="flex items-center justify-center">
-  <img src={Merc} alt="" className="sm:w-2/5 mt-28" />
-</div>
-        </motion.div>
-      </div>
+
       <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
         <div className="w-full bg-white h-[1px] opacity-50"></div>
       </div>
