@@ -114,7 +114,7 @@ const ContactPage = ({ fadeInUp, sectionPadding }) => {
           </div>
 
           {/* Right-Aligned Social Media Icons */}
-          <div className="flex justify-end mt-4 sm:mt-0 space-x-4 text-xl sm:pr-16">
+          <div className="flex justify-end mt-4 sm:mt-0 space-x-4 text-xl sm:pr-[6%]">
             <motion.a 
               href="https://www.facebook.com" 
               target="_blank" 

@@ -7,6 +7,8 @@ import mobilebg from "../assets/images/mobnew.jpg";
 import carImage from "../assets/images/car1.png";
 import Carousel from "../components/Carousel";
 import Merc from "../assets/images/merch.png";
+import BlackSwitch from "../assets/images/bslogo.png";
+
 import sponsor1 from "../assets/images/sponsor1.png";
 import sponsor2 from "../assets/images/sponsor2.png";
 import teamImage from "../assets/images/newteam.png";
@@ -270,7 +272,7 @@ const LandingPage = () => {
     className={`min-h-screen font-exo-2 bg-[#0033CC] text-white flex flex-col items-center sm:items-start justify-center p-4 sm:pl-12 relative ${sectionPadding}`}
   >
     <motion.div
-      className="mb-8"
+      className="mb-8 mx-0"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -382,19 +384,19 @@ const LandingPage = () => {
 </div>
 
 
-      <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
+      <div className="h-[1px] w-full bg-[#0033CC] flex justify-center ">
         <div className="w-full bg-white h-[1px] opacity-50"></div>
       </div>
       <div className="bg-[#0033CC] text-white p-8">
   <motion.div
-    className="w-full max-w-7xl mx-auto"
+    className="w-full max-w-7xl mx-[6%]"
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
     viewport={{ once: false }}
   >
-            <div className="flex flex-col sm:flex-row items-center justify-between">
-  <div className="flex-shrink-0 mb-8 sm:mb-0 sm:ml-24 font-exo-2">
+            <div className="flex flex-col sm:flex-row items-center  max-w-[100%] justify-between gap-9">
+  <div className="flex-shrink-0 mb-8 justify-start  sm:mb-0 font-exo-2">
     <h5 className="text-2xl sm:text-4xl font-bold text-left">
       Proudly
     </h5>
@@ -428,6 +430,16 @@ const LandingPage = () => {
         src={sponsor2}
         alt="Sponsor 2"
         className="max-w-full max-h-full object-contain"
+      />
+    </motion.div>
+    <motion.div
+      className="w-32 h-24 sm:w-48 sm:h-40 flex items-center justify-center sm:ml-24"
+      variants={fadeInUp}
+    >
+      <img
+        src={BlackSwitch}
+        alt="Sponsor 2"
+        className="max-w-[200px] rounded-xl max-h-[110px] object-contain"
       />
     </motion.div>
   </motion.div>
@@ -492,7 +504,7 @@ const LandingPage = () => {
       backgroundSize: "200px auto",    // Increase the size (width: 200px, height: auto)
     }}
   >
-    <p className="text-md sm:text-base inline-block p-5 max-w-xl font-exo-2">
+    <p className="text-xl sm:text-base inline-block p-5 max-w-xl font-exo-2">
       Meet the team behind <strong>STRIDERZ RACING</strong>,
       showcasing exceptional {" "}
       <br className="hidden sm:block" />
@@ -511,14 +523,14 @@ const LandingPage = () => {
       </div>
       <div className="bg-[#0033CC] text-white p-8">
   <motion.div
-    className="w-full max-w-7xl mx-auto"
+    className="w-full max-w-7xl mx-[6%]"
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
     viewport={{ once: false }}
   >
     <div className="flex flex-col sm:flex-row items-center justify-between">
-  <div className="flex-shrink-0 mb-8 sm:mb-0 sm:ml-24 font-exo-2">
+  <div className="flex-shrink-0 mb-8 sm:mb-0 font-exo-2">
     <h5 className="text-2xl sm:text-4xl font-bold text-left">
       Featured On
     </h5>
