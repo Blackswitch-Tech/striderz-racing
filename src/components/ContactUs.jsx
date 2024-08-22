@@ -40,7 +40,7 @@ const ContactPage = ({ fadeInUp, sectionPadding }) => {
       }}
     >
       <div className="w-full px-4 md:px-0">
-        <h1 className="text-2xl sm:text-4xl font-bold text-white mb-8 font-exo-2 text-left sm:ml-32">
+        <h1 className="text-2xl sm:text-4xl font-bold text-white mb-8 font-exo-2 text-center md:text-left sm:ml-32">
           Contact Us
         </h1>
         <motion.form 

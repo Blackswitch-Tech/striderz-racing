@@ -396,11 +396,11 @@ const LandingPage = () => {
     viewport={{ once: false }}
   >
             <div className="flex flex-col sm:flex-row items-center  max-w-[100%] justify-between gap-9">
-  <div className="flex-shrink-0 mb-8 justify-start  sm:mb-0 font-exo-2">
-    <h5 className="text-2xl sm:text-4xl font-bold text-left">
+  <div className="flex-shrink-0 mb-8 sm:justify-start  justify-center  sm:mb-0 font-exo-2">
+    <h5 className="text-2xl sm:text-4xl text-center font-bold md:text-left">
       Proudly
     </h5>
-    <h5 className="text-2xl sm:text-4xl font-bold text-left">
+    <h5 className="text-2xl sm:text-4xl text-center font-bold md:text-left">
       Supported By
     </h5>
   </div>
@@ -465,12 +465,13 @@ const LandingPage = () => {
           <Link
             to="/team"
             state={{ activeTab: "people" }}
-            className="flex-shrink-0 mb-8 flex items-center group p-2 hover:text-yellow-500 transition-colors duration-300"
+            className="flex-shrink-0 mb-8 flex items-center justify-center md:justify-start  p-2 hover:text-yellow-500 transition-colors duration-300"
           >
-            <div className="flex items-center ml-0 sm:ml-32 font-exo-2">
-              <h5 className="text-2xl sm:text-4xl font-bold text-left">
+            <div className="flex items-center  ml-0 sm:ml-32 font-exo-2">
+              <h5 className="text-2xl sm:text-4xl text-center font-bold md:text-left ">
                 Meet the Team
               </h5>
+              <div className="sm:block hidden">
               <motion.span
                 style={{
                   display: "inline-block",
@@ -484,6 +485,7 @@ const LandingPage = () => {
               >
                 ➔
               </motion.span>
+              </div>
             </div>
           </Link>
 
@@ -583,26 +585,27 @@ const LandingPage = () => {
     >
       <Link
         to="/gallery"
-        className="flex-shrink-0 mb-8 flex items-center group p-2 hover:text-yellow-500 transition-colors duration-300"
+        className="flex-shrink-0 mb-8 flex items-center justify-center md:justify-start p-2 hover:text-yellow-500 transition-colors duration-300"
       >
         <div className="flex items-center ml-0 sm:ml-32">
-          <h5 className="text-2xl sm:text-4xl font-bold text-left">Gallery</h5>
-          <motion.span
+          <h5 className="text-2xl sm:text-4xl font-bold text-center sm:text-left">Gallery</h5>
+          <div className="sm:block hidden"> <motion.span
             style={{
               display: 'inline-block',
               marginLeft: '12px',
               fontSize: '18px',
               sm: { fontSize: '24px' },
             }}
-            className="rotate-arrow"
+            className="rotate-arrow "
             whileHover={{ x: 5, rotate: -30 }}
             transition={{ type: 'spring', stiffness: 400, damping: 10 }}
           >
             ➔
-          </motion.span>
+          </motion.span></div>
+         
         </div>
       </Link>
-      <div className="sm:px-10 mx-auto pt-10 sm:pt-16">
+      <div className="sm:px-10 mx-[5%] md:mx-auto pt-10 sm:pt-16">
         <Carousel />
       </div>
     </motion.div>
@@ -610,22 +613,20 @@ const LandingPage = () => {
 
   {/* Background Image */}
   <div 
-  className="absolute left-1/2 transform -translate-x-1/2 w-3/4 h-[130%]"
-  style={{
-    backgroundImage: `url(${bg3})`,
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "contain",
-    backgroundPosition: "left center", // Keep it to the left and centered vertically
-    zIndex: 0,
-    top: '-2%',
-    left: '50%', // Adjust position to the right
-  }}
-/>
-
-
+    className="absolute left-1/2 transform -translate-x-1/2  h-[50%] w-[50%]"
+    style={{
+      backgroundImage: `url(${bg3})`,
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "contain",
+      backgroundPosition: "center left", // Center the image vertically and align to the left
+      zIndex: 0,
+      top: '30%',
+      left: '50%',
+    }}
+  />
 
   {/* Merchandise Section */}
-  <div className={`min-h-screen flex items-center justify-center ${sectionPadding}`} style={{ marginTop: "20vh" }}>
+  <div className={`min-h-[90%] flex items-center justify-center ${sectionPadding}`} style={{ marginTop: "10%" }}>
     <motion.div
       className="w-full relative z-10"
       initial={{ opacity: 0, y: 20 }}
@@ -643,7 +644,6 @@ const LandingPage = () => {
     </motion.div>
   </div>
 </div>
-
 
       <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
         <div className="w-full bg-white h-[1px] opacity-50"></div>
