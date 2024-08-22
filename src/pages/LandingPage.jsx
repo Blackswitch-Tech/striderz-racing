@@ -278,7 +278,7 @@ const LandingPage = () => {
       transition={{ duration: 0.5 }}
       viewport={{ once: false }}
     >
-      <h5 className="text-4xl font-bold sm:ml-24 text-center sm:text-left">
+      <h5 className="text-2xl font-bold sm:ml-24 text-center sm:text-left">
         Meet the Buggy
       </h5>
     </motion.div>
@@ -389,7 +389,7 @@ const LandingPage = () => {
       </div>
       <div className="bg-[#0033CC] text-white p-8">
   <motion.div
-    className="w-full max-w-7xl mx-[6%]"
+    className="w-full max-w-7xl md:mx-[6%]"
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
@@ -525,7 +525,7 @@ const LandingPage = () => {
       </div>
       <div className="bg-[#0033CC] text-white p-8">
   <motion.div
-    className="w-full max-w-7xl mx-[6%]"
+    className="w-full max-w-7xl md:mx-[6%] "
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
@@ -533,12 +533,12 @@ const LandingPage = () => {
   >
     <div className="flex flex-col sm:flex-row items-center justify-between">
   <div className="flex-shrink-0 mb-8 sm:mb-0 font-exo-2">
-    <h5 className="text-2xl sm:text-4xl font-bold text-left">
+    <h5 className="text-2xl sm:text-4xl font-bold text-center mr-3 sm:text-left">
       Featured On
     </h5>
   </div>
   <motion.div
-    className="flex flex-wrap sm:flex-nowrap justify-center sm:justify-end w-full sm:w-auto sm:mr-24"
+    className="flex flex-wrap sm:flex-nowrap justify-center md:justify-end w-full sm:w-auto sm:mr-24"
     variants={staggerChildren}
     initial="hidden"
     whileInView="visible"
@@ -635,7 +635,7 @@ const LandingPage = () => {
       viewport={{ once: false }}
     >
       <div className="flex-shrink-0 flex justify-center sm:justify-start sm:ml-32">
-        <h5 className="text-4xl font-bold text-left">Merchandise</h5>
+        <h5 className="text-2xl font-bold text-left">Merchandise</h5>
       </div>
 
       <div className="flex items-center justify-center mt-16">
