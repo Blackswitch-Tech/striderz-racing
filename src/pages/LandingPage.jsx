@@ -278,7 +278,7 @@ const LandingPage = () => {
       transition={{ duration: 0.5 }}
       viewport={{ once: false }}
     >
-      <h5 className="text-2xl font-bold sm:ml-24 text-center sm:text-left">
+      <h5 className="md:text-4xl text-2xl font-bold sm:ml-24 text-center sm:text-left">
         Meet the Buggy
       </h5>
     </motion.div>
@@ -635,7 +635,7 @@ const LandingPage = () => {
       viewport={{ once: false }}
     >
       <div className="flex-shrink-0 flex justify-center sm:justify-start sm:ml-32">
-        <h5 className="text-2xl font-bold text-left">Merchandise</h5>
+        <h5 className="md:text-4xl text-2xl font-bold text-left">Merchandise</h5>
       </div>
 
       <div className="flex items-center justify-center mt-16">
