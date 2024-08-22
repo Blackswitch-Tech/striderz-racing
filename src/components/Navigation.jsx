@@ -51,11 +51,11 @@ const Navigation = () => {
   return (
     <div>
 <nav
-  className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+  className={`flex mx-auto  w-full fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
     scrolled ? 'bg-black bg-opacity-50 backdrop-filter backdrop-blur-lg' : 'bg-transparent'
-  } hidden md:block`}
+  } hidden md:block max-w-full mx-auto  items-center justify-center`}
 >
-  <div className="container mx-[6%] max-w-[100vw] ">
+  <div className="container  w-max -mr-16 ">
     <div className="py-2">
       <motion.div
         className="grid grid-cols-5 items-center gap-10"
