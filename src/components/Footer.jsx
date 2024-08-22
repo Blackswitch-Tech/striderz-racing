@@ -63,7 +63,7 @@ const Footer = () => {
           <div className="text-center">
             <p className="text-sm">&copy; 2024 TSR. All rights reserved</p>
             <a href="https://blackswitch.in/">
-              <p className="text-sm mt-1">Powered by Blackswitch Technologies</p>
+              <p className="text-base mt-1 underline">Powered by Blackswitch Technologies</p>
             </a>
           </div>
         </div>

@@ -366,7 +366,7 @@ const LandingPage = () => {
             backgroundRepeat: "no-repeat",
             backgroundSize: "contain",
             backgroundPosition: "bottom right",
-            transform: "translate(14px, 2px)", // Move 6 pixels right and 3 pixels down
+            transform: "translate(55px, -10px)", // Move 6 pixels right and 3 pixels down
           }}
         />
       </div>
@@ -593,7 +593,7 @@ const LandingPage = () => {
               </div>
             </Link>
             <div className="sm:px-10 mx-[5%] md:mx-auto pt-10 sm:pt-16">
-              <Carousel />
+              <Carousel/>
             </div>
           </motion.div>
         </div>

@@ -24,10 +24,10 @@ const responsive = {
 
 const Carouselc = () => {
   const nav = useNavigate();
-  const select_photos = photos.slice(0, 8);
+  const select_photos = photos.slice(0,4);
 
   return (
-    <div className="w-full mx-auto">
+    <div className="w-full mx-auto px-6">
       <Carousel
         responsive={responsive}
         autoPlay={true}
