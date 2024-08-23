@@ -14,7 +14,7 @@ const Footer = () => {
         </div>
         <div>
           <p className='flex justify-center items-center '>&copy; 2024 TSR. All rights reserved </p>
-          <p>Powered by Blackswitch Technologies</p>
+          <a href="https://blackswitch.in/"><p>Powered by Blackswitch Technologies</p></a>
         </div>
       </div>
     </footer>

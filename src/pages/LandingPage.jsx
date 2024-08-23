@@ -439,7 +439,7 @@ const LandingPage = () => {
       <img
         src={BlackSwitch}
         alt="Sponsor 2"
-        className="max-w-[200px] rounded-xl max-h-[110px] object-contain"
+        className="max-w-full max-h-[110%] object-contain rounded-lg"
       />
     </motion.div>
   </motion.div>
