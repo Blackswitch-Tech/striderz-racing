@@ -179,17 +179,7 @@ const LandingPage = () => {
           className={`min-h-screen text-white flex items-center justify-end pr-4 md:pr-16 relative overflow-hidden ${sectionPadding}`}
         >
           {/* BG11 Image Positioned in the Background */}
-          <div
-            className="absolute inset-y-0 right-0 bg-no-repeat bg-contain bg-right"
-            style={{
-              backgroundImage: `url(${bg11})`,
-              width: "50%", // Adjust width to a relative value
-              height: "130%", // Keep height to cover the entire section
-              top: "-40%", // Adjust top position using a percentage
-              right: "15%", // Slightly move the image to the left with a relative value
-              zIndex: 0, // Ensure it stays behind the content
-            }}
-          />
+          
 
           <motion.img
             src={carImage}
@@ -255,7 +245,7 @@ const LandingPage = () => {
         </div>
 
         <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
-          <div className="bg-white h-[1px] opacity-50 w-full mr-[28%]"></div>{" "}
+          <div className="bg-white h-[1px] opacity-50 w-full"></div>{" "}
           {/* Reduce length from right side */}
         </div>
 
@@ -338,9 +328,9 @@ const LandingPage = () => {
             className="absolute inset-y-0 right-0 bg-no-repeat bg-contain bg-right"
             style={{
               backgroundImage: `url(${bg1})`,
-              width: "40%", // Adjust width to a relative value (e.g., 40% of the container's width)
+              width: "50%", // Adjust width to a relative value (e.g., 40% of the container's width)
               height: "100%", // Keep height to cover the entire section
-              top: "-48%", // Adjust top position using a percentage relative to the container's height
+              top: "-38%", // Adjust top position using a percentage relative to the container's height
             }}
           />
         </div>
@@ -355,30 +345,20 @@ const LandingPage = () => {
           overflow: "hidden", // This prevents any overflow
         }}
       >
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            bottom: 0,
-            left: 0,
-            right: 0,
-            backgroundImage: `url(${bg22})`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "contain",
-            backgroundPosition: "bottom right",
-            transform: "translate(55px, -10px)", // Move 6 pixels right and 3 pixels down
-          }}
-        />
+       <div
+  className="relative bg-cover bg-no-repeat bg-bottom-right"
+  style={{ backgroundImage: `url(${bg22})` }}
+>
+  <div className="absolute inset-0 bg-cover bg-no-repeat bg-bottom-right" />
+</div>
+
       </div>
 
       <div className="h-[1px] w-full bg-[#0033CC] flex justify-center ">
         <div className="w-full bg-white h-[1px] opacity-50"></div>
       </div>
 
-      <div className="h-[1px] w-full bg-[#0033CC] flex justify-center">
-        <div className="w-full bg-white h-[1px] opacity-50"></div>
-      </div>
-
+     
       <div
         className={`min-h-screen bg-[#0033CC] text-white flex flex-col justify-center items-center  ${sectionPadding}`}
       >
@@ -533,7 +513,7 @@ const LandingPage = () => {
                   src={BlackSwitch}
                   height={20}
                   alt="Sponsor 3"
-                  className=" h-auto object-contain rounded-lg  w-36 sm:w-32 md:w-44"
+                  className=" h-auto object-contain rounded-lg  w-36 sm:w-32 md:w-48"
                 />
               </motion.div>
             </motion.div>
