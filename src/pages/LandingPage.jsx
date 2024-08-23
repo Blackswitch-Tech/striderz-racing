@@ -457,7 +457,7 @@ const LandingPage = () => {
         >
           <div className="flex flex-col  items-center sm:items-start ">
             <div className="flex-shrink-0 mb-12 sm:mb-0 font-exo-2  ">
-              <h5 className="text-2xl sm:text-4xl font-bold mb-10">
+              <h5 className="text-2xl sm:text-4xl font-bold mb-5">
                 Featured On
               </h5>
             </div>
@@ -479,10 +479,7 @@ const LandingPage = () => {
                   className=" h-auto object-contain w-28 sm:w-32 md:w-44 "
                 />
               </motion.div>
-              <motion.div
-                className=""
-                variants={fadeInUp}
-              >
+              <motion.div className="" variants={fadeInUp}>
                 <img
                   src={featured2}
                   alt="featured2"
@@ -505,45 +502,38 @@ const LandingPage = () => {
           viewport={{ once: false }}
         >
           <div className="flex flex-col  justify-start mb-10  items-center sm:items-start">
-            <div className="flex-shrink-0 mb-8  font-exo-2 mb-10">
-              <h5 className="text-2xl sm:text-4xl font-bold text-wrap">Proudly Supported By</h5>
-            
+            <div className="flex-shrink-0 mb-12  font-exo-2 ">
+              <h5 className="text-2xl sm:text-4xl font-bold text-wrap">
+                Proudly Supported By
+              </h5>
             </div>
             <motion.div
-              className="flex flex-wrap gap-5 "
+              className="flex flex-wrap gap-5 justify-center "
               variants={staggerChildren}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false }}
             >
-              <motion.div
-                className=" "
-                variants={fadeInUp}
-              >
+              <motion.div className=" " variants={fadeInUp}>
                 <img
                   src={sponsor1}
                   alt="Sponsor 1"
-                  className=" h-auto object-contain w-28 sm:w-32 md:w-44 "
+                  className=" h-auto object-contain w-32 sm:w-32 md:w-44 "
                 />
               </motion.div>
-              <motion.div
-                className=" "
-                variants={fadeInUp}
-              >
+              <motion.div className=" " variants={fadeInUp}>
                 <img
                   src={sponsor2}
                   alt="Sponsor 2"
-                  className=" h-auto object-contain w-28 sm:w-32 md:w-44"
+                  className=" h-auto object-contain w-32 sm:w-32 md:w-44"
                 />
               </motion.div>
-              <motion.div
-                className=" "
-                variants={fadeInUp}
-              >
+              <motion.div className=" " variants={fadeInUp}>
                 <img
                   src={BlackSwitch}
+                  height={20}
                   alt="Sponsor 3"
-                  className=" h-auto object-contain rounded-lg w-28 sm:w-32 md:w-44"
+                  className=" h-auto object-contain rounded-lg  w-36 sm:w-32 md:w-44"
                 />
               </motion.div>
             </motion.div>
@@ -593,7 +583,7 @@ const LandingPage = () => {
               </div>
             </Link>
             <div className="sm:px-10 mx-[5%] md:mx-auto pt-10 sm:pt-16">
-              <Carousel/>
+              <Carousel />
             </div>
           </motion.div>
         </div>
@@ -615,7 +605,7 @@ const LandingPage = () => {
         {/* Merchandise Section */}
         <div
           className={`min-h-[90%] flex items-center justify-center ${sectionPadding}`}
-          style={{ marginTop: "10%" }}
+          style={{ marginTop: "5%" }}
         >
           <motion.div
             className="w-full relative z-10"
@@ -630,7 +620,7 @@ const LandingPage = () => {
               </h5>
             </div>
 
-            <div className="flex items-center justify-center mt-16">
+            <div className="flex items-center justify-center mt-10">
               <img src={Merc} alt="" className="sm:w-2/5" />
             </div>
           </motion.div>
