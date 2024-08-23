@@ -31,7 +31,7 @@ const ContactPage = ({ fadeInUp, sectionPadding }) => {
   return (
     <div
       id="contact-us"
-      className="bg-[#0033CC] min-h-screen w-full flex items-center justify-start"
+      className="bg-[#0033CC] min-h-screen w-full flex items-center justify-start px-2 sm:px-10 md:px-28"
       style={{
         backgroundImage: `url(${bg4})`,
         backgroundRepeat: "no-repeat",
@@ -40,12 +40,12 @@ const ContactPage = ({ fadeInUp, sectionPadding }) => {
       }}
     >
       <div className="w-full px-4 md:px-0">
-        <h1 className="text-2xl sm:text-4xl font-bold text-white mb-8 font-exo-2 text-center md:text-left sm:ml-32">
+        <h1 className="text-2xl sm:text-4xl font-bold text-white mb-8 font-exo-2 text-center md:text-left">
           Contact Us
         </h1>
         <motion.form 
           ref={formRef}
-          className="w-full md:max-w-xl xl:max-w-2xl space-y-6 mb-8 sm:ml-32"
+          className="w-full md:max-w-xl xl:max-w-2xl space-y-6 mb-8 "
           variants={fadeInUp}
           onSubmit={handleSubmit}
           method='POST'
@@ -100,50 +100,7 @@ const ContactPage = ({ fadeInUp, sectionPadding }) => {
         <iframe name="hidden_iframe" ref={iframeRef} style={{display: 'none'}}></iframe>
 
         {/* Contact Details, Centered Bold Email, and Right-Aligned Social Media Links */}
-        <div className="sm:ml-32 text-white mt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between">
-          {/* Contact Details */}
-          <div className="flex flex-col items-start mb-6 sm:mb-0">
-            <p className="text-lg">+91 70126 06474</p>
-            <p className="text-sm mt-1">Paul J Illickan</p>
-            <p className="text-sm">Team Captain</p>
-          </div>
-
-          {/* Centered Bold Email */}
-          <div className="flex justify-center mb-6 sm:mb-0 sm:flex-1">
-            <p className="text-lg font-bold">teamstriderz.saintgits@gmail.com</p>
-          </div>
-
-          {/* Right-Aligned Social Media Icons */}
-          <div className="flex justify-end mt-4 sm:mt-0 space-x-4 text-xl sm:pr-[6%]">
-            <motion.a 
-              href="https://www.facebook.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.2 }} // Grow on hover
-              className="text-white"
-            >
-              <ImFacebook2 />
-            </motion.a>
-            <motion.a 
-              href="https://wa.me/917012606474" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.2 }} // Grow on hover
-              className="text-white"
-            >
-              <FaWhatsapp />
-            </motion.a>
-            <motion.a 
-              href="https://www.instagram.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.2 }} // Grow on hover
-              className="text-white"
-            >
-              <FaInstagram />
-            </motion.a>
-          </div>
-        </div>
+     
       </div>
     </div>
   );
