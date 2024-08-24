@@ -179,7 +179,6 @@ const LandingPage = () => {
           className={`min-h-screen text-white flex items-center justify-end pr-4 md:pr-16 relative overflow-hidden ${sectionPadding}`}
         >
           {/* BG11 Image Positioned in the Background */}
-          
 
           <motion.img
             src={carImage}
@@ -345,20 +344,18 @@ const LandingPage = () => {
           overflow: "hidden", // This prevents any overflow
         }}
       >
-       <div
-  className="relative bg-cover bg-no-repeat bg-bottom-right"
-  style={{ backgroundImage: `url(${bg22})` }}
->
-  <div className="absolute inset-0 bg-cover bg-no-repeat bg-bottom-right" />
-</div>
-
+        <div
+          className="relative bg-cover bg-no-repeat bg-bottom-right"
+          style={{ backgroundImage: `url(${bg22})` }}
+        >
+          <div className="absolute inset-0 bg-cover bg-no-repeat bg-bottom-right" />
+        </div>
       </div>
 
       <div className="h-[1px] w-full bg-[#0033CC] flex justify-center ">
         <div className="w-full bg-white h-[1px] opacity-50"></div>
       </div>
 
-     
       <div
         className={`min-h-screen bg-[#0033CC] text-white flex flex-col justify-center items-center  ${sectionPadding}`}
       >
@@ -413,12 +410,11 @@ const LandingPage = () => {
                 backgroundSize: "200px auto", // Increase the size (width: 200px, height: auto)
               }}
             >
-              <p className="text-xl sm:text-base inline-block p-5 max-w-xl font-exo-2">
+              <p className="text-xl sm:text-2xl inline-block p-5 max-w-xl font-exo-2">
                 Meet the team behind <strong>STRIDERZ RACING</strong>,
-                showcasing exceptional <br className="hidden sm:block" />
-                engineering talent and a passion for racing. Join us as we push
-                <br className="hidden sm:block" />
-                boundaries and achieve racing excellence.
+                showcasing exceptional engineering talent and a passion for
+                racing. Join us as we push boundaries and achieve racing
+                excellence.
               </p>
             </motion.div>
           </div>
@@ -456,14 +452,14 @@ const LandingPage = () => {
                 <img
                   src={featured1}
                   alt="featured1"
-                  className=" h-auto object-contain w-28 sm:w-32 md:w-44 "
+                  className=" h-auto object-contain w-28 sm:w-32 md:w-48 "
                 />
               </motion.div>
               <motion.div className="" variants={fadeInUp}>
                 <img
                   src={featured2}
                   alt="featured2"
-                  className="  h-auto object-contain w-28 sm:w-32 md:w-44"
+                  className="  h-auto object-contain w-28 sm:w-32 md:w-48"
                 />
               </motion.div>
             </motion.div>
@@ -498,14 +494,14 @@ const LandingPage = () => {
                 <img
                   src={sponsor1}
                   alt="Sponsor 1"
-                  className=" h-auto object-contain w-32 sm:w-32 md:w-44 "
+                  className=" h-auto object-contain w-32 sm:w-32 md:w-48 "
                 />
               </motion.div>
               <motion.div className=" " variants={fadeInUp}>
                 <img
                   src={sponsor2}
                   alt="Sponsor 2"
-                  className=" h-auto object-contain w-32 sm:w-32 md:w-44"
+                  className=" h-auto object-contain w-32 sm:w-32 md:w-48"
                 />
               </motion.div>
               <motion.div className=" " variants={fadeInUp}>
@@ -513,7 +509,7 @@ const LandingPage = () => {
                   src={BlackSwitch}
                   height={20}
                   alt="Sponsor 3"
-                  className=" h-auto object-contain rounded-lg  w-36 sm:w-32 md:w-48"
+                  className=" h-auto object-contain rounded-lg  w-36 sm:w-32 md:w-52"
                 />
               </motion.div>
             </motion.div>
