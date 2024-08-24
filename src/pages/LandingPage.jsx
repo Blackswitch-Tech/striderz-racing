@@ -304,19 +304,19 @@ const LandingPage = () => {
             >
               <div className="flex flex-col sm:flex-row items-center space-y-8 sm:space-y-0 sm:space-x-40">
                 <motion.div className="text-center" variants={fadeInUp}>
-                  <p className="text-xl font-extrabold">10hp @</p>
-                  <p className="text-xl">3600rpm</p>
-                  <p className="text-sm mt-2">Peak Power</p>
+                  <p className="text-2xl font-extrabold">10hp @</p>
+                  <p className="text-2xl">3600rpm</p>
+                  <p className="text-xl mt-1">Peak Power</p>
                 </motion.div>
                 <motion.div className="text-center" variants={fadeInUp}>
-                  <p className="text-xl font-extrabold">CVT</p>
-                  <p className="text-sm mt-2">Transmission</p>
-                  <p className="text-sm">Type</p>
+                  <p className="text-2xl font-extrabold">CVT</p>
+                  <p className="text-2xl ">Transmission</p>
+                  <p className="text-xl mt-1">Type</p>
                 </motion.div>
                 <motion.div className="text-center" variants={fadeInUp}>
-                  <p className="text-xl font-extrabold">19.66 Nm @</p>
-                  <p className="text-xl">2800rpm</p>
-                  <p className="text-sm mt-2">Peak Torque</p>
+                  <p className="text-2xl font-extrabold">19.66 Nm @</p>
+                  <p className="text-2xl">2800rpm</p>
+                  <p className="text-xl mt-2">Peak Torque</p>
                 </motion.div>
               </div>
             </motion.div>
