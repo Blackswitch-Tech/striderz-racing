@@ -176,7 +176,7 @@ const LandingPage = () => {
       </div>
       <div className="relative bg-[#0033CC]">
         <div
-          className={`min-h-screen text-white flex items-center justify-end pr-4 md:pr-16 relative overflow-hidden ${sectionPadding}`}
+          className={`min-h-screen text-white flex items-center justify-end px-5 sm:px-10 md:px-28 relative overflow-hidden ${sectionPadding}`}
         >
           {/* BG11 Image Positioned in the Background */}
 
@@ -401,7 +401,7 @@ const LandingPage = () => {
               variants={fadeInUp}
             />
             <motion.div
-              className="w-full text-center sm:pr-48 sm:text-right relative"
+              className="w-full text-centerpx-5 sm:px-10 md:px-28  sm:text-right relative"
               variants={fadeInUp}
               style={{
                 backgroundImage: `url(${bg2})`, // Adding the background image
@@ -558,7 +558,7 @@ const LandingPage = () => {
                 </div>
               </div>
             </Link>
-            <div className="sm:px-10 mx-[5%] md:mx-auto pt-10 sm:pt-16">
+            <div className="sm:px-10 mx-[5%] md:mx-auto pt-10 sm:pt-16 px-5 sm:px-10 md:px-28">
               <Carousel />
             </div>
           </motion.div>
